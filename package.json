@@ -2,15 +2,14 @@
   "name": "lottie-mvp",
   "version": "1.0.0",
   "description": "",
-  "main": "build.ts",
   "scripts": {
-    "build": "npx ts-node build.ts",
+    "build": "npx ts-node build.ts && cd src && npx tsc && cp *.ts ../site",
     "serve": "cd site && npx http-server -p 8080 -a 127.0.0.1 -c -1",
     "lint": "npx eslint build.ts"
   },
   "author": "",
   "license": "Apache 2.0",
-  "dependencies": {
+  "devDependencies": {
     "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",

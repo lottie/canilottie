@@ -5,6 +5,7 @@ import {
   readdir, writeFile, readFile, copyFile, mkdir,
 } from 'fs/promises';
 import { join, extname } from 'path';
+import { CorpusPage } from './src/common';
 
 const sourceDataDir = './data';
 const destDir = './site';
@@ -25,7 +26,7 @@ interface CanIUseData {
   spec: string
   links: Link[]
   categories: string[],
-  stats: {[key: string]: Product}
+  stats?: {[key: string]: Product}
   notes: string
   parent: string
   keywords: string
@@ -48,18 +49,6 @@ const htmlFilenameFromJSONFilename = (jsonFilename: string): string => {
 
   return `${rootFileName}.html`;
 };
-
-/** CorpusPage has data for a single page. */
-interface CorpusPage {
-  // Relative URL of the page.
-  url: string
-
-  /** The page title. */
-  title: string
-
-  /** A stripped down CanIUseData serialized as JSON. */
-  content: string
-}
 
 const createCombinedJSONFile = async (sourceDirListing: string[]) => {
   // First create the combined output file.
@@ -118,7 +107,6 @@ const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<vo
 
 const copyOverFixedFiles = async (): Promise<void> => {
   await copyFile('./index.html', join(destDir, 'index.html'));
-  await copyFile('./index.js', join(destDir, 'index.js'));
 };
 
 const createTargetDir = async (): Promise<void> => {
