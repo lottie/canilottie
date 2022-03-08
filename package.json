@@ -1,0 +1,16 @@
+{
+  "name": "lottie-mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "cd site && http-server -p 8080 -a 127.0.0.1 -c -1"
+  },
+  "author": "",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}
