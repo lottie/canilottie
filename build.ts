@@ -49,14 +49,12 @@ const loadFile = async (filename: string): Promise<CanIUseData> => {
   return JSON.parse(buf.toString());
 };
 
-const htmlFilenameFromJSONFilename = (jsonFilename: string): string => {
-  const rootFileName = jsonFilename.slice(
-    0,
-    jsonFilename.length - extname(jsonFilename).length,
-  );
+const jsonFilenameWithoutExtension = (jsonFilename: string): string => jsonFilename.slice(
+  0,
+  jsonFilename.length - extname(jsonFilename).length,
+);
 
-  return `${rootFileName}.html`;
-};
+const htmlFilenameFromJSONFilename = (jsonFilename: string): string => `${jsonFilenameWithoutExtension(jsonFilename)}.html`;
 
 const createCombinedJSONFile = async (sourceDirListing: string[]) => {
   // First create the combined output file.
@@ -68,7 +66,7 @@ const createCombinedJSONFile = async (sourceDirListing: string[]) => {
     delete parsed.stats;
 
     combined.push({
-      url: htmlFilenameFromJSONFilename(filename),
+      url: jsonFilenameWithoutExtension(filename),
       title: parsed.title,
       content: JSON.stringify(parsed),
     });
