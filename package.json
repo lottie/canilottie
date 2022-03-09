@@ -15,7 +15,7 @@
   "license": "Apache 2.0",
   "dependencies": {
     "handlebars": "^4.7.7",
-    "lit-html": "^2.2.0"
+    "lit": "^2.2.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.3.2",
