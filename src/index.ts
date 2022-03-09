@@ -1,25 +1,41 @@
 import { CorpusPage } from './common';
 
-const searchInput = document.querySelector<HTMLInputElement>('#search_input')!;
-const results = document.querySelector<HTMLUListElement>('#results')!;
+const main = async () => {
+  const searchInput = document.querySelector<HTMLInputElement>('#search_input')!;
+  const results = document.querySelector<HTMLUListElement>('#results')!;
+  const button = document.querySelector<HTMLInputElement>('#submit')!;
+  const form = document.querySelector<HTMLFormElement>('#form')!;
 
-let corpus: CorpusPage[] = [];
+  // Load the search corpus.
+  const resp = await fetch('./allData.json');
+  const corpus: CorpusPage[] = await resp.json();
 
-// Load the search corpus.
-fetch('./allData.json')
-  .then((response: Response) => response.json())
-  .then((data) => corpus = data);
+  // Hook up the query button.
+  form.addEventListener('submit', (e: SubmitEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
 
-document.querySelector<HTMLButtonElement>('#search')!.addEventListener('click', () => {
-  // Clear the results.
-  results.innerHTML = '';
+    // Clear the results.
+    results.innerHTML = '';
 
-  const searchValue = searchInput.value;
-  corpus.forEach((page) => {
-    if (page.content.includes(searchValue)) {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="${page.url}">${page.title}</a>`;
-      results.appendChild(li);
-    }
+    const searchValue = searchInput.value;
+    corpus.forEach((page) => {
+      if (page.content.includes(searchValue)) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = page.url;
+        a.innerText = page.title;
+        results.appendChild(li);
+      }
+    });
   });
-});
+
+  // Enable the query button.
+  button.disabled = false;
+};
+
+if (document.readyState === 'complete') {
+  main();
+} else {
+  window.addEventListener('DOMContentLoaded', main);
+}
