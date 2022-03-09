@@ -14,7 +14,8 @@
   "author": "",
   "license": "Apache 2.0",
   "dependencies": {
-    "lit-html": "^2.2.0"
+    "lit-html": "^2.2.0",
+    "handlebars": "^4.7.7"
   },
   "devDependencies": {
     "@parcel/transformer-typescript-tsc": "^2.3.2",

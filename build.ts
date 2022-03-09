@@ -5,9 +5,11 @@ import {
   readdir, writeFile, readFile, mkdir,
 } from 'fs/promises';
 import { join, extname } from 'path';
+import { compile } from 'handlebars';
 import { CorpusPage } from './src/common';
 
 const sourceDataDir = './data';
+const templateDir = './templates';
 const destDir = './dist';
 
 interface Link {
@@ -35,6 +37,11 @@ interface CanIUseData {
   bugs: any[]
   notes_by_num: any,
 }
+
+const loadTemplate = async (filename: string): Promise<HandlebarsTemplateDelegate<any>> => {
+  const buf = await readFile(join(templateDir, filename));
+  return compile(buf.toString());
+};
 
 const loadFile = async (filename: string): Promise<CanIUseData> => {
   const buf = await readFile(join(sourceDataDir, filename));
@@ -70,32 +77,11 @@ const createCombinedJSONFile = async (sourceDirListing: string[]) => {
   await writeFile(join(destDir, 'allData.json'), JSON.stringify(combined));
 };
 
-const expandTemplate = (data: CanIUseData) => `
-<!DOCTYPE html>
-<html>
-<head>
-    <title>${data.title}</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-<section>
-    <h1><a href="${data.spec}">${data.title}</a></h1>
-    <p>${data.description}</p>
-</section>
-<section>
-    <h2>Notes</h2>
-    <p>${data.notes}</p>
-</section>
-</body>
-</html>
-`;
-
 const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<void> => {
+  const pageTemplate = await loadTemplate('page.html');
   const wait = sourceDirListing.map(async (filename) => {
     const data = await loadFile(filename);
-    const page = expandTemplate(data);
+    const page = pageTemplate(data);
 
     await writeFile(
       join(destDir, htmlFilenameFromJSONFilename(filename)),
