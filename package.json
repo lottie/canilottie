@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "npx ts-node build.ts && cd src && npx tsc && cp *.ts ../site",
+    "build": "npx ts-node build.ts && cd src && npx tsc && cp *.ts ../site && cd .. && sass src:site",
     "serve": "cd site && npx http-server -p 8080 -a 127.0.0.1 -c -1",
-    "lint": "npx eslint build.ts"
+    "lint": "npx eslint build.ts",
+    "watch": "nodemon"
   },
   "author": "",
   "license": "Apache 2.0",
+  "dependencies": {
+    "sass": "^1.49.9"
+  },
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.14.0",

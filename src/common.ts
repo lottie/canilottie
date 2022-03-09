@@ -15,9 +15,13 @@ interface Link {
   title: string
 }
 
-type YesNo = 'yes' | 'no'
+export type YesNo = 'y' | 'n'
 
-type Product = { [key: string]: YesNo}
+export type Product = { [key: string]: YesNo}
+
+export interface CanIUseDataStats {
+  [key: string]: Product
+}
 
 /** The format of the CanIUse data. */
 export interface CanIUseData {
@@ -26,7 +30,7 @@ export interface CanIUseData {
   spec: string
   links: Link[]
   categories: string[],
-  stats?: {[key: string]: Product}
+  stats: CanIUseDataStats
   notes: string
   parent: string
   keywords: string
@@ -34,4 +38,8 @@ export interface CanIUseData {
   // TODO(jcgregorio) Figure out the shape of the following:
   bugs: any[]
   notes_by_num: any,
+}
+
+export interface CanIUseSearchableData extends Omit<CanIUseData, 'stats'> {
+
 }

@@ -5,7 +5,7 @@ import {
   readdir, writeFile, readFile, copyFile, mkdir,
 } from 'fs/promises';
 import { join, extname } from 'path';
-import { CorpusPage, CanIUseData } from './src/common';
+import { CorpusPage, CanIUseData, CanIUseSearchableData } from './src/common';
 import expandPage from './src/templates/expandPage';
 
 const sourceDataDir = './data';
@@ -32,12 +32,12 @@ const createCombinedJSONFile = async (sourceDirListing: string[]) => {
     const parsed: CanIUseData = await loadFile(filename);
 
     // Remove info we don't want to search on.
-    delete parsed.stats;
+    const { stats, ...searchableData } = parsed;
 
     combined.push({
       url: htmlFilenameFromJSONFilename(filename),
-      title: parsed.title,
-      content: JSON.stringify(parsed),
+      title: searchableData.title,
+      content: JSON.stringify(searchableData),
     });
   });
   await Promise.all(wait);

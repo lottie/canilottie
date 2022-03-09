@@ -1,0 +1,72 @@
+@import "_constants";
+
+.expand-page {
+
+  padding: $gu * 3;
+  overflow-y: auto;
+
+  &__header {
+
+    background: $color-palette-1;
+    padding: $gu * 3 $gu * 2;
+
+    &__title {
+      font-size: $font-large;
+      margin-bottom: $gu * 0.5;
+
+      &__link {
+        color: $color-palette-3;
+
+        &:visited {
+          color: $dark-gray;
+        }
+      }
+    }
+    &__description {
+      font-size: $font-small;
+    }
+  }
+
+  &__stats {
+    margin-top: $gu * 2;
+    padding: $gu * 3 $gu * 2;
+    background: $color-palette-2;
+
+    &__grid {
+      display: flex;
+
+    }
+  }
+}
+
+.stats-card {
+  width: $gu * 14;
+  margin-right: $gu;
+  text-align: center;
+
+  &__header {
+    background-color: $dark-gray;
+    padding: $gu $gu * 0.25;
+    color: $color-palette-5;
+    border-bottom: 2px solid $color-palette-4;
+  }
+
+  &__content {
+    margin-top: $gu;
+    font-weight: 800;
+    font-size: $font-small;
+
+    &__box {
+      padding: $gu * 2;
+
+      &--supported {
+        background-color: $green;
+      }
+
+      &--unsupported {
+        background-color: $red;
+      }
+
+    }
+  }
+}
