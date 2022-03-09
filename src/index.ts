@@ -21,10 +21,12 @@ const main = async () => {
     const searchValue = searchInput.value;
     corpus.forEach((page) => {
       if (page.content.includes(searchValue)) {
+        // TODO(jcgregorio) If this gets more complex then switch to lit-html.
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = page.url;
         a.innerText = page.title;
+        li.appendChild(a);
         results.appendChild(li);
       }
     });
