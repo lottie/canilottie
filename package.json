@@ -5,10 +5,10 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "index.html",
   "scripts": {
-    "build": "npm run clean && npx ts-node build.ts && npx parcel build --dist-dir ./site",
-    "serve": "cd site && npx http-server -p 8080 -a 127.0.0.1 -c -1",
+    "build": "npm run clean && npx ts-node build.ts && npx parcel build",
+    "serve": "cd dist && npx http-server -p 8080 -a 127.0.0.1 -c -1",
     "lint": "npx eslint build.ts",
-    "clean": "rm -rf ./site",
+    "clean": "rm -rf ./dist",
     "check": "npx tsc --noEmit"
   },
   "author": "",

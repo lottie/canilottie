@@ -8,7 +8,7 @@ import { join, extname } from 'path';
 import { CorpusPage } from './src/common';
 
 const sourceDataDir = './data';
-const destDir = './site';
+const destDir = './dist';
 
 interface Link {
   url: string
