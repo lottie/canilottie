@@ -9,6 +9,7 @@ import { compile } from 'handlebars';
 import { CorpusPage } from './src/common';
 
 const sourceDataDir = './data';
+const buildDir = './build';
 const templateDir = './templates';
 const destDir = './dist';
 
@@ -84,7 +85,7 @@ const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<vo
     const page = pageTemplate(data);
 
     await writeFile(
-      join(destDir, htmlFilenameFromJSONFilename(filename)),
+      join(buildDir, htmlFilenameFromJSONFilename(filename)),
       page,
     );
   });
@@ -93,6 +94,7 @@ const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<vo
 
 const createTargetDir = async (): Promise<void> => {
   await mkdir(destDir, { mode: 0o755, recursive: true });
+  await mkdir(buildDir, { mode: 0o755, recursive: true });
 };
 
 const main = async () => {

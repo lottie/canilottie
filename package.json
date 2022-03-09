@@ -5,19 +5,20 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "index.html",
   "scripts": {
-    "build": "npm run clean && npx ts-node build.ts && npx parcel build",
+    "build": "npm run clean && npx ts-node build.ts && npx parcel build index.html && cd build && npx parcel build ./*.html",
     "serve": "cd dist && npx http-server -p 8080 -a 127.0.0.1 -c -1",
     "lint": "npx eslint build.ts",
-    "clean": "rm -rf ./dist",
+    "clean": "rm -rf ./dist ./build",
     "check": "npx tsc --noEmit"
   },
   "author": "",
   "license": "Apache 2.0",
   "dependencies": {
-    "lit-html": "^2.2.0",
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "lit-html": "^2.2.0"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.3.2",
     "@parcel/transformer-typescript-tsc": "^2.3.2",
     "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.14.0",

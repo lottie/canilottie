@@ -1,3 +1,5 @@
+import '../css/index.scss';
+
 import { html, render, TemplateResult } from 'lit-html';
 import { CorpusPage } from './common';
 
