@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "module": "es6",
+    "lib": ["DOM", "ES2017"],
+    "target": "ES2017",
     "inlineSourceMap": true,
     "outDir": "../site",
     "sourceRoot": ".", // Needed since we copy the TS files over to the site directory.
