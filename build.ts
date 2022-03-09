@@ -2,7 +2,7 @@
 // the /site directory.
 
 import {
-  readdir, writeFile, readFile, copyFile, mkdir,
+  readdir, writeFile, readFile, mkdir,
 } from 'fs/promises';
 import { join, extname } from 'path';
 import { CorpusPage } from './src/common';
@@ -105,10 +105,6 @@ const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<vo
   Promise.all(wait);
 };
 
-const copyOverFixedFiles = async (): Promise<void> => {
-  await copyFile('./index.html', join(destDir, 'index.html'));
-};
-
 const createTargetDir = async (): Promise<void> => {
   await mkdir(destDir, { mode: 0o755, recursive: true });
 };
@@ -119,7 +115,6 @@ const main = async () => {
   await createTargetDir();
   await createPageForEachDataFile(sourceDirListing);
   await createCombinedJSONFile(sourceDirListing);
-  await copyOverFixedFiles();
 };
 
 main();

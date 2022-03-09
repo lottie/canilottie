@@ -1,3 +1,4 @@
+import { html, render, TemplateResult } from 'lit-html';
 import { CorpusPage } from './common';
 
 const main = async () => {
@@ -17,28 +18,26 @@ const main = async () => {
   const resp = await fetch('./allData.json');
   const corpus: CorpusPage[] = await resp.json();
 
+  const template = (page: CorpusPage): TemplateResult => html`
+    <li><a href="${page.url}">${page.title}</a></li>
+  `;
+
   /** Does the actual search work and populates the results. */
   const doSearch = () => {
-    // Clear the results.
-    results.innerHTML = '';
-
     const searchValue: string = searchInput.value;
+    const templateResults: TemplateResult[] = [];
     let totalResults: number = 0;
+
     corpus.forEach((page) => {
       if (totalResults > MAX_RESULTS) {
         return;
       }
       if (page.content.includes(searchValue)) {
-        // TODO(jcgregorio) If this gets more complex then switch to lit-html.
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = page.url;
-        a.innerText = page.title;
-        li.appendChild(a);
-        results.appendChild(li);
+        templateResults.push(template(page));
         totalResults++;
       }
     });
+    render(templateResults, results);
 
     // Clear any pending search.
     if (autoSubmitTimer) {

@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "module": "es6",
+    "module": "amd",
+    "moduleResolution": "node",
     "lib": ["DOM", "ES2017"],
     "target": "ES2017",
     "inlineSourceMap": true,
-    "outDir": "../site",
+    "outDir": "../build",
     "sourceRoot": ".", // Needed since we copy the TS files over to the site directory.
     "rootDir": "."
   },
