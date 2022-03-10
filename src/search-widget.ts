@@ -78,7 +78,16 @@ class SearchWidget extends HTMLElement {
   }
 
   private async doSearch() {
-    const searchValue: string = this.input!.value;
+    // Clear the auto submit timer.
+    if (this.autoSubmitTimer) {
+      window.clearTimeout(this.autoSubmitTimer);
+      this.autoSubmitTimer = 0;
+    }
+
+    const searchValue: string = this.input!.value.toLowerCase().trim();
+    if (searchValue === '') {
+      return;
+    }
     let totalResults: number = 0;
 
     // Clear out the previous search results.
@@ -94,12 +103,6 @@ class SearchWidget extends HTMLElement {
         totalResults++;
       }
     });
-
-    // Clear the auto submit timer.
-    if (this.autoSubmitTimer) {
-      window.clearTimeout(this.autoSubmitTimer);
-      this.autoSubmitTimer = 0;
-    }
   }
 }
 

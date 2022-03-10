@@ -68,7 +68,7 @@ const createCombinedJSONFile = async (sourceDirListing: string[]) => {
     combined.push({
       url: jsonFilenameWithoutExtension(filename),
       title: parsed.title,
-      content: JSON.stringify(parsed),
+      content: JSON.stringify(parsed).toLowerCase(),
     });
   });
   await Promise.all(wait);
