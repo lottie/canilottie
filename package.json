@@ -5,10 +5,9 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "index.html",
   "scripts": {
-    "build": "npm run clean && npm run generate && npm run bundle-index && npm run bundle-pages",
+    "build": "npm run clean && npm run generate && npm run bundle",
     "generate": "npx ts-node build.ts",
-    "bundle-index": "npx parcel build index.html --no-source-maps",
-    "bundle-pages": "cd build && npx parcel build *.html --no-source-maps",
+    "bundle": "cd build && npx parcel build *.html --no-source-maps",
     "serve": "cd dist && npx http-server -p 8080 -a 127.0.0.1 -c -1",
     "lint": "npx eslint *.ts src/*.ts",
     "clean": "rm -rf ./dist/* ./build/*",

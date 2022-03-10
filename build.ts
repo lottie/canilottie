@@ -2,7 +2,7 @@
 // the /site directory.
 
 import {
-  readdir, writeFile, readFile, mkdir,
+  readdir, writeFile, readFile, mkdir, copyFile,
 } from 'fs/promises';
 import { join, extname } from 'path';
 import { compile } from 'handlebars';
@@ -39,7 +39,7 @@ interface CanIUseData {
   notes_by_num: any,
 }
 
-const loadTemplate = async (filename: string): Promise<HandlebarsTemplateDelegate<any>> => {
+const loadTemplate = async (filename: string): Promise<HandlebarsTemplateDelegate<CanIUseData>> => {
   const buf = await readFile(join(templateDir, filename));
   return compile(buf.toString());
 };
@@ -78,6 +78,7 @@ const createCombinedJSONFile = async (sourceDirListing: string[]) => {
 
 const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<void> => {
   const pageTemplate = await loadTemplate('page.html');
+
   const wait = sourceDirListing.map(async (filename) => {
     const data = await loadFile(filename);
     const page = pageTemplate(data);
@@ -87,20 +88,26 @@ const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<vo
       page,
     );
   });
+
   Promise.all(wait);
 };
 
-const createTargetDir = async (): Promise<void> => {
+const createTargetDirs = async (): Promise<void> => {
   await mkdir(destDir, { mode: 0o755, recursive: true });
   await mkdir(buildDir, { mode: 0o755, recursive: true });
+};
+
+const copyOverFixedFiles = async (): Promise<void> => {
+  await copyFile('./pages/index.html', join(buildDir, 'index.html'));
 };
 
 const main = async () => {
   const sourceDirListing = await readdir(sourceDataDir);
 
-  await createTargetDir();
+  await createTargetDirs();
   await createPageForEachDataFile(sourceDirListing);
   await createCombinedJSONFile(sourceDirListing);
+  await copyOverFixedFiles();
 };
 
 main();
