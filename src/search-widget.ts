@@ -28,11 +28,14 @@ class SearchWidget extends HTMLElement {
 
   private results: HTMLUListElement | null = null;
 
+  private message: HTMLDivElement | null = null;
+
   connectedCallback(): void {
     this.render();
     this.input = this.querySelector<HTMLInputElement>('#search_input')!;
     this.form = this.querySelector<HTMLFormElement>('#form')!;
     this.results = this.querySelector<HTMLUListElement>('#results');
+    this.message = this.querySelector<HTMLDivElement>('#message');
 
     this.input.addEventListener('input', () => this.textInput());
     this.form.addEventListener('submit', (e) => this.submitForm(e));
@@ -56,7 +59,8 @@ class SearchWidget extends HTMLElement {
       <input type=submit value=Query />
     </form>
     <ul id=results>
-    </ul>`;
+    </ul>
+    <p id=message></p>`;
   }
 
   // Triggers a search if the user presses the submit button of if they press
@@ -92,6 +96,7 @@ class SearchWidget extends HTMLElement {
 
     // Clear out the previous search results.
     this.results.innerHTML = '';
+    this.message.textContent = '';
 
     const corpus: CorpusPage[] = await SearchWidget.corpusPromise;
     corpus.forEach((page) => {
@@ -103,6 +108,10 @@ class SearchWidget extends HTMLElement {
         totalResults++;
       }
     });
+
+    if (totalResults === 0) {
+      this.message.textContent = '0 results found.';
+    }
   }
 }
 
