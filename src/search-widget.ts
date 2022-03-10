@@ -1,25 +1,25 @@
+/**
+ * The file defines the custom element <search-widget> which allows searching
+ * over all the caniuse data.
+ */
 import { CorpusPage } from './common';
 
 const AUTO_SUBMIT_TIMOUT_MS = 1000;
+
 const MAX_RESULTS = 30;
 
-const loadCorpus = async (): Promise<CorpusPage[]> => {
-  const resp = await fetch('./allData.json');
-  return resp.json();
-};
-
-const resultTemplate = (page: CorpusPage): HTMLLIElement => {
-  const li = document.createElement('li');
-  const a = document.createElement('a');
-  a.href = page.url;
-  a.textContent = page.title;
-  li.appendChild(a);
-  return li;
-};
-
 class SearchWidget extends HTMLElement {
-  static corpusPromise: Promise<CorpusPage[]> = loadCorpus();
+  // Loads the JSON data.
+  static loadCorpus = async (): Promise<CorpusPage[]> => {
+    const resp = await fetch('./allData.json');
+    return resp.json();
+  };
 
+  static corpusPromise: Promise<CorpusPage[]> = SearchWidget.loadCorpus();
+
+  // If non-zero the value is a window timer handle used to count down
+  // AUTO_SUBMIT_TIMOUT_MS after the user stops typing in the search input to
+  // automatically trigger the search.
   private autoSubmitTimer: number = 0;
 
   private form: HTMLFormElement | null = null;
@@ -38,6 +38,17 @@ class SearchWidget extends HTMLElement {
     this.form.addEventListener('submit', (e) => this.submitForm(e));
   }
 
+  // Renders a single page into displayable results.
+  static resultTemplate = (page: CorpusPage): HTMLLIElement => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = page.url;
+    a.textContent = page.title;
+    li.appendChild(a);
+    return li;
+  };
+
+  // Renders the initial contents of the element.
   private render() {
     this.innerHTML = `
     <form id=form>
@@ -48,6 +59,8 @@ class SearchWidget extends HTMLElement {
     </ul>`;
   }
 
+  // Triggers a search if the user presses the submit button of if they press
+  // the Return key in the input field.
   private submitForm(e: SubmitEvent) {
     e.stopPropagation();
     e.preventDefault();
@@ -55,6 +68,7 @@ class SearchWidget extends HTMLElement {
     this.doSearch();
   }
 
+  // As key presses arrive we continually bump back the auto submit timer.
   private textInput() {
     if (this.autoSubmitTimer) {
       window.clearTimeout(this.autoSubmitTimer);
@@ -76,12 +90,12 @@ class SearchWidget extends HTMLElement {
         return;
       }
       if (page.content.includes(searchValue)) {
-        this.results.appendChild(resultTemplate(page));
+        this.results.appendChild(SearchWidget.resultTemplate(page));
         totalResults++;
       }
     });
 
-    // Clear any pending search.
+    // Clear the auto submit timer.
     if (this.autoSubmitTimer) {
       window.clearTimeout(this.autoSubmitTimer);
       this.autoSubmitTimer = 0;
