@@ -4,9 +4,9 @@
     "moduleResolution": "node",
     "lib": ["DOM", "es6"],
     "target": "es6",
-    "inlineSourceMap": true,
+    "inlineSourceMap": false,
+    "sourceMap": false,
     "outDir": "../build",
-    "sourceRoot": ".",
     "rootDir": "."
   },
   "files": ["index.ts"]

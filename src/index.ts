@@ -1,8 +1,3 @@
-import '../css/index.scss';
-
-import {
-  html, render, TemplateResult,
-} from 'lit';
 import { CorpusPage } from './common';
 
 const AUTO_SUBMIT_TIMOUT_MS = 1000;
@@ -13,43 +8,54 @@ const loadCorpus = async (): Promise<CorpusPage[]> => {
   return resp.json();
 };
 
+const resultTemplate = (page: CorpusPage): HTMLLIElement => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = page.url;
+  a.textContent = page.title;
+  li.appendChild(a);
+  return li;
+};
+
 class SearchWidget extends HTMLElement {
   static corpusPromise: Promise<CorpusPage[]> = loadCorpus();
 
   private autoSubmitTimer: number = 0;
 
+  private form: HTMLFormElement | null = null;
+
   private input: HTMLInputElement | null = null;
 
-  private matchingPages: CorpusPage[] = [];
-
-  static template = (ele: SearchWidget): TemplateResult => html`
-    <form id=form @submit=${ele.submitForm}>
-      <input type=text id=search_input @input=${ele.textInput} />
-      <input type=submit value=Query />
-    </form>
-    <ul>
-      ${ele.matchingPages.map((page: CorpusPage): TemplateResult => html`
-        <li><a href="${page.url}">${page.title}</a></li>
-      `)}
-    </ul>`;
+  private results: HTMLUListElement | null = null;
 
   connectedCallback(): void {
     this.render();
-    this.input = this.querySelector('#search_input');
+    this.input = this.querySelector<HTMLInputElement>('#search_input')!;
+    this.form = this.querySelector<HTMLFormElement>('#form')!;
+    this.results = this.querySelector<HTMLUListElement>('#results');
+
+    this.input.addEventListener('input', () => this.textInput());
+    this.form.addEventListener('submit', (e) => this.submitForm(e));
   }
 
-  render() {
-    render(SearchWidget.template(this), this, { host: this });
+  private render() {
+    this.innerHTML = `
+    <form id=form>
+      <input type=text id=search_input />
+      <input type=submit value=Query />
+    </form>
+    <ul id=results>
+    </ul>`;
   }
 
-  submitForm(e: SubmitEvent) {
+  private submitForm(e: SubmitEvent) {
     e.stopPropagation();
     e.preventDefault();
 
     this.doSearch();
   }
 
-  textInput() {
+  private textInput() {
     if (this.autoSubmitTimer) {
       window.clearTimeout(this.autoSubmitTimer);
       this.autoSubmitTimer = 0;
@@ -57,23 +63,23 @@ class SearchWidget extends HTMLElement {
     this.autoSubmitTimer = window.setTimeout(() => this.doSearch(), AUTO_SUBMIT_TIMOUT_MS);
   }
 
-  async doSearch() {
+  private async doSearch() {
     const searchValue: string = this.input!.value;
     let totalResults: number = 0;
 
+    // Clear out the previous search results.
+    this.results.innerHTML = '';
+
     const corpus: CorpusPage[] = await SearchWidget.corpusPromise;
-    this.matchingPages = [];
     corpus.forEach((page) => {
       if (totalResults > MAX_RESULTS) {
         return;
       }
       if (page.content.includes(searchValue)) {
-        this.matchingPages.push(page);
+        this.results.appendChild(resultTemplate(page));
         totalResults++;
       }
     });
-
-    this.render();
 
     // Clear any pending search.
     if (this.autoSubmitTimer) {
