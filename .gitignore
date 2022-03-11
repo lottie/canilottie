@@ -1,5 +1,7 @@
-
+build/
 site/
+.parcel-cache/
+dist/
 
 # Logs
 logs

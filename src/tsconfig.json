@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "module": "es6",
-    "inlineSourceMap": true,
-    "outDir": "../site",
-    "sourceRoot": ".", // Needed since we copy the TS files over to the site directory.
+    "module": "amd",
+    "moduleResolution": "node",
+    "lib": ["DOM", "es6"],
+    "target": "es6",
+    "inlineSourceMap": false,
+    "sourceMap": false,
+    "outDir": "../build",
     "rootDir": "."
-  },
-  "files": ["index.ts"]
+  }
 }
