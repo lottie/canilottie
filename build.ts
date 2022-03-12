@@ -13,7 +13,6 @@ import {
   initializeFunctions as initializePartialsFunctions,
   loadPageTemplate,
 } from './partials/index';
-import { version } from 'os';
 
 const sourceDataDir = './data';
 const buildDir = './build';
@@ -38,7 +37,7 @@ const createCombinedJSONFile = async (sourceDirListing: string[]) => {
     const parsed: CanIUseData = await loadFile(filename);
 
     // Remove info we don't want to search on.
-    const { stats, ...searchableData } = parsed;
+    const { stats, ...searchableData } = parsed; // eslint-disable-line @typescript-eslint/no-unused-vars
 
     combined.push({
       url: jsonFilenameWithoutExtension(filename),

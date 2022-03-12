@@ -12,7 +12,6 @@
     "lint": "npx eslint *.ts src/*.ts",
     "clean": "rm -rf ./dist/* ./build/*",
     "check": "npx tsc --noEmit *.ts src/*.ts",
-    "build2": "npx ts-node build.ts && cd src && npx tsc && cp *.ts ../site && cd .. && sass src:site",
     "watch": "nodemon",
     "test": "echo ${PWD}"
   },

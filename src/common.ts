@@ -50,6 +50,4 @@ export interface CanIUseData {
   notes_by_num: any,
 }
 
-export interface CanIUseSearchableData extends Omit<CanIUseData, 'stats'> {
-
-}
+export type CanIUseSearchableData = Omit<CanIUseData, 'stats'>
