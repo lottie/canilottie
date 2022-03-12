@@ -19,7 +19,17 @@ export type YesNo = 'y' | 'n'
 
 export type Product = { [key: string]: YesNo}
 
-export interface CanIUseDataStats {
+export interface VersionStat {
+  version: string
+  className: string
+}
+
+export interface ProductStat {
+  name: string
+  product: Product
+}
+
+export interface SupportStats {
   [key: string]: Product
 }
 
@@ -30,7 +40,7 @@ export interface CanIUseData {
   spec: string
   links: Link[]
   categories: string[],
-  stats: CanIUseDataStats
+  stats: SupportStats
   notes: string
   parent: string
   keywords: string
