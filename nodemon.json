@@ -1,0 +1,13 @@
+{
+  "watch": [
+      "./"
+  ],
+  "ext": "ts,html,json,scss",
+  "ignore": [
+    "node_modules",
+    "site/*",
+    "build/*",
+    "dist/*"
+  ],
+  "exec": "npm run build"
+}
