@@ -57,7 +57,8 @@
     font-size: $font-small;
 
     &__box {
-      padding: $gu * 2;
+      padding: $gu * 1.5;
+      @include text-overflow-with-ellipsis;
 
       &--supported {
         background-color: $green;
