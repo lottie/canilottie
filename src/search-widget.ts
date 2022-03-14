@@ -8,6 +8,10 @@ const AUTO_SUBMIT_TIMOUT_MS = 1000;
 
 const MAX_RESULTS = 30;
 
+interface SearchWidgetAttributes extends NamedNodeMap {
+  small?: any;
+}
+
 class SearchWidget extends HTMLElement {
   // Loads the JSON data.
   static loadCorpus = async (): Promise<CorpusPage[]> => {
@@ -16,6 +20,8 @@ class SearchWidget extends HTMLElement {
   };
 
   static corpusPromise: Promise<CorpusPage[]> = SearchWidget.loadCorpus();
+
+  static searchResultTemplate: HTMLTemplateElement = document.querySelector('#search-result');
 
   // If non-zero the value is a window timer handle used to count down
   // AUTO_SUBMIT_TIMOUT_MS after the user stops typing in the search input to
@@ -30,37 +36,45 @@ class SearchWidget extends HTMLElement {
 
   private message: HTMLDivElement | null = null;
 
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   connectedCallback(): void {
     this.render();
-    this.input = this.querySelector<HTMLInputElement>('#search_input')!;
-    this.form = this.querySelector<HTMLFormElement>('#form')!;
-    this.results = this.querySelector<HTMLUListElement>('#results');
-    this.message = this.querySelector<HTMLDivElement>('#message');
+    const { shadowRoot } = this;
+    this.input = shadowRoot.querySelector<HTMLInputElement>('#search_input')!;
+    this.form = shadowRoot.querySelector<HTMLFormElement>('#form')!;
+    this.results = shadowRoot.querySelector<HTMLUListElement>('#results');
+    this.message = shadowRoot.querySelector<HTMLDivElement>('#message');
 
     this.input.addEventListener('input', () => this.textInput());
     this.form.addEventListener('submit', (e) => this.submitForm(e));
   }
 
   // Renders a single page into displayable results.
-  static resultTemplate = (page: CorpusPage): HTMLLIElement => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
+  static resultTemplate = (page: CorpusPage): DocumentFragment => {
+    const instance = document.importNode(SearchWidget.searchResultTemplate.content, true);
+    const a: HTMLAnchorElement = instance.querySelector('.link');
     a.href = page.url;
     a.textContent = page.title;
-    li.appendChild(a);
-    return li;
+    return instance;
   };
 
   // Renders the initial contents of the element.
   private render() {
-    this.innerHTML = `
-    <form id=form>
-      <input type=text id=search_input />
-      <input type=submit value=Query />
-    </form>
-    <ul id=results>
-    </ul>
-    <p id=message></p>`;
+    const { shadowRoot } = this;
+    const searchWidgetTemplate: HTMLTemplateElement = document.querySelector('#search-widget-template');
+    const searchWidget = document.importNode(searchWidgetTemplate.content, true);
+    // TODO: fix this
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore:next-line
+    if (this.attributes.small.value === 'true') {
+      const wrapper = searchWidget.querySelector('.wrapper');
+      wrapper.setAttribute('class', 'wrapper wrapper--small');
+    }
+    shadowRoot.appendChild(searchWidget);
   }
 
   // Triggers a search if the user presses the submit button of if they press
@@ -97,6 +111,7 @@ class SearchWidget extends HTMLElement {
     // Clear out the previous search results.
     this.results.innerHTML = '';
     this.message.textContent = '';
+    this.message.style.display = 'none';
 
     const corpus: CorpusPage[] = await SearchWidget.corpusPromise;
     corpus.forEach((page) => {
@@ -111,6 +126,7 @@ class SearchWidget extends HTMLElement {
 
     if (totalResults === 0) {
       this.message.textContent = '0 results found.';
+      this.message.style.display = 'block';
     }
   }
 }

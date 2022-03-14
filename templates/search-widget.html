@@ -1,0 +1,113 @@
+<template id="search-widget-template">
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .wrapper {
+      padding: 0 calc(var(--grid-unit) * 27);
+    }
+
+    .search-container {
+      width: 100%;
+      position: relative;
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-form__input {
+      border: none;
+      padding: calc(var(--grid-unit) * 2);
+      font-size: var(--font-medium);
+      flex: 1 1 auto;
+    }
+
+    .search-form__submit-button {
+      display: none;
+    }
+
+    .search-form__submit-label {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-large);
+      background-color: var(--color-dark-gray);
+      color: var(--color-light-gray);
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .search-form__input:focus-visible {
+      outline: none;
+    }
+
+    .search-results {
+      position: absolute;
+      left: 0;
+      background-color: var(--color-light-gray);
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .search-message {
+      color: var(--color-dark-red);
+      font-size: var(--font-small);
+      margin-top: calc(var(--grid-unit) * 0.5);
+      display: none;
+    }
+
+    .wrapper--small {
+      padding: 0 calc(var(--grid-unit) * 40);
+    }
+
+    .wrapper--small .search-form__submit-label {
+      width: 22px;
+      height: 22px;
+      font-size: var(--font-medium);
+    }
+
+    .wrapper--small .search-form__input {
+      padding: calc(var(--grid-unit) * 0.5);
+      font-size: var(--font-small);
+    }
+
+  </style>
+    <div
+      class="wrapper"
+    >
+      <div class="search-container">
+        <form id="form" class="search-form">
+          <input
+            class="search-form__input"
+            type="text"
+            id="search_input"
+            autocomplete="off"
+          />
+          <input
+            class="search-form__submit-button"
+            type="submit"
+            value="Query"
+          />
+          <label
+            class="search-form__submit-label"
+            for="Query"
+          >?
+        </label>
+        </form>
+        <ul
+          id="results"
+          class="search-results"
+        >
+        </ul>
+      </div>
+      <p id="message" class="search-message"></p>
+    </div>
+</template>

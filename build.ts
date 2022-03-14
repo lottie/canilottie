@@ -12,6 +12,7 @@ import {
 import {
   initializeFunctions as initializePartialsFunctions,
   loadPageTemplate,
+  loadIndexTemplate,
 } from './partials/index';
 
 const sourceDataDir = './data';
@@ -73,7 +74,12 @@ const createTargetDirs = async (): Promise<void> => {
 };
 
 const copyOverFixedFiles = async (): Promise<void> => {
-  await copyFile('./pages/index.html', join(buildDir, 'index.html'));
+  const indexTemplate = await loadIndexTemplate();
+  await writeFile(
+    join(buildDir, 'index.html'),
+    indexTemplate(),
+  );
+  // await copyFile('./pages/index.html', join(buildDir, 'index.html'));
 };
 
 const main = async () => {

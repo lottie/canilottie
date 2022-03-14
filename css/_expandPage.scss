@@ -2,35 +2,35 @@
 
 .expand-page {
 
-  padding: $gu * 3;
+  padding: calc(var(--grid-unit) * 3);
   overflow-y: auto;
 
   &__header {
 
-    background: $color-palette-1;
-    padding: $gu * 3 $gu * 2;
+    background: var(--color-palette-1);
+    padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
 
     &__title {
-      font-size: $font-large;
-      margin-bottom: $gu * 0.5;
+      font-size: var(--font-large);;
+      margin-bottom: var(--grid-unit);
 
       &__link {
-        color: $color-palette-3;
+        color: var(--color-palette-3);
 
         &:visited {
-          color: $dark-gray;
+          color: var(--color-dark-gray);
         }
       }
     }
     &__description {
-      font-size: $font-small;
+      font-size: var(--font-small);
     }
   }
 
   &__stats {
-    margin-top: $gu * 2;
-    padding: $gu * 3 $gu * 2;
-    background: $color-palette-2;
+    margin-top: calc(var(--grid-unit) * 0);
+    padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
+    background: var(--color-palette-2);
 
     &__grid {
       display: flex;
@@ -40,32 +40,32 @@
 }
 
 .stats-card {
-  width: $gu * 14;
-  margin-right: $gu;
+  width: calc(var(--grid-unit) * 14);
+  margin-right: var(--grid-unit);
   text-align: center;
 
   &__header {
-    background-color: $dark-gray;
-    padding: $gu $gu * 0.25;
-    color: $color-palette-5;
-    border-bottom: 2px solid $color-palette-4;
+    background-color: var(--color-dark-gray);
+    padding: var(--grid-unit) calc(var(--grid-unit) * 0.25);
+    color: var(--color-palette-5);
+    border-bottom: 2px solid var(--color-palette-4);
   }
 
   &__content {
-    margin-top: $gu;
+    margin-top: var(--grid-unit);
     font-weight: 800;
-    font-size: $font-small;
+    font-size: var(--font-small);
 
     &__box {
-      padding: $gu * 1.5;
+      padding: calc(var(--grid-unit) * 1.5);
       @include text-overflow-with-ellipsis;
 
       &--supported {
-        background-color: $green;
+        background-color: var(--color-green);
       }
 
       &--unsupported {
-        background-color: $red;
+        background-color: var(--color-red);
       }
 
     }

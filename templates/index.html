@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Can I Lottie</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/index.scss" rel="stylesheet" />
   </head>
   <body>
-    <section>
-      <h2>Search</h2>
-      <search-widget></search-widget>
-    </section>
+    <!-- TEMPLATES -->
+    {{> search-widget}}
+    {{> search-result}}
+    <!-- END TEMPLATES -->
+    {{> main-title}}
+    {{> search-section}}
     <script
       src="../src/search-widget.ts"
       type="module"

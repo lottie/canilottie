@@ -8,12 +8,14 @@
     <link href="../css/index.scss" rel="stylesheet" />
   </head>
   <body>
-    <section>
-      <h1>Search</h1>
-      <search-widget></search-widget>
-    </section>
+    <!-- TEMPLATES -->
+    {{> search-widget}}
+    {{> search-result}}
+    <!-- END TEMPLATES -->
+    {{> main-title}}
+    {{> search-section isSmall=true}}
     <section class="expand-page__header">
-      <h1
+      <h2
         class="expand-page__header__title"
       >
         <a
@@ -22,7 +24,7 @@
         >
             {{title}}
           </a>
-      </h1>
+      </h2>
       <p class="expand-page__header__description">{{description}}</p>
     </section>
     {{> support-table stats}}
