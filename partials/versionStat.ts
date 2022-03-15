@@ -3,12 +3,20 @@ import { loadTemplate } from './index';
 import {
   Product,
   VersionStat,
+  YesNo,
 } from '../src/common';
+
+const MAX_LAST_VERSIONS_TO_DISPLAY = 3;
 
 interface VersionStatPartial {
   initialVersion: string,
   finalVersion: string,
-  support: string,
+  support: YesNo,
+}
+
+const YesNoToClassName : Record<YesNo, string> = {
+  "y": 'stats-card__content__box--supported',
+  "n": 'stats-card__content__box--unsupported',
 }
 
 const registerVersionStatHelper = async (): Promise<void> => {
@@ -23,7 +31,7 @@ const registerVersionStatHelper = async (): Promise<void> => {
           finalVersion: key,
           support: product[key],
         };
-      if (lastVersion.support === product[key] && currentIndex < versions.length - 3) {
+      if (lastVersion.support === product[key] && currentIndex < versions.length - MAX_LAST_VERSIONS_TO_DISPLAY) {
         lastVersion.finalVersion = key;
         if (!accumulator.length) {
           accumulator.push(lastVersion);
@@ -39,14 +47,11 @@ const registerVersionStatHelper = async (): Promise<void> => {
       return accumulator;
     }, []);
     return versionsByGroup.map((versionStatPartial) => {
-      const className = versionStatPartial.support === 'y'
-        ? 'stats-card__content__box--supported'
-        : 'stats-card__content__box--unsupported';
       const data = {
         version: versionStatPartial.initialVersion === versionStatPartial.finalVersion
           ? versionStatPartial.initialVersion
           : `${versionStatPartial.initialVersion} - ${versionStatPartial.finalVersion}`,
-        className: className,
+        className: YesNoToClassName[versionStatPartial.support],
       };
       return versionStatTemplate(data);
     }).join('');
