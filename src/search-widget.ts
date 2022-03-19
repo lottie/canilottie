@@ -51,6 +51,7 @@ class SearchWidget extends HTMLElement {
 
     this.input.addEventListener('input', () => this.textInput());
     this.form.addEventListener('submit', (e) => this.submitForm(e));
+    document.addEventListener('click', (e) => this.handleDocumentClick(e));
   }
 
   // Renders a single page into displayable results.
@@ -84,6 +85,16 @@ class SearchWidget extends HTMLElement {
     e.preventDefault();
 
     this.doSearch();
+  }
+
+  private handleDocumentClick(e) {
+    // Only need to compare with `this` because listening on document clicks
+    // don't go beyoud the shadow dom
+    if (e.target !== this) {
+      this.results.innerHTML = '';
+      this.message.textContent = '';
+      this.message.style.display = 'none';
+    }
   }
 
   // As key presses arrive we continually bump back the auto submit timer.
