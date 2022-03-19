@@ -34,7 +34,8 @@
 
     &__grid {
       display: flex;
-
+      overflow-x: auto;
+      overflow-y: hidden;
     }
   }
 }
@@ -43,6 +44,7 @@
   width: calc(var(--grid-unit) * 14);
   margin-right: var(--grid-unit);
   text-align: center;
+  flex: 0 0 auto;
 
   &__header {
     background-color: var(--color-dark-gray);
