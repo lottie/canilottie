@@ -48,10 +48,6 @@ const registerTernary = async (): Promise<void> => {
   Handlebars.registerHelper('ternary', (cond, v1, v2) => (cond ? v1 : v2));
 };
 
-const registerParser = async (): Promise<void> => {
-  Handlebars.registerHelper('json', (obj) => JSON.stringify(obj));
-};
-
 const registerMarkdownFormatter = async (): Promise<void> => {
   Handlebars.registerHelper('markdown', (text: string) => {
     const markedText = new Handlebars.SafeString(marked(text));
@@ -69,7 +65,6 @@ const initializeFunctions = async (): Promise<void> => {
   await registerPartials();
   await registerHelpers();
   await registerTernary();
-  await registerParser();
   await registerMarkdownFormatter();
 };
 

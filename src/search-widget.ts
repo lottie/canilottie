@@ -51,7 +51,7 @@ class SearchWidget extends HTMLElement {
 
     this.input.addEventListener('input', () => this.textInput());
     this.form.addEventListener('submit', (e) => this.submitForm(e));
-    document.addEventListener('click', (e) => this.handleDocumentClick(e));
+    document.addEventListener('click', (e) => this.checkForClickOutside(e));
   }
 
   // Renders a single page into displayable results.
@@ -87,7 +87,7 @@ class SearchWidget extends HTMLElement {
     this.doSearch();
   }
 
-  private handleDocumentClick(e) {
+  private checkForClickOutside(e) {
     // Only need to compare with `this` because listening on document clicks
     // don't go beyoud the shadow dom
     if (e.target !== this) {
