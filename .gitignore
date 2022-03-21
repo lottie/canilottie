@@ -2,6 +2,7 @@ build/
 site/
 .parcel-cache/
 dist/
+.firebase/
 
 # Logs
 logs
