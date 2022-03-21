@@ -13,7 +13,8 @@
     "clean": "rm -rf ./dist/* ./build/*",
     "check": "npx tsc --noEmit *.ts src/*.ts",
     "watch": "nodemon",
-    "test": "echo ${PWD}"
+    "test": "echo ${PWD}",
+    "deploy": "npm run build && npx firebase deploy"
   },
   "author": "",
   "license": "Apache 2.0",
@@ -31,6 +32,7 @@
     "eslint": "^8.10.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
+    "firebase-tools": "^10.4.0",
     "http-server": "^14.1.0",
     "nodemon": "^2.0.15",
     "parcel": "^2.3.2",
