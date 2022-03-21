@@ -10,7 +10,7 @@ export interface CorpusPage {
   content: string
 }
 
-interface Link {
+export interface Link {
   url: string
   title: string
 }
@@ -33,6 +33,10 @@ export interface SupportStats {
   [key: string]: Product
 }
 
+export interface NotesByNum {
+  [key: string]: string
+}
+
 /** The format of the CanIUse data. */
 export interface CanIUseData {
   title: string
@@ -47,7 +51,7 @@ export interface CanIUseData {
 
   // TODO(jcgregorio) Figure out the shape of the following:
   bugs: any[]
-  notes_by_num: any,
+  notes_by_num: NotesByNum,
 }
 
 export type CanIUseSearchableData = Omit<CanIUseData, 'stats'>

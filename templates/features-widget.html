@@ -1,0 +1,88 @@
+<template id="features-widget-template">
+  <style>
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .wrapper {
+      padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
+      background-color: var(--color-palette-3);
+    }
+
+    nav.navigation {
+      width: 100%;
+      display: flex;
+      background: rgba(0,0,0,0.15);
+    }
+
+    .navigation__button {
+      border: none;
+      color: var(--color-light-gray);
+      background: rgba(0,0,0,0.75);
+      padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 2);
+      cursor: pointer;
+      transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
+    }
+
+    .navigation__button:hover {
+      background: rgba(0,0,0,0.25);
+    }
+
+    .navigation__button--selected {
+      background: rgba(255,255,255,0.75);
+      color: var(--color-dark-gray);
+      cursor: default;
+    }
+
+    .navigation__button--selected:hover {
+      background: rgba(255,255,255,0.75);
+      color: var(--color-dark-gray);
+    }
+
+    .view {
+      width: 100%;
+      display: none;
+      margin-top: calc(var(--grid-unit) * 2);
+    }
+
+    /* NOTES */
+
+    .notes-element {
+      display: flex;
+      gap: calc(var(--grid-unit) * 0.5);
+      align-items: center;
+      padding: calc(var(--grid-unit) * 1.75) 0 calc(var(--grid-unit) * 0.25);
+    }
+
+    .notes-element--highlight:hover {
+      border-bottom: 1px solid var(--color-dark-gray);
+    }
+
+    .notes-element-label {
+      background-color: var(--color-light-gray);
+      padding: calc(var(--grid-unit) * 0.5);
+    }
+  </style>
+  <section
+    class="wrapper"
+    id="main"
+  >
+    <nav class="navigation" id="navigation">
+      {{{features-navigation notes notes_by_num spec links}}}
+    </nav>
+    <div class="features">
+      {{{features-notes notes notes_by_num}}}
+      {{{features-resources spec links}}}
+    </div>
+  </section>
+</template>

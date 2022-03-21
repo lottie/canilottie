@@ -11,6 +11,7 @@
     <!-- TEMPLATES -->
     {{> search-widget}}
     {{> search-result}}
+    {{> features-widget this}}
     <!-- END TEMPLATES -->
     {{> main-title}}
     {{> search-section isSmall=true}}
@@ -28,12 +29,14 @@
       <p class="expand-page__header__description">{{description}}</p>
     </section>
     {{> support-table stats}}
-    <section>
-      <h2>Notes</h2>
-      <p>{{notes}}</p>
-    </section>
+    <features-widget></features-widget>
     <script
       src="../src/search-widget.ts"
+      type="module"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../src/features-widget.ts"
       type="module"
       charset="utf-8"
     ></script>

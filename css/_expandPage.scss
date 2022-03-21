@@ -61,6 +61,7 @@
     &__box {
       padding: calc(var(--grid-unit) * 1.5);
       @include text-overflow-with-ellipsis;
+      position: relative;
 
       &--supported {
         background-color: var(--color-green);
@@ -68,6 +69,27 @@
 
       &--unsupported {
         background-color: var(--color-red);
+      }
+
+      &--highlight {
+        outline: 1px solid var(--color-palette-2);
+        outline-offset: -1px;
+      }
+
+      &__note {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        font-weight: 100;
+        background-color: var(--color-light-gray);
+        color: var(--color-dark-gray);
+        padding: calc(var(--grid-unit) * 0.5);
+        transition: color 0.33s ease-in-out, background-color 0.33s ease-in-out;
+      }
+
+      &--highlight .stats-card__content__box__note {
+        background-color: var(--color-dark-gray);
+        color: var(--color-light-gray);
       }
 
     }

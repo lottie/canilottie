@@ -14,10 +14,29 @@ interface VersionStatPartial {
   support: YesNo,
 }
 
-const YesNoToClassName : Record<YesNo, string> = {
-  "y": 'stats-card__content__box--supported',
-  "n": 'stats-card__content__box--unsupported',
-}
+const YesNoToClassName: Record<YesNo, string> = {
+  y: 'stats-card__content__box--supported',
+  n: 'stats-card__content__box--unsupported',
+};
+
+const buildClassName = (support: string) => {
+  const supportData: string[] = support.split(' ');
+  const classNames = [
+    YesNoToClassName[supportData[0] as YesNo],
+  ];
+  if (supportData[1]) {
+    classNames.push(`stats-card__content__box__${supportData[1]}`);
+  }
+  return classNames.join(' ');
+};
+
+const buildNoteLabel = (support: string) => {
+  const supportData: string[] = support.split(' ');
+  if (supportData[1]) {
+    return supportData[1];
+  }
+  return '';
+};
 
 const registerVersionStatHelper = async (): Promise<void> => {
   const versionStatTemplate = await loadTemplate('version-stat.html') as HandlebarsTemplateDelegate<VersionStat>;
@@ -51,7 +70,8 @@ const registerVersionStatHelper = async (): Promise<void> => {
         version: versionStatPartial.initialVersion === versionStatPartial.finalVersion
           ? versionStatPartial.initialVersion
           : `${versionStatPartial.initialVersion} - ${versionStatPartial.finalVersion}`,
-        className: YesNoToClassName[versionStatPartial.support],
+        className: buildClassName(versionStatPartial.support),
+        note: buildNoteLabel(versionStatPartial.support),
       };
       return versionStatTemplate(data);
     }).join('');
