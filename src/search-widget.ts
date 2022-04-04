@@ -4,7 +4,7 @@
  */
 import { CorpusPage } from './common';
 
-const AUTO_SUBMIT_TIMOUT_MS = 1000;
+const AUTO_SUBMIT_TIMOUT_MS = 500;
 
 const MAX_RESULTS = 30;
 
