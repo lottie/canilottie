@@ -50,7 +50,10 @@ const registerTernary = async (): Promise<void> => {
 
 const registerMarkdownFormatter = async (): Promise<void> => {
   Handlebars.registerHelper('markdown', (text: string) => {
-    const markedText = new Handlebars.SafeString(marked(text));
+    const markedString = marked(text);
+    // TODO: find a way to parametrize this option and uncomment
+    // markedString = markedString.replace(/<a /, '<a target="_blank" rel="nofollow" ');
+    const markedText = new Handlebars.SafeString(markedString);
     return markedText;
   });
 };

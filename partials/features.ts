@@ -110,11 +110,14 @@ const registerResources = async (): Promise<void> => {
     spec: string,
     links: Link[],
   ) => {
-    const elements = [...links];
+    const elements = links.map((link) => (
+      {
+        title: `[${link.title}](${link.url})`,
+      }
+    ));
     if (spec) {
       elements.push({
-        title: 'Spec',
-        url: spec,
+        title: `[Spec](${spec})`,
       });
     }
     return featuresResources({
