@@ -85,6 +85,6 @@
   },
   "usage_perc_y":0,
   "usage_perc_a":0,
-  "parent":"animators",
+  "parent":"text-animators",
   "keywords":"anchor point grouping"
 }

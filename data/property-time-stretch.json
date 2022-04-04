@@ -85,6 +85,6 @@
   },
   "usage_perc_y":0,
   "usage_perc_a":0,
-  "parent":"precomp",
+  "parent":"layer-precomp",
   "keywords":"time stretch"
 }
