@@ -2,9 +2,6 @@
   <ul>
     {{#each elements}}
       <li class="notes-element {{ternary label 'notes-element--highlight' ''}}" id="note-{{label}}">
-        {{#if label}}
-          <span class="notes-element-label">Note {{label}}:</span>
-        {{/if}}
         <span class="notes-element-content">{{markdown text}}</span>
       </li>
     {{/each}}

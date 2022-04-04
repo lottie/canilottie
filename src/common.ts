@@ -43,7 +43,7 @@ export interface CanIUseData {
   description: string
   spec: string
   links: Link[]
-  categories: string[],
+  categories: string[]
   stats: SupportStats
   notes: string
   parent: string
@@ -51,7 +51,8 @@ export interface CanIUseData {
 
   // TODO(jcgregorio) Figure out the shape of the following:
   bugs: any[]
-  notes_by_num: NotesByNum,
+  notes_by_num: NotesByNum
+  sub_features: string[]
 }
 
 export type CanIUseSearchableData = Omit<CanIUseData, 'stats'>

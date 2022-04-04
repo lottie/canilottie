@@ -87,6 +87,6 @@
   },
   "usage_perc_y":0,
   "usage_perc_a":0,
-  "parent":"masks",
+  "parent":"mask",
   "keywords":"mask opacity"
 }

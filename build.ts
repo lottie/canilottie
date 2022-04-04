@@ -19,6 +19,12 @@ const sourceDataDir = './data';
 const buildDir = './build';
 const destDir = './dist';
 
+interface FeatureInterface {
+  data: CanIUseData
+  name: string
+  filename: string
+}
+
 const loadFile = async (filename: string): Promise<CanIUseData> => {
   const buf = await readFile(join(sourceDataDir, filename));
   return JSON.parse(buf.toString());
@@ -51,19 +57,56 @@ const createCombinedJSONFile = async (sourceDirListing: string[]) => {
   await writeFile(join(destDir, 'allData.json'), JSON.stringify(combined));
 };
 
+const buildSubFeatureRelationship = (features: FeatureInterface[]): FeatureInterface[] => {
+  const featuresDict = features.reduce((dict: any, featureData) => {
+    dict[featureData.name] = featureData.data;
+    return dict;
+  }, {});
+  features.forEach((feature) => {
+    if (feature.data.parent && featuresDict[feature.data.parent]) {
+      featuresDict[feature.data.parent].sub_features.push(
+        `[${feature.data.title}](${htmlFilenameFromJSONFilename(feature.filename)})`,
+      );
+    }
+  });
+  return features;
+};
+
 const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<void> => {
   const pageTemplate = await loadPageTemplate();
 
-  const wait = sourceDirListing.map(async (filename) => {
+  // Adding feature to subfeature relationship
+  let features = await Promise.all(sourceDirListing.map(async (filename) => {
     const data = await loadFile(filename);
+    data.sub_features = [];
+    return {
+      name: jsonFilenameWithoutExtension(filename),
+      filename,
+      data,
+    };
+  }));
+  features = buildSubFeatureRelationship(features);
+
+  const wait = features.map(async (feature) => {
     // const page = expandPage(data);
-    const page = pageTemplate(data);
+    const page = pageTemplate(feature.data);
 
     await writeFile(
-      join(buildDir, htmlFilenameFromJSONFilename(filename)),
+      join(buildDir, htmlFilenameFromJSONFilename(feature.filename)),
       page,
     );
   });
+
+  // const wait = sourceDirListing.map(async (filename) => {
+  //   const data = await loadFile(filename);
+  //   // const page = expandPage(data);
+  //   const page = pageTemplate(data);
+
+  //   await writeFile(
+  //     join(buildDir, htmlFilenameFromJSONFilename(filename)),
+  //     page,
+  //   );
+  // });
 
   Promise.all(wait);
 };

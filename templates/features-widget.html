@@ -72,17 +72,22 @@
       background-color: var(--color-light-gray);
       padding: calc(var(--grid-unit) * 0.5);
     }
+
+    .notes-element-content {
+      padding: calc(var(--grid-unit) * 2);
+    }
   </style>
   <section
     class="wrapper"
     id="main"
   >
     <nav class="navigation" id="navigation">
-      {{{features-navigation notes notes_by_num spec links}}}
+      {{{features-navigation notes notes_by_num spec links sub_features}}}
     </nav>
     <div class="features">
       {{{features-notes notes notes_by_num}}}
       {{{features-resources spec links}}}
+      {{{features-subfeatures sub_features}}}
     </div>
   </section>
 </template>

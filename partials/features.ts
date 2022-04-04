@@ -5,6 +5,7 @@ import { Link, NotesByNum } from '../src/common';
 const featuresIds = {
   NOTES: 'notes',
   RESOURCES: 'resources',
+  SUBFEATURES: 'subfeatures',
 };
 
 const tabPrefix = 'tab-';
@@ -38,15 +39,27 @@ const registerNavigation = async (): Promise<void> => {
     });
   };
 
+  const buildSubfeaturesTab = (subFeatures: string[]) => {
+    if (!subFeatures.length) {
+      return null;
+    }
+    return featuresTab({
+      id: `${tabPrefix}${featuresIds.SUBFEATURES}`,
+      name: `Sub-Features (${subFeatures.length})`,
+    });
+  };
+
   Handlebars.registerHelper('features-navigation', (
     notes: string,
     notesByNum: NotesByNum,
     spec: string,
     links: Link[],
+    subFeatures: string[],
   ) => {
     const tabElements = [
       buildNotesTab(notes, notesByNum),
       buildResourcesTab(spec, links),
+      buildSubfeaturesTab(subFeatures),
     ];
     return tabElements.filter((tab) => tab).join('');
   });
@@ -98,10 +111,21 @@ const registerResources = async (): Promise<void> => {
   });
 };
 
+const registerSubfeatures = async (): Promise<void> => {
+  const featuresSubfeatures = await loadTemplate('features-subfeatures.html') as HandlebarsTemplateDelegate<any>;
+  Handlebars.registerHelper('features-subfeatures', (
+    subfeatures: string[],
+  ) => featuresSubfeatures({
+    id: `${viewPrefix}${featuresIds.SUBFEATURES}`,
+    elements: subfeatures.map((subfeature) => ({ text: subfeature })),
+  }));
+};
+
 const registerFeaturesHelper = async (): Promise<void> => {
   await registerNavigation();
   await registerNotes();
   await registerResources();
+  await registerSubfeatures();
 };
 
 export default registerFeaturesHelper;
