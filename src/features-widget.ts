@@ -6,9 +6,9 @@
 class FeaturesWidget extends HTMLElement {
   private currentView: string = '';
 
-  private viewPrefix: string = 'view--';
+  private viewPrefix: string = 'view-';
 
-  private tabPrefix: string = 'tab--';
+  private tabPrefix: string = 'tab-';
 
   private tabSelectedClass: string = 'navigation__button--selected';
 
@@ -30,7 +30,7 @@ class FeaturesWidget extends HTMLElement {
   }
 
   private getFeatureNameFromId(id: string): string {
-    const view = id.split('--')[1];
+    const view = id.split('-')[1];
     return view;
   }
 

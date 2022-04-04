@@ -6,11 +6,11 @@ const featuresIds = {
   NOTES: 'notes',
   RESOURCES: 'resources',
   SUBFEATURES: 'subfeatures',
-  KNOWN_ISSUES: 'known-issues',
+  KNOWN_ISSUES: 'known_issues',
 };
 
-const tabPrefix = 'tab--';
-const viewPrefix = 'view--';
+const tabPrefix = 'tab-';
+const viewPrefix = 'view-';
 
 const registerNavigation = async (): Promise<void> => {
   const featuresTab = await loadTemplate('features-tab.html') as HandlebarsTemplateDelegate<any>;
