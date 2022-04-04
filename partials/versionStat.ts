@@ -25,7 +25,7 @@ const buildClassName = (support: string) => {
     YesNoToClassName[supportData[0] as YesNo],
   ];
   if (supportData[1]) {
-    classNames.push(`stats-card__content__box__${supportData[1]}`);
+    classNames.push(`stats-card__content__box--with-note stats-card__content__box__${supportData[1]}`);
   }
   return classNames.join(' ');
 };

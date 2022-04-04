@@ -92,6 +92,18 @@
         color: var(--color-light-gray);
       }
 
+      &--with-note {
+        &:hover {
+          outline: 1px solid var(--color-palette-2);
+          outline-offset: -1px;
+        }
+  
+        &:hover .stats-card__content__box__note {
+          background-color: var(--color-dark-gray);
+          color: var(--color-light-gray);
+        }
+      }
+
     }
   }
 }
