@@ -1,0 +1,37 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Version updater
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    outputs:
+      branch_name: ${{ steps.execute.outputs.branch_name }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        id: node_step
+        run: npm install
+      - run: npm run build_version
+        id: execute
+      - name: cancelling
+        if: ${{steps.execute.outputs.cancelled == 'true'}}
+        uses: andymckay/cancel-action@0.2
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: ${{steps.execute.outputs.branch_name}}
+          title: Adds version ${{steps.execute.outputs.version}} for player ${{steps.execute.outputs.player}} 
