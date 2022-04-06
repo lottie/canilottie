@@ -51,11 +51,12 @@ const getPlayerData = async (issueBody: string): Promise<PlayerData> => {
   return keys;
 };
 
-const setOutputs = async (playerData: PlayerData) => {
+const setOutputs = async (playerData: PlayerData, issue_number: string) => {
   const branchName = `${playerData.player}__${playerData.version}`;
   core.setOutput('branch_name', branchName);
   core.setOutput('version', playerData.version);
   core.setOutput('player', playerData.player);
+  core.setOutput('issue_number', issue_number);
 };
 
 async function run() {
@@ -68,7 +69,7 @@ async function run() {
     if (!playerData.player || !playerData.version) {
       throw new Error('player or version are missing');
     }
-    await setOutputs(playerData);
+    await setOutputs(playerData, issue.number.toString());
     await updateFiles(playerData.player, playerData.version);
   } catch (error) {
     core.setOutput('cancelled', 'true');
