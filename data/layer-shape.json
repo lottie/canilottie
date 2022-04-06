@@ -1,90 +1,88 @@
 {
-  "title":"Shape Layer",
-  "description":"A layer with a set of verctor based paint instructions",
-  "spec":"https://lottie-animation-community.github.io/docs/specs/layers/shapes/",
-  "status":"ls",
-  "links":[
+  "title": "Shape Layer",
+  "description": "A layer with a set of verctor based paint instructions",
+  "spec": "https://lottie-animation-community.github.io/docs/specs/layers/shapes/",
+  "status": "ls",
+  "links": [
     {
-      "url":"https://lottie-animation-community.github.io/docs/specs/layers/shapes/",
-      "title":"Spec link"
+      "url": "https://lottie-animation-community.github.io/docs/specs/layers/shapes/",
+      "title": "Spec link"
     }
   ],
-  "bugs":[
-  ],
-  "categories":[
+  "bugs": [],
+  "categories": [
     "Layer"
   ],
-  "stats":{
-    "lottie-web":{
-      "5.5.0":"y",
-      "5.5.1":"y",
-      "5.5.2":"y",
-      "5.5.3":"y",
-      "5.5.4":"y",
-      "5.5.5":"y",
-      "5.5.6":"y",
-      "5.5.7":"y",
-      "5.5.8":"y",
-      "5.5.9":"y",
-      "5.5.10":"y",
-      "5.6.0":"y",
-      "5.6.1":"y",
-      "5.6.2":"y",
-      "5.6.3":"y",
-      "5.6.4":"y",
-      "5.6.5":"y",
-      "5.6.6":"y",
-      "5.6.7":"y",
-      "5.6.8":"y",
-      "5.6.9":"y",
-      "5.6.10":"y",
-      "5.7.0":"y",
-      "5.7.1":"y",
-      "5.7.2":"y",
-      "5.7.3":"y",
-      "5.7.4":"y",
-      "5.7.5":"y",
-      "5.7.6":"y",
-      "5.7.7":"y",
-      "5.7.8":"y",
-      "5.7.9":"y",
-      "5.7.10":"y",
-      "5.7.11":"y",
-      "5.7.12":"y",
-      "5.7.13":"y",
-      "5.7.14":"y",
-      "5.8.0":"y",
-      "5.8.1":"y",
-      "5.9.0":"y"
+  "stats": {
+    "lottie-web": {
+      "5.5.0": "y",
+      "5.5.1": "y",
+      "5.5.2": "y",
+      "5.5.3": "y",
+      "5.5.4": "y",
+      "5.5.5": "y",
+      "5.5.6": "y",
+      "5.5.7": "y",
+      "5.5.8": "y",
+      "5.5.9": "y",
+      "5.5.10": "y",
+      "5.6.0": "y",
+      "5.6.1": "y",
+      "5.6.2": "y",
+      "5.6.3": "y",
+      "5.6.4": "y",
+      "5.6.5": "y",
+      "5.6.6": "y",
+      "5.6.7": "y",
+      "5.6.8": "y",
+      "5.6.9": "y",
+      "5.6.10": "y",
+      "5.7.0": "y",
+      "5.7.1": "y",
+      "5.7.2": "y",
+      "5.7.3": "y",
+      "5.7.4": "y",
+      "5.7.5": "y",
+      "5.7.6": "y",
+      "5.7.7": "y",
+      "5.7.8": "y",
+      "5.7.9": "y",
+      "5.7.10": "y",
+      "5.7.11": "y",
+      "5.7.12": "y",
+      "5.7.13": "y",
+      "5.7.14": "y",
+      "5.8.0": "y",
+      "5.8.1": "y",
+      "5.9.0": "y"
     },
-    "skottie":{
-      "81":"y",
-      "82":"y",
-      "83":"y",
-      "84":"y",
-      "85":"y",
-      "86":"y",
-      "87":"y",
-      "88":"y",
-      "89":"y"
+    "skottie": {
+      "81": "y",
+      "82": "y",
+      "83": "y",
+      "84": "y",
+      "85": "y",
+      "86": "y",
+      "87": "y",
+      "88": "y",
+      "89": "y"
     },
-    "lottie-android":{
-      "4.0.0":"y",
-      "5.0.0":"y"
+    "lottie-android": {
+      "4.0.0": "y",
+      "5.0.0": "y"
     },
-    "lottie-ios":{
-      "3.2.0":"y",
-      "3.2.1":"y",
-      "3.2.2":"y",
-      "3.2.3":"y",
-      "3.3.0":"y"
+    "lottie-ios": {
+      "3.2.0": "y",
+      "3.2.1": "y",
+      "3.2.2": "y",
+      "3.2.3": "y",
+      "3.3.0": "y"
     }
   },
-  "notes":"",
-  "notes_by_num":{
-  },
-  "usage_perc_y":0,
-  "usage_perc_a":0,
-  "parent":"",
-  "keywords":"shape"
+  "notes": "",
+  "notes_by_num": {},
+  "usage_perc_y": 0,
+  "usage_perc_a": 0,
+  "parent": "",
+  "keywords": "shape"
 }
