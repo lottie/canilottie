@@ -33,10 +33,8 @@ jobs:
       - name: cancelling
         if: ${{steps.execute.outputs.cancelled == 'true'}}
         uses: andymckay/cancel-action@0.2
-      - id: test
-        run: echo "value ${{steps.execute.outputs.issue_number}}"
-      # - name: Create Pull Request
-      #   uses: peter-evans/create-pull-request@v4
-      #   with:
-      #     branch: ${{steps.execute.outputs.branch_name}}
-      #     title: "Closes #${{steps.execute.outputs.issue_number}} , Adds version ${{steps.execute.outputs.version}} for player ${{steps.execute.outputs.player}}" 
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: ${{steps.execute.outputs.branch_name}}
+          title: "Closes #${{steps.execute.outputs.issue_number}} , Adds version ${{steps.execute.outputs.version}} for player ${{steps.execute.outputs.player}}" 
