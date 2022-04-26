@@ -86,5 +86,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "layer-shape",
+  "ae_codes": ["ADBE Vector Shape - Ellipse", "ADBE Vector Ellipse Size", "ADBE Vector Ellipse Position"],
   "keywords": "ellipse"
 }

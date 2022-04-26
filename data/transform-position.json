@@ -1,11 +1,11 @@
 {
-  "title": "Range selector units",
-  "description": "Units that are used to calculate ranges.",
-  "spec": "https://lottie-animation-community.github.io/docs/specs/layers/text/#range-units",
+  "title": "Position",
+  "description": "The position of an element.",
+  "spec": "https://lottie-animation-community.github.io/docs/specs/layers/common/#position",
   "status": "ls",
   "links": [
     {
-      "url": "https://lottie-animation-community.github.io/docs/specs/layers/text/#range-units",
+      "url": "https://lottie-animation-community.github.io/docs/specs/layers/common/#position",
       "title": "Spec link"
     }
   ],
@@ -69,22 +69,22 @@
       "100": "y"
     },
     "lottie-android": {
-      "4.0.0": "n",
-      "5.0.0": "n"
+      "4.0.0": "y",
+      "5.0.0": "y"
     },
     "lottie-ios": {
-      "3.2.0": "n",
-      "3.2.1": "n",
-      "3.2.2": "n",
-      "3.2.3": "n",
-      "3.3.0": "n"
+      "3.2.0": "y",
+      "3.2.1": "y",
+      "3.2.2": "y",
+      "3.2.3": "y",
+      "3.3.0": "y"
     }
   },
   "notes": "",
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
-  "parent": "text-animators",
-  "ae_codes": ["ADBE Text Range Units"],
-  "keywords": "range units"
+  "parent": "transform",
+  "ae_codes": ["ADBE Position","ADBE Position_0","ADBE Position_1","ADBE Position_2","ADBE Vector Position"],
+  "keywords": "transform, position"
 }

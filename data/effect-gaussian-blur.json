@@ -87,5 +87,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "effects",
+  "ae_codes": ["ADBE Gaussian Blur 2","ADBE Gaussian Blur 2-0001","ADBE Gaussian Blur 2-0002","ADBE Gaussian Blur 2-0003"],
   "keywords": "effect, gaussian blur"
 }

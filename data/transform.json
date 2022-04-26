@@ -1,11 +1,11 @@
 {
-  "title": "Range selector units",
-  "description": "Units that are used to calculate ranges.",
-  "spec": "https://lottie-animation-community.github.io/docs/specs/layers/text/#range-units",
+  "title": "Transform",
+  "description": "The transform property is a container for a set of properties that are traditionally related to GPU operations on textures.",
+  "spec": "https://lottie-animation-community.github.io/docs/specs/layers/common/#transform",
   "status": "ls",
   "links": [
     {
-      "url": "https://lottie-animation-community.github.io/docs/specs/layers/text/#range-units",
+      "url": "https://lottie-animation-community.github.io/docs/specs/layers/common/#transform",
       "title": "Spec link"
     }
   ],
@@ -69,22 +69,22 @@
       "100": "y"
     },
     "lottie-android": {
-      "4.0.0": "n",
-      "5.0.0": "n"
+      "4.0.0": "y",
+      "5.0.0": "y"
     },
     "lottie-ios": {
-      "3.2.0": "n",
-      "3.2.1": "n",
-      "3.2.2": "n",
-      "3.2.3": "n",
-      "3.3.0": "n"
+      "3.2.0": "y",
+      "3.2.1": "y",
+      "3.2.2": "y",
+      "3.2.3": "y",
+      "3.3.0": "y"
     }
   },
   "notes": "",
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
-  "parent": "text-animators",
-  "ae_codes": ["ADBE Text Range Units"],
-  "keywords": "range units"
+  "parent": "",
+  "ae_codes": ["ADBE Transform Group", "ADBE Vector Transform Group"],
+  "keywords": "transform"
 }

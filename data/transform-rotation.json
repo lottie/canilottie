@@ -1,18 +1,33 @@
 {
-  "title": "Shape path",
-  "description": "A path defining a shape to paint",
-  "spec": "https://lottie-animation-community.github.io/docs/specs/layers/shapes/#shape-element",
+  "title": "Rotation",
+  "description": "The rotation of an element.",
+  "spec": "https://lottie-animation-community.github.io/docs/specs/layers/common/#rotation-for-2d-layers",
   "status": "ls",
   "links": [
     {
-      "url": "https://lottie-animation-community.github.io/docs/specs/layers/shapes/#shape-element",
-      "title": "Spec link"
+      "url": "https://lottie-animation-community.github.io/docs/specs/layers/common/#rotation-for-2d-layers",
+      "title": "Spec link 2d rotation"
+    },
+    {
+      "url": "https://lottie-animation-community.github.io/docs/specs/layers/common/#x-rotation-for-3d-layers",
+      "title": "Spec link 3d x rotation"
+    },
+    {
+      "url": "https://lottie-animation-community.github.io/docs/specs/layers/common/#y-rotation-for-3d-layers",
+      "title": "Spec link 3d y rotation"
+    },
+    {
+      "url": "https://lottie-animation-community.github.io/docs/specs/layers/common/#z-rotation-for-3d-layers",
+      "title": "Spec link 3d z rotation"
+    },
+    {
+      "url": "https://lottie-animation-community.github.io/docs/specs/layers/common/#orientation-for-3d-layerss",
+      "title": "Spec link 3d orientation"
     }
   ],
   "bugs": [],
   "categories": [
-    "shapes",
-    "paint"
+    "Layer"
   ],
   "stats": {
     "lottie-web": {
@@ -85,7 +100,7 @@
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
-  "parent": "layer-shape",
-  "ae_codes": ["ADBE Vector Shape - Group","ADBE Vector Shape"],
-  "keywords": "shape path"
+  "parent": "transform",
+  "ae_codes": ["ADBE Orientation","ADBE Rotate X","ADBE Rotate Y","ADBE Rotate Z","ADBE Vector Rotation"],
+  "keywords": "transform, rotation"
 }

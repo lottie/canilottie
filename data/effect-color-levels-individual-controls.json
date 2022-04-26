@@ -87,5 +87,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "effects",
+  "ae_codes": ["ADBE Pro Levels2","ADBE Pro Levels2-0002","ADBE Pro Levels2-0004","ADBE Pro Levels2-0005","ADBE Pro Levels2-0006","ADBE Pro Levels2-0007","ADBE Pro Levels2-0008","ADBE Pro Levels2-0011","ADBE Pro Levels2-0012","ADBE Pro Levels2-0013","ADBE Pro Levels2-0014","ADBE Pro Levels2-0015","ADBE Pro Levels2-0018","ADBE Pro Levels2-0019","ADBE Pro Levels2-0020","ADBE Pro Levels2-0021","ADBE Pro Levels2-0022","ADBE Pro Levels2-0025","ADBE Pro Levels2-0026","ADBE Pro Levels2-0027","ADBE Pro Levels2-0028","ADBE Pro Levels2-0029","ADBE Pro Levels2-0032","ADBE Pro Levels2-0033","ADBE Pro Levels2-0034","ADBE Pro Levels2-0035","ADBE Pro Levels2-0036","ADBE Pro Levels2-0038","ADBE Pro Levels2-0039"],
   "keywords": "effect, color levels"
 }

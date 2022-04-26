@@ -86,5 +86,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "layer-shape",
+  "ae_codes": ["ADBE Vector Graphic - Fill","ADBE Vector Fill Opacity","ADBE Vector Composite Order","ADBE Vector Fill Rule","ADBE Vector Fill Color"],
   "keywords": "fill"
 }

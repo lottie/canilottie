@@ -86,5 +86,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "layer-shape",
+  "ae_codes": ["ADBE Vector Graphic - G-Fill","ADBE Vector Fill Opacity","ADBE Vector Grad End Pt","ADBE Vector Composite Order","ADBE Vector Grad Start Pt","ADBE Vector Fill Rule","ADBE Vector Grad Colors","ADBE Vector Grad Type"],
   "keywords": "gradient fill,linear gradient,radial gradient"
 }

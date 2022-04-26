@@ -86,5 +86,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "layer-shape",
+  "ae_codes": ["ADBE Vector Filter - Offset","ADBE Vector Offset Copies","ADBE Vector Offset Miter Limit","ADBE Vector Offset Line Join","ADBE Vector Offset Amount","ADBE Vector Offset Copy Offset"],
   "keywords": "offset path"
 }

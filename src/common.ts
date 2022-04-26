@@ -55,6 +55,7 @@ export interface CanIUseData {
   bugs: Bug[]
   sub_features: string[]
   notes_by_num: NotesByNum
+  ae_codes?: string[]
 }
 
 export type CanIUseSearchableData = Omit<CanIUseData, 'stats'>

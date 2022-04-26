@@ -86,5 +86,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "layer-shape",
+  "ae_codes": ["ADBE Vector Graphic - Stroke","ADBE Vector Stroke Color","ADBE Vector Stroke Opacity","ADBE Vector Stroke Miter Limit","ADBE Vector Stroke Dashes","ADBE Vector Stroke Width","ADBE Vector Stroke Line Join","ADBE Vector Stroke Line Cap","ADBE Vector Composite Order","ADBE Vector Stroke Taper","ADBE Vector Stroke Wave"],
   "keywords": "stroke"
 }

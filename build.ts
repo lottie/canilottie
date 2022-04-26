@@ -2,9 +2,9 @@
 // the /site directory.
 
 import {
-  readdir, writeFile, readFile, mkdir, copyFile,
+  writeFile,
 } from 'fs/promises';
-import { join, extname } from 'path';
+import { join } from 'path';
 import {
   CorpusPage,
   CanIUseData,
@@ -14,28 +14,16 @@ import {
   loadPageTemplate,
   loadIndexTemplate,
 } from './partials/index';
-
-const sourceDataDir = './data';
-const buildDir = './build';
-const destDir = './dist';
+import { buildApi } from './helpers/api';
+import {
+  createTargetDirs, getDirPath, getSourceDirListing, htmlFilenameFromJSONFilename, jsonFilenameWithoutExtension, loadFile,
+} from './helpers/file';
 
 interface FeatureInterface {
   data: CanIUseData
   name: string
   filename: string
 }
-
-const loadFile = async (filename: string): Promise<CanIUseData> => {
-  const buf = await readFile(join(sourceDataDir, filename));
-  return JSON.parse(buf.toString());
-};
-
-const jsonFilenameWithoutExtension = (jsonFilename: string): string => jsonFilename.slice(
-  0,
-  jsonFilename.length - extname(jsonFilename).length,
-);
-
-const htmlFilenameFromJSONFilename = (jsonFilename: string): string => `${jsonFilenameWithoutExtension(jsonFilename)}.html`;
 
 const createCombinedJSONFile = async (sourceDirListing: string[]) => {
   // First create the combined output file.
@@ -54,7 +42,7 @@ const createCombinedJSONFile = async (sourceDirListing: string[]) => {
   });
   await Promise.all(wait);
 
-  await writeFile(join(destDir, 'allData.json'), JSON.stringify(combined));
+  await writeFile(join(getDirPath('dest'), 'allData.json'), JSON.stringify(combined));
 };
 
 const buildSubFeatureRelationship = (features: FeatureInterface[]): FeatureInterface[] => {
@@ -92,7 +80,7 @@ const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<vo
     const page = pageTemplate(feature.data);
 
     await writeFile(
-      join(buildDir, htmlFilenameFromJSONFilename(feature.filename)),
+      join(getDirPath('build'), htmlFilenameFromJSONFilename(feature.filename)),
       page,
     );
   });
@@ -111,28 +99,27 @@ const createPageForEachDataFile = async (sourceDirListing: string[]): Promise<vo
   Promise.all(wait);
 };
 
-const createTargetDirs = async (): Promise<void> => {
-  await mkdir(destDir, { mode: 0o755, recursive: true });
-  await mkdir(buildDir, { mode: 0o755, recursive: true });
-};
-
 const copyOverFixedFiles = async (): Promise<void> => {
   const indexTemplate = await loadIndexTemplate();
   await writeFile(
-    join(buildDir, 'index.html'),
+    join(getDirPath('build'), 'index.html'),
     indexTemplate(),
   );
   // await copyFile('./pages/index.html', join(buildDir, 'index.html'));
 };
 
-const main = async () => {
-  const sourceDirListing = await readdir(sourceDataDir);
-
-  await createTargetDirs();
+const buildPages = async (sourceDirListing: string[]) => {
   await initializePartialsFunctions();
   await createPageForEachDataFile(sourceDirListing);
   await createCombinedJSONFile(sourceDirListing);
   await copyOverFixedFiles();
+};
+
+const main = async () => {
+  const sourceDirListing = await getSourceDirListing();
+  await createTargetDirs();
+  await buildPages(sourceDirListing);
+  await buildApi(sourceDirListing);
 };
 
 main();

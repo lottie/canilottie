@@ -86,5 +86,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "layer-shape",
+  "ae_codes": ["ADBE Vector Shape - Star","ADBE Vector Star Type","ADBE Vector Star Outer Roundess","ADBE Vector Star Rotation","ADBE Vector Star Inner Radius","ADBE Vector Star Inner Roundess","ADBE Vector Star Points","ADBE Vector Star Outer Radius","ADBE Vector Star Position"],
   "keywords": "polystar,star,polygon"
 }

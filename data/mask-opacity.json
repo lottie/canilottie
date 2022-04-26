@@ -85,5 +85,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "mask",
+  "ae_codes": ["ADBE Mask Opacity"],
   "keywords": "mask opacity"
 }

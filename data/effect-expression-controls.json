@@ -1,6 +1,6 @@
 {
-  "title": "Effects",
-  "description": "Effects define a collection of pixel manipulation of layers.",
+  "title": "Expression controls",
+  "description": "Expression controls",
   "spec": "",
   "status": "ls",
   "links": [],
@@ -52,16 +52,16 @@
       "5.9.0": "y 1"
     },
     "skottie": {
-      "81": "y 1",
-      "82": "y 1",
-      "83": "y 1",
-      "84": "y 1",
-      "85": "y 1",
-      "86": "y 1",
-      "87": "y 1",
-      "88": "y 1",
-      "89": "y 1",
-      "100": "y 1"
+      "81": "n",
+      "82": "n",
+      "83": "n",
+      "84": "n",
+      "85": "n",
+      "86": "n",
+      "87": "n",
+      "88": "n",
+      "89": "n",
+      "100": "n"
     },
     "lottie-android": {
       "4.0.0": "n",
@@ -75,13 +75,12 @@
       "3.3.0": "n"
     }
   },
-  "notes": "",
   "notes_by_num": {
-    "1": "Only some effects are supported. Check the sub features tab to see each one of them"
+    "1": "Expression controls are used for expressions. Their support might depend on the expression itself."
   },
   "usage_perc_y": 0,
   "usage_perc_a": 0,
-  "parent": "",
-  "ae_codes": ["ADBE Effect Parade"],
-  "keywords": "effects"
+  "parent": "effects",
+  "ae_codes": ["ADBE Point3D Control","ADBE Point3D Control-0001","ADBE Angle Control","ADBE Angle Control-0001","ADBE Checkbox Control","ADBE Checkbox Control-0001","ADBE Color Control","ADBE Color Control-0001","Pseudo/@@N0guGAl/Rjm3dFbCcl+vuQ","Pseudo/@@N0guGAl/Rjm3dFbCcl+vuQ-0001","ADBE Layer Control","ADBE Layer Control-0001","ADBE Point Control","ADBE Point Control-0001","ADBE Slider Control","ADBE Slider Control-0001"],
+  "keywords": "effect, expression controls, point control, angle control, checkbox control, color control, dropdown control, layer controls, slider control"
 }
