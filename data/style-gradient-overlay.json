@@ -1,0 +1,89 @@
+{
+  "title": "Gradient overlay layer style",
+  "description": "Gradient overlay layer style",
+  "spec": "",
+  "status": "ls",
+  "links": [
+    {
+      "url": "https://helpx.adobe.com/after-effects/using/blending-modes-layer-styles.html#layer_styles",
+      "title": "AE Spec link"
+    }
+  ],
+  "bugs": [],
+  "categories": [
+    "Layer styles"
+  ],
+  "stats": {
+    "lottie-web": {
+      "5.5.0": "n",
+      "5.5.1": "n",
+      "5.5.2": "n",
+      "5.5.3": "n",
+      "5.5.4": "n",
+      "5.5.5": "n",
+      "5.5.6": "n",
+      "5.5.7": "n",
+      "5.5.8": "n",
+      "5.5.9": "n",
+      "5.5.10": "n",
+      "5.6.0": "n",
+      "5.6.1": "n",
+      "5.6.2": "n",
+      "5.6.3": "n",
+      "5.6.4": "n",
+      "5.6.5": "n",
+      "5.6.6": "n",
+      "5.6.7": "n",
+      "5.6.8": "n",
+      "5.6.9": "n",
+      "5.6.10": "n",
+      "5.7.0": "n",
+      "5.7.1": "n",
+      "5.7.2": "n",
+      "5.7.3": "n",
+      "5.7.4": "n",
+      "5.7.5": "n",
+      "5.7.6": "n",
+      "5.7.7": "n",
+      "5.7.8": "n",
+      "5.7.9": "n",
+      "5.7.10": "n",
+      "5.7.11": "n",
+      "5.7.12": "n",
+      "5.7.13": "n",
+      "5.7.14": "n",
+      "5.8.0": "n",
+      "5.8.1": "n",
+      "5.9.0": "n"
+    },
+    "skottie": {
+      "81": "n",
+      "82": "n",
+      "83": "n",
+      "84": "n",
+      "85": "n",
+      "86": "n",
+      "87": "n",
+      "88": "n",
+      "89": "n",
+      "100": "n"
+    },
+    "lottie-android": {
+      "4.0.0": "n",
+      "5.0.0": "n"
+    },
+    "lottie-ios": {
+      "3.2.0": "n",
+      "3.2.1": "n",
+      "3.2.2": "n",
+      "3.2.3": "n",
+      "3.3.0": "n"
+    }
+  },
+  "notes_by_num": {},
+  "usage_perc_y": 0,
+  "usage_perc_a": 0,
+  "parent": "styles",
+  "ae_codes": ["gradientFill/enabled","gradientFill/offset","gradientFill/opacity","gradientFill/angle","gradientFill/scale","gradientFill/type","gradientFill/gradient","gradientFill/mode2","gradientFill/reverse","gradientFill/align","gradientFill/gradientSmoothness"],
+  "keywords": "styles, gradient overlay style"
+}

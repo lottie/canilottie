@@ -1,5 +1,5 @@
 {
-  "title": "Masks opacity",
+  "title": "Masks expansion",
   "description": "Expansion affects the path property of the mask by shrinking or growing it by the specified number of pixels. The path should be transformed by the center of the shape itself.",
   "spec": "https://lottie-animation-community.github.io/docs/specs/layers/common/#expansion-property",
   "status": "ls",

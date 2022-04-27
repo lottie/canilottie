@@ -85,5 +85,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "",
+  "ae_codes": ["ADBE Vector Group", "ADBE Root Vectors Group"],
   "keywords": "shape"
 }

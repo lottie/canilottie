@@ -1,0 +1,89 @@
+{
+  "title": "CC Sphere effect",
+  "description": "CC Sphere effect",
+  "spec": "",
+  "status": "ls",
+  "links": [
+    {
+      "url": "https://helpx.adobe.com/after-effects/using/perspective-effects.html",
+      "title": "AE Spec link"
+    }
+  ],
+  "bugs": [],
+  "categories": [
+    "Effects"
+  ],
+  "stats": {
+    "lottie-web": {
+      "5.5.0": "n",
+      "5.5.1": "n",
+      "5.5.2": "n",
+      "5.5.3": "n",
+      "5.5.4": "n",
+      "5.5.5": "n",
+      "5.5.6": "n",
+      "5.5.7": "n",
+      "5.5.8": "n",
+      "5.5.9": "n",
+      "5.5.10": "n",
+      "5.6.0": "n",
+      "5.6.1": "n",
+      "5.6.2": "n",
+      "5.6.3": "n",
+      "5.6.4": "n",
+      "5.6.5": "n",
+      "5.6.6": "n",
+      "5.6.7": "n",
+      "5.6.8": "n",
+      "5.6.9": "n",
+      "5.6.10": "n",
+      "5.7.0": "n",
+      "5.7.1": "n",
+      "5.7.2": "n",
+      "5.7.3": "n",
+      "5.7.4": "n",
+      "5.7.5": "n",
+      "5.7.6": "n",
+      "5.7.7": "n",
+      "5.7.8": "n",
+      "5.7.9": "n",
+      "5.7.10": "n",
+      "5.7.11": "n",
+      "5.7.12": "n",
+      "5.7.13": "n",
+      "5.7.14": "n",
+      "5.8.0": "n",
+      "5.8.1": "n",
+      "5.9.0": "n"
+    },
+    "skottie": {
+      "81": "y",
+      "82": "y",
+      "83": "y",
+      "84": "y",
+      "85": "y",
+      "86": "y",
+      "87": "y",
+      "88": "y",
+      "89": "y",
+      "100": "y"
+    },
+    "lottie-android": {
+      "4.0.0": "n",
+      "5.0.0": "n"
+    },
+    "lottie-ios": {
+      "3.2.0": "n",
+      "3.2.1": "n",
+      "3.2.2": "n",
+      "3.2.3": "n",
+      "3.3.0": "n"
+    }
+  },
+  "notes_by_num": {},
+  "usage_perc_y": 0,
+  "usage_perc_a": 0,
+  "parent": "effects",
+  "ae_codes": ["CC Sphere","CC Sphere-0002","CC Sphere-0003","CC Sphere-0004","CC Sphere-0026","CC Sphere-0006","CC Sphere-0007","CC Sphere-0008","CC Sphere-0010","CC Sphere-0011","CC Sphere-0012","CC Sphere-0013","CC Sphere-0016","CC Sphere-0017","CC Sphere-0018","CC Sphere-0019","CC Sphere-0020","CC Sphere-0021","CC Sphere-0022","CC Sphere-0023","CC Sphere-0024"],
+  "keywords": "effect, CC Sphere"
+}

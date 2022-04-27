@@ -85,5 +85,6 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "layer-text",
+  "ae_codes": ["ADBE Text Stroke Saturation","ADBE Text Line Anchor","ADBE Text Rotation","ADBE Text Anchor Point 3D","ADBE Text Stroke Color","ADBE Text Stroke Hue","ADBE Text Character Replace","ADBE Text Opacity","ADBE Text Character Range","ADBE Text Line Spacing","ADBE Text Fill Color","ADBE Text Stroke Width","ADBE Text Tracking Amount","ADBE Text Fill Saturation","ADBE Text Fill Opacity","ADBE Text Position 3D","ADBE Text Skew","ADBE Text Track Type","ADBE Text Character Change Type","ADBE Text Scale 3D","ADBE Text Fill Brightness","ADBE Text Character Offset","ADBE Text Fill Hue","ADBE Text Stroke Brightness","ADBE Text Skew Axis","ADBE Text Stroke Opacity"],
   "keywords": "animators"
 }

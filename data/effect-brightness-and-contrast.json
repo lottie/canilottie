@@ -1,0 +1,89 @@
+{
+  "title": "Brightness and contrast effect",
+  "description": "Brightness and contrast effect",
+  "spec": "",
+  "status": "ls",
+  "links": [
+    {
+      "url": "https://helpx.adobe.com/after-effects/using/color-correction-effects.html#brightness_contrast_effect",
+      "title": "AE Spec link"
+    }
+  ],
+  "bugs": [],
+  "categories": [
+    "Effects"
+  ],
+  "stats": {
+    "lottie-web": {
+      "5.5.0": "n",
+      "5.5.1": "n",
+      "5.5.2": "n",
+      "5.5.3": "n",
+      "5.5.4": "n",
+      "5.5.5": "n",
+      "5.5.6": "n",
+      "5.5.7": "n",
+      "5.5.8": "n",
+      "5.5.9": "n",
+      "5.5.10": "n",
+      "5.6.0": "n",
+      "5.6.1": "n",
+      "5.6.2": "n",
+      "5.6.3": "n",
+      "5.6.4": "n",
+      "5.6.5": "n",
+      "5.6.6": "n",
+      "5.6.7": "n",
+      "5.6.8": "n",
+      "5.6.9": "n",
+      "5.6.10": "n",
+      "5.7.0": "n",
+      "5.7.1": "n",
+      "5.7.2": "n",
+      "5.7.3": "n",
+      "5.7.4": "n",
+      "5.7.5": "n",
+      "5.7.6": "n",
+      "5.7.7": "n",
+      "5.7.8": "n",
+      "5.7.9": "n",
+      "5.7.10": "n",
+      "5.7.11": "n",
+      "5.7.12": "n",
+      "5.7.13": "n",
+      "5.7.14": "n",
+      "5.8.0": "n",
+      "5.8.1": "n",
+      "5.9.0": "n"
+    },
+    "skottie": {
+      "81": "y",
+      "82": "y",
+      "83": "y",
+      "84": "y",
+      "85": "y",
+      "86": "y",
+      "87": "y",
+      "88": "y",
+      "89": "y",
+      "100": "y"
+    },
+    "lottie-android": {
+      "4.0.0": "n",
+      "5.0.0": "n"
+    },
+    "lottie-ios": {
+      "3.2.0": "n",
+      "3.2.1": "n",
+      "3.2.2": "n",
+      "3.2.3": "n",
+      "3.3.0": "n"
+    }
+  },
+  "notes_by_num": {},
+  "usage_perc_y": 0,
+  "usage_perc_a": 0,
+  "parent": "effects",
+  "ae_codes": ["ADBE Brightness & Contrast 2","ADBE Brightness & Contrast 2-0001","ADBE Brightness & Contrast 2-0002","ADBE Brightness & Contrast 2-0003"],
+  "keywords": "effect, brightness and contrast, brightness & contrast"
+}
