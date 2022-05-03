@@ -15,10 +15,10 @@
       margin-bottom: var(--grid-unit);
 
       &__link {
-        color: var(--color-palette-3);
+        color: var(--color-dark-gray);
 
         &:visited {
-          color: var(--color-dark-gray);
+          color: var(--color-dark-red);
         }
       }
     }

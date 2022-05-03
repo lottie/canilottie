@@ -68,11 +68,20 @@ li {
       }
     }
 }
-
 .main-title {
   font-size: var(--font-larger);
   font-weight: 100;
   color: var(--color-light-gray);
   padding: calc(var(--grid-unit) * 2) 0;
   text-align: center;
+}
+
+body.embed  {
+  padding: 0;
+  .search {
+    display: none;
+  }
+  .main-title {
+    display: none;
+  }
 }

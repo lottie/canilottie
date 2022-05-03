@@ -27,6 +27,7 @@ class FeaturesWidget extends HTMLElement {
     this.render();
     this.buildNavigation();
     this.buildNotesHighlights();
+    this.searchAnchorLinks();
   }
 
   private getFeatureNameFromId(id: string): string {
@@ -107,6 +108,46 @@ class FeaturesWidget extends HTMLElement {
         });
       });
     });
+  }
+
+  private addAnchorListener(anchor) {
+    anchor.setAttribute('target', '_blank');
+    anchor.addEventListener('click', () => {
+      const link = `${anchor.protocol}//${anchor.host + anchor.pathname + anchor.search + anchor.hash}`;
+      const data = {
+        type: 'link',
+        link: link,
+      };
+      try {
+        window.top.postMessage({
+          name: 'lottieEvent',
+          payload: data,
+        }, '*');
+      } catch (error) {
+        //
+      }
+    });
+  }
+
+  private getQueryVariable(variable) {
+    const query = window.location.search.substring(1);
+    const vars = query.split('&');
+    for (let i = 0; i < vars.length; i++) {
+      const pair = vars[i].split('=');
+      if (pair[0] === variable) {
+        return pair[1];
+      }
+    }
+    return (false);
+  }
+
+  private searchAnchorLinks() {
+    const { shadowRoot } = this;
+    const mode = this.getQueryVariable('mode');
+    if (mode === 'embed') {
+      const anchors = shadowRoot.querySelectorAll('a');
+      Array.prototype.forEach.call(anchors, this.addAnchorListener);
+    }
   }
 
   // Renders the initial contents of the element.
