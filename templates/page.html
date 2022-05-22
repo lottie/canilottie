@@ -13,23 +13,29 @@
     {{> search-result}}
     {{> features-widget this}}
     <!-- END TEMPLATES -->
-    {{> main-title}}
-    {{> search-section isSmall=true}}
-    <section class="expand-page__header">
-      <h2
-        class="expand-page__header__title"
-      >
-        <a
-          href="{{spec}}"
-          class="expand-page__header__title__link"
+    {{> navigation}}
+    <main class="main">
+      {{> main-title}}
+      {{> search-section isSmall=true}}
+      <section class="expand-page__header">
+        <h2
+          class="expand-page__header__title"
         >
-            {{title}}
-          </a>
-      </h2>
-      <p class="expand-page__header__description">{{description}}</p>
-    </section>
-    {{> support-table stats}}
-    <features-widget></features-widget>
+          <a
+            href="{{spec}}"
+            class="expand-page__header__title__link"
+          >
+              {{title}}
+            </a>
+        </h2>
+        <p class="expand-page__header__description">{{description}}</p>
+      </section>
+      {{> support-table stats}}
+      <features-widget></features-widget>
+    </main>
+    <aside class="aside">
+      <div>TEST</div>
+    </aside>
     <script
       src="../src/search-widget.ts"
       type="module"

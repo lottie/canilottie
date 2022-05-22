@@ -15,8 +15,10 @@
 
     .search-container {
       width: 100%;
-      max-width: calc(var(--grid-unit) * 50);
       position: relative;
+      background-color: var(--color-light-green);
+      border: 1px solid var(--color-green);
+      border-radius: calc(var(--grid-unit) * 4);
     }
 
     .search-form {
@@ -30,6 +32,7 @@
       padding: calc(var(--grid-unit) * 2);
       font-size: var(--font-medium);
       flex: 1 1 auto;
+      background: none;
     }
 
     .search-form__submit-button {
@@ -43,10 +46,12 @@
       align-items: center;
       justify-content: center;
       font-size: var(--font-large);
-      background-color: var(--color-dark-gray);
       color: var(--color-light-gray);
       cursor: pointer;
       flex: 0 0 auto;
+      background: url('/assets//navigation/search.svg');
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .search-form__input:focus-visible {
@@ -92,12 +97,6 @@
       <div class="search-container">
         <form id="form" class="search-form">
           <input
-            class="search-form__input"
-            type="text"
-            id="search_input"
-            autocomplete="off"
-          />
-          <input
             class="search-form__submit-button"
             type="submit"
             value="Query"
@@ -105,8 +104,15 @@
           <label
             class="search-form__submit-label"
             for="Query"
-          >?
-        </label>
+          >
+          </label>
+          <input
+            class="search-form__input"
+            type="text"
+            id="search_input"
+            autocomplete="off"
+            placeholder="Search for a Lottie feature"
+          />
         </form>
         <ul
           id="results"
