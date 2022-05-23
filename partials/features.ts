@@ -1,6 +1,7 @@
 import Handlebars from 'handlebars';
 import { loadTemplate } from './index';
 import { Bug, Link, NotesByNum } from '../src/common';
+import { PlayerTypes, PlayerTypesKeys } from '../helpers/featuresList';
 
 const featuresIds = {
   NOTES: 'notes',
@@ -147,12 +148,26 @@ const registerKnownIssues = async (): Promise<void> => {
   }));
 };
 
+const registerFeatureIcon = async (): Promise<void> => {
+  Handlebars.registerHelper('feature-icon', (players: PlayerTypes, playerType: PlayerTypesKeys) => {
+    switch (players[playerType]) {
+      case 'y':
+        return '/assets/features/check.svg';
+      case 'n':
+        return '/assets/features/block.svg';
+      default:
+        return '/assets/features/bug.svg';
+    }
+  });
+};
+
 const registerFeaturesHelper = async (): Promise<void> => {
   await registerNavigation();
   await registerNotes();
   await registerResources();
   await registerSubfeatures();
   await registerKnownIssues();
+  await registerFeatureIcon();
 };
 
 export default registerFeaturesHelper;

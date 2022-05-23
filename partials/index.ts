@@ -21,6 +21,8 @@ const loadPageTemplate = async (): Promise<HandlebarsTemplateDelegate<CanIUseDat
 
 const loadIndexTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('index.html');
 
+const loadFeaturesListTemplate = async (): Promise<HandlebarsTemplateDelegate<any>> => loadTemplate('features-list.html');
+
 const loadSupportTableTemplate = async (): Promise<HandlebarsTemplateDelegate<CanIUseData>> => loadTemplate('support-table.html');
 
 const loadSearchResultTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('search-result.html');
@@ -79,4 +81,5 @@ export {
   initializeFunctions,
   loadPageTemplate,
   loadIndexTemplate,
+  loadFeaturesListTemplate,
 };

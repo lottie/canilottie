@@ -15,6 +15,7 @@ import {
   loadIndexTemplate,
 } from './partials/index';
 import { buildApi } from './helpers/api';
+import { buildFeaturesList } from './helpers/featuresList';
 import {
   createTargetDirs, getDirPath, getSourceDirListing, htmlFilenameFromJSONFilename, jsonFilenameWithoutExtension, loadFile,
 } from './helpers/file';
@@ -113,6 +114,7 @@ const buildPages = async (sourceDirListing: string[]) => {
   await createPageForEachDataFile(sourceDirListing);
   await createCombinedJSONFile(sourceDirListing);
   await copyOverFixedFiles();
+  await buildFeaturesList(sourceDirListing);
 };
 
 const main = async () => {
