@@ -24,8 +24,10 @@
   --grid-unit: 8px;
 
   --font-small: 0.75rem;
+  --font-small-medium: 0.875rem;
   --font-medium: 1rem;
-  --font-medium-large: 1.5rem;
+  --font-medium-medium-large: 1.375rem;
+  --font-medium-large: 1.75rem;
   --font-large: 2rem;
   --font-larger: 3rem;
 
@@ -45,7 +47,6 @@ html, body {
 }
 
 body {
-  padding: 0 calc(var(--grid-unit) * 2);
   overflow-y: auto;
   display: flex;
 }
@@ -103,23 +104,32 @@ body.embed  {
 }
 
 .navigation {
-  width: 100px;
+  width: calc(var(--grid-unit) * 10);
+  margin-top: calc(var(--grid-unit) * 4);
   flex: 0 0 auto;
+  text-align: center;
 
   &__button {
     text-align: center;
     display: inline-block;
     text-decoration: none;
+    margin: calc(var(--grid-unit) * 1) 0;
+    color: var(--color-dark-black);
+    @include font-label-medium;
 
     &__figure {
 
-      padding: calc(var(--grid-unit) * 0.5) calc(var(--grid-unit) * 2);
-      border-radius: calc(var(--grid-unit) * 2);
+      padding: calc(var(--grid-unit)*1) calc(var(--grid-unit)*2.5);
+      border-radius: calc(var(--grid-unit) * 3);
 
       &__image {
-        width: calc(var(--grid-unit) * 2);
-        height: calc(var(--grid-unit) * 2);
+        width: 18px;
+        height: 18px;
       }
+    }
+
+    &__label {
+      margin-top: calc(var(--grid-unit) * 0.5);
     }
       
     &:hover {
@@ -128,6 +138,10 @@ body.embed  {
         background-color: var(--color-green);
       }
     }
+  }
+
+  &__logo {
+    margin-bottom: calc(var(--grid-unit) * 4);
   }
 }
 

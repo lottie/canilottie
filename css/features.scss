@@ -1,6 +1,9 @@
 @import "_constants";
 
 .main {
+
+  padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2) 0 calc(var(--grid-unit) * 2);
+
   &__table {
     margin-top: calc(var(--grid-unit) * 3);
     width: 100%;
@@ -93,4 +96,8 @@
       }
     }
   }
+}
+
+#navigation__features .navigation__button__figure {
+  background-color: var(--color-green);
 }

@@ -55,11 +55,21 @@ class SearchWidget extends HTMLElement {
   }
 
   // Renders a single page into displayable results.
-  static resultTemplate = (page: CorpusPage): DocumentFragment => {
+  static resultTemplate = (page: CorpusPage, searchValue: string): DocumentFragment => {
     const instance = document.importNode(SearchWidget.searchResultTemplate.content, true);
     const a: HTMLAnchorElement = instance.querySelector('.link');
     a.href = page.url;
-    a.textContent = page.title;
+    const regEx = new RegExp(searchValue, 'i');
+    const matchedPattern = regEx.exec(page.title);
+    let resultText = page.title;
+    if (matchedPattern) {
+      resultText = `${resultText.substring(0, matchedPattern.index)
+      }<b>${
+        resultText.substring(matchedPattern.index, searchValue.length + matchedPattern.index)
+      }</b>${
+        resultText.substring(matchedPattern.index + searchValue.length)}`;
+    }
+    a.innerHTML = resultText;
     return instance;
   };
 
@@ -130,7 +140,7 @@ class SearchWidget extends HTMLElement {
         return;
       }
       if (page.content.includes(searchValue)) {
-        this.results.appendChild(SearchWidget.resultTemplate(page));
+        this.results.appendChild(SearchWidget.resultTemplate(page, searchValue));
         totalResults++;
       }
     });

@@ -5,28 +5,42 @@
 }
 
 @mixin font-body-medium {
-  font-size: 1rem;
+  font-size: var(--font-medium);
   line-height: 1.5rem;
   font-weight: 400;
   font-family: var(--font-family);
 }
 
+@mixin font-label-medium {
+  font-size: var(--font-smal);
+  line-height: 1rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+}
+
 @mixin font-label-large {
-  font-size: 0.875rem;
+  font-size: var(--font-small-medium);
   line-height: 1.25rem;
   font-weight: 500;
   font-family: var(--font-family);
 }
 
 @mixin font-title-medium {
-  font-size: 1rem;
+  font-size: var(--font-medium);
+  line-height: 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+}
+
+@mixin font-title-large {
+  font-size: var(--font-medium-medium-large);
   line-height: 1.5rem;
   font-weight: 600;
   font-family: var(--font-family);
 }
 
 @mixin font-headline-medium {
-  font-size: 1.76rem;
+  font-size: var(--font-medium-large);
   line-height: 2.25rem;
   font-weight: 900;
   font-family: var(--font-family);

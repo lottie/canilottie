@@ -17,7 +17,7 @@
       width: 100%;
       position: relative;
       background-color: var(--color-light-green);
-      border: 1px solid var(--color-green);
+      border: 2px solid var(--color-green);
       border-radius: calc(var(--grid-unit) * 4);
     }
 
@@ -30,7 +30,8 @@
     .search-form__input {
       border: none;
       padding: calc(var(--grid-unit) * 2);
-      font-size: var(--font-medium);
+      font-size: var(--font-medium-medium-large);
+      font-family: var(--font-family);
       flex: 1 1 auto;
       background: none;
     }
@@ -40,8 +41,8 @@
     }
 
     .search-form__submit-label {
-      height: 50px;
-      width: 50px;
+      height: 62px;
+      padding: 0 0 0 calc(var(--grid-unit) * 3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -49,23 +50,34 @@
       color: var(--color-light-gray);
       cursor: pointer;
       flex: 0 0 auto;
-      background: url('/assets//navigation/search.svg');
-      background-repeat: no-repeat;
-      background-position: center;
+    }
+
+    .search-form__submit-label__icon {
+      width: 18px;
+      height: 18px;
     }
 
     .search-form__input:focus-visible {
       outline: none;
     }
 
+    .search-results-container {
+      position: relative;
+      width: 100%;
+    }
+
     .search-results {
       position: absolute;
       left: 0;
-      background-color: var(--color-light-gray);
-      width: 100%;
+      right: 0;
+      top: calc(var(--grid-unit) * 0.5);
+      background-color: var(--color-light-green);
+      width: calc(100% - calc(var(--grid-unit) * 8));
       padding: 0;
-      margin: 0;
+      margin: auto;
       z-index: 10;
+      border-radius: calc(var(--grid-unit) * 0.5);
+      box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     }
 
     .search-message {
@@ -79,16 +91,6 @@
       padding: 0 calc(var(--grid-unit) * 1);
     }
 
-    .wrapper--small .search-form__submit-label {
-      width: 22px;
-      height: 22px;
-      font-size: var(--font-medium);
-    }
-
-    .wrapper--small .search-form__input {
-      padding: calc(var(--grid-unit) * 0.5);
-      font-size: var(--font-small);
-    }
 
   </style>
     <div
@@ -105,6 +107,10 @@
             class="search-form__submit-label"
             for="Query"
           >
+            <img
+            class="search-form__submit-label__icon"
+              src="/assets/navigation/search.svg"
+            />
           </label>
           <input
             class="search-form__input"
@@ -114,11 +120,13 @@
             placeholder="Search for a Lottie feature"
           />
         </form>
-        <ul
-          id="results"
-          class="search-results"
-        >
-        </ul>
+        <div class="search-results-container">
+          <ul
+            id="results"
+            class="search-results"
+          >
+          </ul>
+        </div>
       </div>
       <p id="message" class="search-message"></p>
     </div>
