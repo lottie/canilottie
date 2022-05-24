@@ -16,21 +16,26 @@
 
     .wrapper {
       padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
-      background-color: var(--color-palette-3);
+      border-top: 1px solid var(--color-gray);
     }
 
     nav.navigation {
       width: 100%;
       display: flex;
-      background: rgba(0,0,0,0.15);
     }
 
     .navigation__button {
       border: none;
-      color: var(--color-light-gray);
-      background: rgba(0,0,0,0.75);
-      padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 2);
+      font-size: var(--font-small-medium);
+      line-height: 1.25rem;
+      font-weight: 500;
+      font-family: var(--font-family);
+      color: var(--color-dark-black);
+      padding: calc(var(--grid-unit)*1) calc(var(--grid-unit)*2);
+      margin-right: calc(var(--grid-unit)*1);
+      border-radius: calc(var(--grid-unit) * 3);
       cursor: pointer;
+      background: transparent;
       transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
     }
 
@@ -39,14 +44,24 @@
     }
 
     .navigation__button--selected {
-      background: rgba(255,255,255,0.75);
-      color: var(--color-dark-gray);
+      background: var(--color-green);
+      color: var(--color-dark-black);
       cursor: default;
     }
 
     .navigation__button--selected:hover {
-      background: rgba(255,255,255,0.75);
-      color: var(--color-dark-gray);
+      background: var(--color-green);
+      color: var(--color-dark-black);
+    }
+
+    .navigation__button--selected .navigation__button__count {
+      display: none;
+    }
+
+    .navigation__button__count {
+      border-radius: calc(var(--grid-unit) * 3);
+      background: var(--color-green);
+      padding: 0 calc(var(--grid-unit) * 0.75);
     }
 
     .view {
@@ -69,8 +84,13 @@
     }
 
     .notes-element-label {
-      background-color: var(--color-light-gray);
+      font-size: var(--font-small);
+      line-height: 1rem;
+      font-weight: 400;
+      border: 1px solid var(--color-gray);
       padding: calc(var(--grid-unit) * 0.5);
+      width: 14px;
+      text-align: center;
     }
 
     .notes-element-content {

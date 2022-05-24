@@ -27,7 +27,8 @@ const registerNavigation = async (): Promise<void> => {
     }
     return featuresTab({
       id: `${tabPrefix}${featuresIds.NOTES}`,
-      name: `Notes (${notesToArray.length + (notes ? 1 : 0)})`,
+      name: 'Notes',
+      count: `${notesToArray.length + (notes ? 1 : 0)}`,
     });
   };
 
@@ -37,7 +38,8 @@ const registerNavigation = async (): Promise<void> => {
     }
     return featuresTab({
       id: `${tabPrefix}${featuresIds.RESOURCES}`,
-      name: `Resources (${links.length + (spec ? 1 : 0)})`,
+      name: 'Resources',
+      count: `${links.length + (spec ? 1 : 0)}`,
     });
   };
 
@@ -47,7 +49,8 @@ const registerNavigation = async (): Promise<void> => {
     }
     return featuresTab({
       id: `${tabPrefix}${featuresIds.SUBFEATURES}`,
-      name: `Sub-Features (${subFeatures.length})`,
+      name: 'Sub-Features',
+      count: `${subFeatures.length}`,
     });
   };
 
@@ -57,7 +60,8 @@ const registerNavigation = async (): Promise<void> => {
     }
     return featuresTab({
       id: `${tabPrefix}${featuresIds.KNOWN_ISSUES}`,
-      name: `Known Issues (${bugs.length})`,
+      name: 'Known Issues',
+      count: `${bugs.length}`,
     });
   };
 
