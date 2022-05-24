@@ -15,8 +15,8 @@ interface VersionStatPartial {
 }
 
 const YesNoToClassName: Record<YesNo, string> = {
-  y: 'stats-card__content__box--supported',
-  n: 'stats-card__content__box--unsupported',
+  y: 'stats-card__content__box__inner--supported',
+  n: 'stats-card__content__box__inner--unsupported',
 };
 
 const buildClassName = (support: string) => {
@@ -25,7 +25,7 @@ const buildClassName = (support: string) => {
     YesNoToClassName[supportData[0] as YesNo],
   ];
   if (supportData[1]) {
-    classNames.push(`stats-card__content__box--with-note stats-card__content__box__${supportData[1]}`);
+    classNames.push(`stats-card__content__box__inner--with-note stats-card__content__box__inner__${supportData[1]}`);
   }
   return classNames.join(' ');
 };

@@ -7,30 +7,28 @@
 
   &__header {
 
-    background: var(--color-palette-1);
     padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
 
     &__title {
-      font-size: var(--font-large);;
+      @include font-headline-medium;
       margin-bottom: var(--grid-unit);
 
       &__link {
-        color: var(--color-dark-gray);
+        color: var(--color-dark-black);
 
         &:visited {
-          color: var(--color-dark-red);
+          color: var(--color-dark-black);
         }
       }
     }
     &__description {
-      font-size: var(--font-small);
+      @include font-body-large;
     }
   }
 
   &__stats {
     margin-top: calc(var(--grid-unit) * 0);
     padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
-    background: var(--color-palette-2);
 
     &__grid {
       display: flex;
@@ -42,68 +40,82 @@
 
 .stats-card {
   width: calc(var(--grid-unit) * 14);
-  margin-right: var(--grid-unit);
   text-align: center;
   flex: 0 0 auto;
+  border: 1px solid var(  --color-gray);
+
+  &:first-of-type {
+    border-top-left-radius: calc(var(--grid-unit) * 1);
+    border-bottom-left-radius: calc(var(--grid-unit) * 1);
+  }
+
+  &:last-of-type {
+    border-top-right-radius: calc(var(--grid-unit) * 1);
+    border-bottom-right-radius: calc(var(--grid-unit) * 1);
+  }
 
   &__header {
-    background-color: var(--color-dark-gray);
+    @include font-body-medium;
     padding: var(--grid-unit) calc(var(--grid-unit) * 0.25);
-    color: var(--color-palette-5);
-    border-bottom: 2px solid var(--color-palette-4);
+    color: var(--color-dark-black);
   }
 
   &__content {
     margin-top: var(--grid-unit);
-    font-weight: 800;
-    font-size: var(--font-small);
+    @include font-label-large;
 
     &__box {
-      padding: calc(var(--grid-unit) * 1.5);
-      @include text-overflow-with-ellipsis;
-      position: relative;
+      padding: calc(var(--grid-unit) * 0.25);
 
-      &--supported {
-        background-color: var(--color-green);
-      }
+      &__inner {
 
-      &--unsupported {
-        background-color: var(--color-red);
-      }
+        padding: calc(var(--grid-unit) * 1);
+        @include text-overflow-with-ellipsis;
+        position: relative;
+        border-radius: calc(var(--grid-unit) * 1);
 
-      &--highlight {
-        outline: 1px solid var(--color-palette-2);
-        outline-offset: -1px;
-      }
+        &--supported {
+          background-color: var(--color-green);
+        }
 
-      &__note {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        font-weight: 100;
-        background-color: var(--color-light-gray);
-        color: var(--color-dark-gray);
-        padding: calc(var(--grid-unit) * 0.5);
-        transition: color 0.33s ease-in-out, background-color 0.33s ease-in-out;
-      }
+        &--unsupported {
+          background-color: var(--color-error);
+        }
 
-      &--highlight .stats-card__content__box__note {
-        background-color: var(--color-dark-gray);
-        color: var(--color-light-gray);
-      }
-
-      &--with-note {
-        &:hover {
+        &--highlight {
           outline: 1px solid var(--color-palette-2);
           outline-offset: -1px;
         }
-  
-        &:hover .stats-card__content__box__note {
+
+        &__note {
+          position: absolute;
+          left: 0;
+          top: 0;
+          @include font-label-small;
+          background-color: var(--color-dark-black-half);
+          color: var(--color-white);
+          padding: calc(var(--grid-unit) * 0.375);
+          transition: color 0.33s ease-in-out, background-color 0.33s ease-in-out;
+        }
+
+        &--highlight .stats-card__content__box__note {
           background-color: var(--color-dark-gray);
           color: var(--color-light-gray);
         }
-      }
 
+        &--with-note {
+          &:hover {
+            outline: 1px solid var(--color-palette-2);
+            outline-offset: -1px;
+          }
+    
+          &:hover .stats-card__content__box__note {
+            background-color: var(--color-dark-gray);
+            color: var(--color-light-gray);
+          }
+        }
+
+      }
     }
   }
 }

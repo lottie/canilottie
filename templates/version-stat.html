@@ -1,22 +1,24 @@
-<div class="stats-card__content__box {{className}}">
-  {{version}}
-  {{#if note}}
-    <span class="stats-card__content__box__note">{{note}}</span>
-    <script>
-      (function(){
-        // This allows us to edit the highlight of notes beyond the shadow-dom
-        // by setting a root css variable
-        const me = document.currentScript;
-        const parent = me.parentElement;
-        parent.addEventListener('mouseover', () => {
-          const root = document.documentElement;
-          root.style.setProperty('--color-highlight-{{note}}', '#333333FF');
-        })
-        parent.addEventListener('mouseout', () => {
-          const root = document.documentElement;
-          root.style.setProperty('--color-highlight-{{note}}', '#00000000');
-        })
-      }())
-    </script>
-  {{/if}}
+<div class="stats-card__content__box">
+  <div class="stats-card__content__box__inner {{className}}">
+    {{version}}
+    {{#if note}}
+      <span class="stats-card__content__box__inner__note">{{note}}</span>
+      <script>
+        (function(){
+          // This allows us to edit the highlight of notes beyond the shadow-dom
+          // by setting a root css variable
+          const me = document.currentScript;
+          const parent = me.parentElement;
+          parent.addEventListener('mouseover', () => {
+            const root = document.documentElement;
+            root.style.setProperty('--color-highlight-{{note}}', '#333333FF');
+          })
+          parent.addEventListener('mouseout', () => {
+            const root = document.documentElement;
+            root.style.setProperty('--color-highlight-{{note}}', '#00000000');
+          })
+        }())
+      </script>
+    {{/if}}
+  </div>
 </div>
