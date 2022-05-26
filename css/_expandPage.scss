@@ -14,10 +14,10 @@
       margin-bottom: var(--grid-unit);
 
       &__link {
-        color: var(--color-dark-black);
+        color: var(--color-on-background);
 
         &:visited {
-          color: var(--color-dark-black);
+          color: var(--color-on-background);
         }
       }
     }
@@ -42,7 +42,7 @@
   width: calc(var(--grid-unit) * 14);
   text-align: center;
   flex: 0 0 auto;
-  border: 1px solid var(  --color-gray);
+  border: 1px solid var(--color-outline);
 
   &:first-of-type {
     border-top-left-radius: calc(var(--grid-unit) * 1);
@@ -57,7 +57,7 @@
   &__header {
     @include font-body-medium;
     padding: var(--grid-unit) calc(var(--grid-unit) * 0.25);
-    color: var(--color-dark-black);
+    color: var(--color-on-background);
   }
 
   &__content {
@@ -75,7 +75,7 @@
         border-radius: calc(var(--grid-unit) * 1);
 
         &--supported {
-          background-color: var(--color-green);
+          background-color: var(--color-secondary-container);
         }
 
         &--unsupported {
@@ -83,7 +83,7 @@
         }
 
         &--highlight {
-          outline: 1px solid var(--color-palette-2);
+          outline: 1px solid var(--color-on-primary-container);
           outline-offset: -1px;
         }
 
@@ -92,26 +92,26 @@
           left: 0;
           top: 0;
           @include font-label-small;
-          background-color: var(--color-dark-black-half);
-          color: var(--color-white);
+          background-color: var(--color-background);
+          color: var(--color-on-background);
           padding: calc(var(--grid-unit) * 0.375);
           transition: color 0.33s ease-in-out, background-color 0.33s ease-in-out;
         }
 
         &--highlight .stats-card__content__box__note {
-          background-color: var(--color-dark-gray);
-          color: var(--color-light-gray);
+          background-color: var(--color-background);
+          color: var(--color-on-background);
         }
 
         &--with-note {
           &:hover {
-            outline: 1px solid var(--color-palette-2);
+            outline: 1px solid var(--color-on-primary-container);
             outline-offset: -1px;
           }
     
           &:hover .stats-card__content__box__note {
-            background-color: var(--color-dark-gray);
-            color: var(--color-light-gray);
+            background-color: var(--color-background);
+            color: var(--color-on-background);
           }
         }
 
@@ -121,6 +121,21 @@
 }
 
 .aside {
-  width: 150px;
+  padding-top: 100px;
+  width: 250px;
+  margin-right: calc(var(--grid-unit) * 3);
   flex: 0 0 auto;
+}
+
+.related-features {
+  background-color: var(  --color-surface-variant);
+  padding: calc(var(--grid-unit) * 3);
+  border-radius: calc(var(--grid-unit) * 3);
+
+  &__title {
+    @include font-title-small;
+  }
+  &__features {
+    @include font-body-medium;
+  }
 }

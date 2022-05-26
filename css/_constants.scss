@@ -12,8 +12,8 @@
 }
 
 @mixin font-body-medium {
-  font-size: var(--font-small-medium);
-  line-height: 1.25rem;
+  font-size: var(--font-small-medium); // 14px
+  line-height: 1.25rem; // 20px
   font-weight: 400;
   font-family: var(--font-family);
 }
@@ -43,6 +43,13 @@
   font-size: var(--font-small-medium); // 14px
   line-height: 1.25rem; // 20px
   font-weight: 500;
+  font-family: var(--font-family);
+}
+
+@mixin font-title-small {
+  font-size: var(--font-small-medium); // 14px
+  line-height: 1.25rem; // 20px
+  font-weight: 600;
   font-family: var(--font-family);
 }
 

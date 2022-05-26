@@ -16,9 +16,13 @@
     .search-container {
       width: 100%;
       position: relative;
-      background-color: var(--color-light-green);
-      border: 2px solid var(--color-green);
+      background-color: var(--color-surface-2);
+      outline: 1px solid var(--color-secondary-container);
       border-radius: calc(var(--grid-unit) * 4);
+    }
+
+    .search-container--focus {
+      outline: 2px solid var(--color-secondary-container);
     }
 
     .search-form {
@@ -36,6 +40,10 @@
       background: none;
     }
 
+    .search-form__input::placeholder, .search-form__input::-webkit-input-placeholder {
+      opacity: 0.5;
+    }
+
     .search-form__submit-button {
       display: none;
     }
@@ -47,7 +55,6 @@
       align-items: center;
       justify-content: center;
       font-size: var(--font-large);
-      color: var(--color-light-gray);
       cursor: pointer;
       flex: 0 0 auto;
     }
@@ -71,7 +78,7 @@
       left: 0;
       right: 0;
       top: calc(var(--grid-unit) * 0.5);
-      background-color: var(--color-light-green);
+      background-color: var(--color-surface-2);
       width: calc(100% - calc(var(--grid-unit) * 8));
       padding: 0;
       margin: auto;
@@ -81,7 +88,7 @@
     }
 
     .search-message {
-      color: var(--color-dark-red);
+      color: var(--color-secondary);
       font-size: var(--font-small);
       margin-top: calc(var(--grid-unit) * 0.5);
       display: none;
@@ -96,7 +103,7 @@
     <div
       class="wrapper"
     >
-      <div class="search-container">
+      <div class="search-container" id="search_container">
         <form id="form" class="search-form">
           <input
             class="search-form__submit-button"

@@ -31,6 +31,7 @@ const loadSearchSectionTemplate = async (): Promise<HandlebarsTemplateDelegate<v
 const loadMainTitleSectionTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('main-title.html');
 const loadFeaturesTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('features-widget.html');
 const loadNavigationSectionTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('navigation.html');
+const loadRelatedFeaturesTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('related-features.html');
 
 const registerPartials = async (): Promise<void> => {
   const partialTemplate = await loadSupportTableTemplate();
@@ -47,6 +48,13 @@ const registerPartials = async (): Promise<void> => {
   Handlebars.registerPartial('features-widget', featuresTemplate);
   const navigationTemplate = await loadNavigationSectionTemplate();
   Handlebars.registerPartial('navigation', navigationTemplate);
+  const relatedFeaturesTemplate = await loadRelatedFeaturesTemplate();
+  Handlebars.registerPartial('related-features', (data) => {
+    if (!data.length) {
+      return '';
+    }
+    return relatedFeaturesTemplate(data);
+  });
 };
 
 const registerTernary = async (): Promise<void> => {

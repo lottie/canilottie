@@ -35,6 +35,8 @@ class SearchWidget extends HTMLElement {
   private results: HTMLUListElement | null = null;
 
   private message: HTMLDivElement | null = null;
+  
+  private searchContainer: HTMLDivElement | null = null;
 
   constructor() {
     super();
@@ -45,10 +47,13 @@ class SearchWidget extends HTMLElement {
     this.render();
     const { shadowRoot } = this;
     this.input = shadowRoot.querySelector<HTMLInputElement>('#search_input')!;
+    this.searchContainer = shadowRoot.querySelector<HTMLInputElement>('#search_container')!;
     this.form = shadowRoot.querySelector<HTMLFormElement>('#form')!;
     this.results = shadowRoot.querySelector<HTMLUListElement>('#results');
     this.message = shadowRoot.querySelector<HTMLDivElement>('#message');
 
+    this.input.addEventListener('focus', () => this.textInputFocus());
+    this.input.addEventListener('blur', () => this.textInputBlur());
     this.input.addEventListener('input', () => this.textInput());
     this.form.addEventListener('submit', (e) => this.submitForm(e));
     document.addEventListener('click', (e) => this.checkForClickOutside(e));
@@ -114,6 +119,16 @@ class SearchWidget extends HTMLElement {
       this.autoSubmitTimer = 0;
     }
     this.autoSubmitTimer = window.setTimeout(() => this.doSearch(), AUTO_SUBMIT_TIMOUT_MS);
+  }
+
+  private textInputFocus() {
+    const classList = this.searchContainer.classList;
+    classList.add('search-container--focus');
+  }
+
+  private textInputBlur() {
+    const classList = this.searchContainer.classList;
+    classList.remove('search-container--focus');
   }
 
   private async doSearch() {

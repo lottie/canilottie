@@ -1,27 +1,6 @@
 @import "_constants";
 
 :root {
-  --color-palette-1: #d4afb9;
-  --color-palette-2: #d1cfe2;
-  --color-palette-3: #9cadce;
-  --color-palette-4: #7ec4cf;
-  --color-palette-5: #daeaf6;
-  // https://www.schemecolor.com/pastel-red-to-green.php
-  --color-red: #FF8989;
-  --color-dark-red: #5c0303;
-  --color-green: #6ddad2;
-  --color-light-green: #ebfbfa;
-
-
-  --color-dark-gray: #333333;
-  --color-light-gray: #dfe1e1;
-  --color-white: #ffffff;
-  --color-primary: #006a5f;
-  --color-primary-container: #6ddad2;
-  --color-error: #f57971;
-  --color-dark-black: #1a1c1a;
-  --color-dark-black-half: #1a1c1a77;
-  --color-gray: #cddad6;
 
   --grid-unit: 8px;
 
@@ -34,7 +13,57 @@
   --font-large: 2rem; // 32px
   --font-larger: 3rem; // 48px
 
+  --color-primary: #006A5F;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #6DDAD2;
+  --color-on-primary-container: #1A1C1C;
+  --color-secondary: #006A5F;
+  --color-on-secondary: #FFFFFF;
+  --color-secondary-container: #6DDAD2;
+  --color-on-secondary-container: #1A1C1C;
+  --color-error: #F57971;
+  --color-on-error: #1A1C1C;
+  --color-background: #FFFFFF;
+  --color-on-background: #1A1C1C;
+  --color-surface: #FFFFFF;
+  --color-on-surface: #1A1C1C;
+  --color-surface-variant: #D0F1EE;
+  --color-on-surface-variant: #1A1C1C;
+  --color-surface-1: #F2FDFC;
+  --color-surface-2: #EBFBFA;
+  --color-surface-3: #E3FAF8;
+  --color-surface-4: #E0F9F8;
+  --color-surface-5: #DBF9F6;
+  --color-outline: #CDDAD6;
+
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #98E0DB;
+    --color-on-primary: #1A1C1C;
+    --color-primary-container: #6DDAD2;
+    --color-on-primary-container: #1A1C1C;
+    --color-secondary: #98E0DB;
+    --color-on-secondary: #1A1C1C;
+    --color-secondary-container: #6DDAD2;
+    --color-on-secondary-container: #1A1C1C;
+    --color-error: #FFB4A9;
+    --color-on-error: #680003;
+    --color-background: #1A1C1C;
+    --color-on-background: #E0E3E1;
+    --color-surface: #1A1C1C;
+    --color-on-surface: #E0E3E1;
+    --color-surface-variant: #2D403F;
+    --color-on-surface-variant: #BFC9C6;
+    --color-surface-1: #1E2525;
+    --color-surface-2: #212B2B;
+    --color-surface-3: #233130;
+    --color-surface-4: #243332;
+    --color-surface-5: #263735;
+    --color-outline: #454F4C;
+  }
 }
 
 * {
@@ -44,7 +73,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  background: var(--color-white);
+  background: var(--color-background);
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -64,7 +93,7 @@ li {
 }
 
 a {
-  color: var(--color-green);
+  color: var(--color-secondary-container);
 }
 
 .search {
@@ -80,20 +109,10 @@ a {
       }
     }
 }
-.main-title {
-  font-size: var(--font-larger);
-  font-weight: 100;
-  color: var(--color-light-gray);
-  padding: calc(var(--grid-unit) * 2) 0;
-  text-align: center;
-}
 
 body.embed  {
   padding: 0;
   .search {
-    display: none;
-  }
-  .main-title {
     display: none;
   }
 }
@@ -117,7 +136,6 @@ body.embed  {
     display: inline-block;
     text-decoration: none;
     margin: calc(var(--grid-unit) * 1) 0;
-    color: var(--color-dark-black);
     @include font-label-medium;
 
     &__figure {
@@ -133,12 +151,13 @@ body.embed  {
 
     &__label {
       margin-top: calc(var(--grid-unit) * 0.5);
+      color: var(--color-on-surface);
     }
       
     &:hover {
 
       .navigation__button__figure {
-        background-color: var(--color-green);
+        background-color: var(--color-secondary-container);
       }
     }
   }
@@ -156,7 +175,7 @@ body.embed  {
 
   .navigation {
     width: 100%;
-    background-color: var(--color-light-green);
+    background-color: var(--color-surface-2);
     padding: calc(var(--grid-unit) * 1) calc(var(--grid-unit) * 1);
     display: flex;
     justify-content: space-evenly;
