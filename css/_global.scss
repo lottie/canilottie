@@ -123,6 +123,27 @@ body.embed  {
   &__title {
     @include font-headline-medium;
   }
+
+  &__footer {
+    flex: 0 0 auto;
+    height: 50px;
+    display: flex;
+    gap: calc(var(--grid-unit) * 2);
+    align-items: center;
+    justify-content: center;
+    margin-top: calc(var(--grid-unit) * 3);
+
+    &__link {
+
+      color: var(--color-on-background);
+      text-decoration: none;
+
+      &__image {
+        vertical-align: middle;
+      }
+
+    }
+  }
 }
 
 .navigation {

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/index.scss" rel="stylesheet" />
+    <link href="../css/expandPage.scss" rel="stylesheet" />
   </head>
   <body>
     <!-- TEMPLATES -->
@@ -15,26 +16,31 @@
     <!-- END TEMPLATES -->
     {{> navigation}}
     <main class="main">
-      {{> search-section isSmall=true}}
-      <section class="expand-page__header">
-        <h2
-          class="expand-page__header__title"
-        >
-          <a
-            href="{{spec}}"
-            class="expand-page__header__title__link"
-          >
-              {{title}}
-            </a>
-        </h2>
-        <p class="expand-page__header__description">{{description}}</p>
-      </section>
-      {{> support-table stats}}
-      <features-widget></features-widget>
+      <div class="main__wrapper">
+        <div class="main__wrapper__content">
+          {{> search-section isSmall=true}}
+          <section class="expand-page__header">
+            <h2
+              class="expand-page__header__title"
+            >
+              <a
+                href="{{spec}}"
+                class="expand-page__header__title__link"
+              >
+                  {{title}}
+                </a>
+            </h2>
+            <p class="expand-page__header__description">{{description}}</p>
+          </section>
+          {{> support-table stats}}
+          <features-widget></features-widget>
+        </div>
+        <aside class="aside">
+          {{> related-features sub_features}}
+        </aside>
+      </div>
+      {{> footer}}
     </main>
-    <aside class="aside">
-      {{> related-features sub_features}}
-    </aside>
     <script
       src="../src/search-widget.ts"
       type="module"

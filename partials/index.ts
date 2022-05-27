@@ -32,6 +32,7 @@ const loadMainTitleSectionTemplate = async (): Promise<HandlebarsTemplateDelegat
 const loadFeaturesTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('features-widget.html');
 const loadNavigationSectionTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('navigation.html');
 const loadRelatedFeaturesTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('related-features.html');
+const loadFooterSectionTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('main-footer.html');
 
 const registerPartials = async (): Promise<void> => {
   const partialTemplate = await loadSupportTableTemplate();
@@ -48,6 +49,8 @@ const registerPartials = async (): Promise<void> => {
   Handlebars.registerPartial('features-widget', featuresTemplate);
   const navigationTemplate = await loadNavigationSectionTemplate();
   Handlebars.registerPartial('navigation', navigationTemplate);
+  const footerTemplate = await loadFooterSectionTemplate();
+  Handlebars.registerPartial('footer', footerTemplate);
   const relatedFeaturesTemplate = await loadRelatedFeaturesTemplate();
   Handlebars.registerPartial('related-features', (data) => {
     if (!data.length) {
