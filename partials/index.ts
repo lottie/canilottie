@@ -6,10 +6,12 @@ import {
 import { marked } from 'marked';
 import {
   CanIUseData,
+  AboutData,
 } from '../src/common';
 import registerProductSupportHelper from './productSupport';
 import registerVersionStatHelper from './versionStat';
 import registerFeaturesHelper from './features';
+import { formatDate } from '../helpers/date';
 
 const templateDir = './templates';
 const loadTemplate = async (filename: string): Promise<HandlebarsTemplateDelegate<any>> => {
@@ -20,6 +22,7 @@ const loadTemplate = async (filename: string): Promise<HandlebarsTemplateDelegat
 const loadPageTemplate = async (): Promise<HandlebarsTemplateDelegate<CanIUseData>> => loadTemplate('page.html');
 
 const loadIndexTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('index.html');
+const loadAboutTemplate = async (): Promise<HandlebarsTemplateDelegate<AboutData>> => loadTemplate('about.html');
 
 const loadFeaturesListTemplate = async (): Promise<HandlebarsTemplateDelegate<any>> => loadTemplate('features-list.html');
 
@@ -32,7 +35,7 @@ const loadMainTitleSectionTemplate = async (): Promise<HandlebarsTemplateDelegat
 const loadFeaturesTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('features-widget.html');
 const loadNavigationSectionTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('navigation.html');
 const loadRelatedFeaturesTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('related-features.html');
-const loadFooterSectionTemplate = async (): Promise<HandlebarsTemplateDelegate<void>> => loadTemplate('main-footer.html');
+const loadFooterSectionTemplate = async (): Promise<HandlebarsTemplateDelegate<AboutData>> => loadTemplate('main-footer.html');
 
 const registerPartials = async (): Promise<void> => {
   const partialTemplate = await loadSupportTableTemplate();
@@ -50,7 +53,9 @@ const registerPartials = async (): Promise<void> => {
   const navigationTemplate = await loadNavigationSectionTemplate();
   Handlebars.registerPartial('navigation', navigationTemplate);
   const footerTemplate = await loadFooterSectionTemplate();
-  Handlebars.registerPartial('footer', footerTemplate);
+  Handlebars.registerPartial('footer', () => footerTemplate({
+    date: formatDate(),
+  }));
   const relatedFeaturesTemplate = await loadRelatedFeaturesTemplate();
   Handlebars.registerPartial('related-features', (data) => {
     if (!data.length) {
@@ -92,5 +97,6 @@ export {
   initializeFunctions,
   loadPageTemplate,
   loadIndexTemplate,
+  loadAboutTemplate,
   loadFeaturesListTemplate,
 };

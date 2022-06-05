@@ -1,8 +1,8 @@
 <div class="view" id={{id}}>
   <ul>
     {{#each elements}}
-      <li class="notes-element {{ternary label 'notes-element--highlight' ''}}" id="note-{{label}}">
-        <span class="notes-element-content">{{markdown text}}</span>
+      <li class="section-element" id="note-{{label}}">
+        <span class="section-element__content">{{markdown text}}</span>
       </li>
     {{/each}}
   </ul>

@@ -1,6 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
+  max-width: calc(var(--grid-unit) * 117);
 
   &__body {
     display: flex;
@@ -21,6 +22,7 @@
 .index__search {
   margin-top: calc(var(--grid-unit) * 1);
   color: var(--color-on-surface);
+  padding: 0 calc(var(--grid-unit) * 1);
 }
 
 #navigation__home .navigation__button__figure {

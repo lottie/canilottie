@@ -13,12 +13,14 @@ import {
   initializeFunctions as initializePartialsFunctions,
   loadPageTemplate,
   loadIndexTemplate,
+  loadAboutTemplate,
 } from './partials/index';
 import { buildApi } from './helpers/api';
 import { buildFeaturesList } from './helpers/featuresList';
 import {
   createTargetDirs, getDirPath, getSourceDirListing, htmlFilenameFromJSONFilename, jsonFilenameWithoutExtension, loadFile,
 } from './helpers/file';
+import { formatDate } from './helpers/date';
 
 interface FeatureInterface {
   data: CanIUseData
@@ -105,6 +107,13 @@ const copyOverFixedFiles = async (): Promise<void> => {
   await writeFile(
     join(getDirPath('build'), 'index.html'),
     indexTemplate(),
+  );
+  const aboutTemplate = await loadAboutTemplate();
+  await writeFile(
+    join(getDirPath('build'), 'about.html'),
+    aboutTemplate({
+      date: formatDate(),
+    }),
   );
   // await copyFile('./pages/index.html', join(buildDir, 'index.html'));
 };

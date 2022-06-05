@@ -127,7 +127,7 @@
 }
 
 .related-features {
-  background-color: var(  --color-surface-variant);
+  background-color: var(--color-surface-variant);
   padding: calc(var(--grid-unit) * 3);
   border-radius: calc(var(--grid-unit) * 3);
 
@@ -136,6 +136,19 @@
   }
   &__features {
     @include font-body-medium;
+    margin-top: calc(var(--grid-unit) * 2);
+
+    a {
+      color: var(--color-on-secondary-container);
+      text-decoration: none;
+      padding: var(--grid-unit) var(--grid-unit);
+      display: block;
+      border-radius: calc(var(--grid-unit) * 2);
+
+      &:hover {
+        background-color: var(--color-secondary-container);
+      }
+    }
   }
 }
 

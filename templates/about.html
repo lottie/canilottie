@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/index.scss" rel="stylesheet" />
+    <link href="../css/about.scss" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- TEMPLATES -->
+    {{> search-widget}}
+    {{> search-result}}
+    <!-- END TEMPLATES -->
+    {{> navigation}}
+    <main class="main">
+      <div class="main__wrapper">
+        <div class="main__wrapper__content">
+          {{> search-section isSmall=true}}
+          <section class="about__body">
+            <h2
+              class="about__body__title"
+            >
+              About Can I Lottie
+            </h2>
+            <div
+              class="about__body__description"
+            >
+              <p>
+                Can I Lottie provides up-to-date support tables for support of Lottie technologies the web, Skia, 
+                Android and iOS. This site is part of the <a href="https://lottie-animation-community.github.io/docs/">Lottie Animation Community</a>, 
+                a growing collection of helpful tools to make Lottie developer’s lives easier. 
+                The site was built and is maintained by <b>:MAINTAINER:</b>, with the help of <b>:MAINTAINER:</b>.
+              </p>
+              <p>
+                More from the Lottie Animation Community:
+              </p>
+              <ul>
+                <li class="about__body__description__list">
+                  <span class="about__body__description__list__bullet">●</span>
+                  <a
+                    href="https://lottie-animation-community.github.io/docs/" 
+                    class="about__body__description__link" 
+                  >
+                    Lottie Animation Docs
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <h3 class="about__body__subsection">FAQ</h3>
+            <h4 class="about__body__subsection__title">I found incorrect information! How can I file a bug?</h4>
+            <div class="about__body__subsection__content">Please head over to our GitHub project and <a href="https://github.com/lottie-animation-community/caniuse/issues">submit a new issue</a> there.</div>
+            <h4 class="about__body__subsection__title">How often is this page updated?</h4>
+            <div class="about__body__subsection__content">The last update was pushed on {{date}}.</div>
+            <h4 class="about__body__subsection__title">May I use your data in my presentation/article/site, etc?</h4>
+            <div class="about__body__subsection__content">Yes, the support data on this site is free to use under the MIT license</div>
+            
+            <h3 class="about__body__subsection">Helpful resources</h3>
+            <ul class="about__body__subsection__title">
+              <li class="about__body__description__list">
+                <span class="about__body__description__list__bullet">●</span>
+                <a
+                  href="https://lottie-animation-community.github.io/docs/" 
+                  class="about__body__description__link" 
+                >
+                  Official Lottie documentaion
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      {{> footer date}}
+    </main>
+    <script
+      src="../src/search-widget.ts"
+      type="module"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

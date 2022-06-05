@@ -16,6 +16,13 @@
 
     .wrapper {
       padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
+    }
+
+    .separator {
+      padding: 0 calc(var(--grid-unit) * 2);
+    }
+
+    .separator__line {
       border-top: 1px solid var(--color-outline);
     }
 
@@ -96,7 +103,26 @@
     .notes-element-content {
       padding: calc(var(--grid-unit) * 2);
     }
+
+    /* SECTIONS */
+    .section-element {
+      padding: calc(var(--grid-unit) * 1.75) 0 calc(var(--grid-unit) * 0.25);
+    }
+
+    .section-element__content {
+      padding: calc(var(--grid-unit) * 1);
+    }
+
+    .section-element__content a {
+      color: var(--color-secondary);
+    }
+
   </style>
+  <div class="separator">
+    <div class="separator__line">
+    
+    </div>
+  </div>
   <section
     class="wrapper"
     id="main"

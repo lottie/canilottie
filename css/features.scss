@@ -16,7 +16,7 @@
       border: 1px solid var(--color-outline);
       border-top-left-radius: var(--grid-unit);
       border-top-right-radius: var(--grid-unit);
-      color: var(--color-on-secondary);
+      color: var(--color-on-secondary-container);
 
       &__row {
         display: flex;
@@ -25,7 +25,7 @@
 
         &__cell {
           vertical-align: middle;
-          width: 100px;
+          width: 90px;
           flex: 0 0 auto;
           text-align: center;
 
@@ -58,7 +58,7 @@
 
         &__cell {
           padding: var(--grid-unit);
-          width: 100px;
+          width: 90px;
           flex: 0 0 auto;
 
           &--feature {
@@ -100,4 +100,19 @@
 
 #navigation__features .navigation__button__figure {
   background-color: var(--color-secondary-container);
+}
+
+@media  (max-width: 600px) {
+
+  .main__table__header__row__cell {
+    width: 48px;
+
+    &__icon {
+      display: none;
+    }
+  }
+
+  .main__table__body__row__cell {
+    width: 48px;
+  }
 }

@@ -58,4 +58,8 @@ export interface CanIUseData {
   ae_codes?: string[]
 }
 
+export interface AboutData {
+  date: string
+}
+
 export type CanIUseSearchableData = Omit<CanIUseData, 'stats'>
