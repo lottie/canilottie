@@ -15,110 +15,112 @@
     <!-- END TEMPLATES -->
     {{> navigation}}
     <main class="main">
-      <div class="main__body">
-        {{> search-section isSmall=true}}
-        <h1 class="main__title">Lottie feature index</h1>
-        <div class="main__table">
-          <div class="main__table__header">
-            <div class="main__table__header__row">
-              <div class="main__table__header__row__cell main__table__header__row__cell--feature">Feature</div>
-              <div class="main__table__header__row__cell">
-                <img
-                  src="/assets/features/world.svg"
-                  class="main__table__header__row__cell__icon"
-                />
-                <span
-                  class="main__table__header__row__cell__label"
-                >
-                  Web
-                </span>
-              </div>
-              <div class="main__table__header__row__cell">
-                <img
-                  src="/assets/features/computer.svg"
-                  class="main__table__header__row__cell__icon"
-                />
-                <span
-                  class="main__table__header__row__cell__label"
-                >
-                  Skottie
-                </span>
-              </div>
-              <div class="main__table__header__row__cell">
-                <img
-                  src="/assets/features/android.svg"
-                  class="main__table__header__row__cell__icon"
-                />
-                <span
-                  class="main__table__header__row__cell__label"
-                >
-                  Android
-                </span>
-              </div>
-              <div class="main__table__header__row__cell">
-                <img
-                  src="/assets/features/apple.svg"
-                  class="main__table__header__row__cell__icon"
-                />
-                <span
-                  class="main__table__header__row__cell__label"
-                >
-                  iOS
-                </span>
+      <div class="main__content">
+        <div class="main__body">
+          {{> search-section isSmall=true}}
+          <h1 class="main__title">Lottie feature index</h1>
+          <div class="main__table">
+            <div class="main__table__header">
+              <div class="main__table__header__row">
+                <div class="main__table__header__row__cell main__table__header__row__cell--feature">Feature</div>
+                <div class="main__table__header__row__cell">
+                  <img
+                    src="/assets/features/world.svg"
+                    class="main__table__header__row__cell__icon"
+                  />
+                  <span
+                    class="main__table__header__row__cell__label"
+                  >
+                    Web
+                  </span>
+                </div>
+                <div class="main__table__header__row__cell">
+                  <img
+                    src="/assets/features/computer.svg"
+                    class="main__table__header__row__cell__icon"
+                  />
+                  <span
+                    class="main__table__header__row__cell__label"
+                  >
+                    Skottie
+                  </span>
+                </div>
+                <div class="main__table__header__row__cell">
+                  <img
+                    src="/assets/features/android.svg"
+                    class="main__table__header__row__cell__icon"
+                  />
+                  <span
+                    class="main__table__header__row__cell__label"
+                  >
+                    Android
+                  </span>
+                </div>
+                <div class="main__table__header__row__cell">
+                  <img
+                    src="/assets/features/apple.svg"
+                    class="main__table__header__row__cell__icon"
+                  />
+                  <span
+                    class="main__table__header__row__cell__label"
+                  >
+                    iOS
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="main__table__body">
-            {{#each features}}
-              <div class="main__table__body__row">
-                <div class="main__table__body__row__cell main__table__body__row__cell--feature {{#unless is_sub_level}} main__table__body__row__cell--main {{/unless}}"
-                  style="padding-left: calc({{sub_level}} * 10px)"
-                >
-                  <a
-                    href="{{link}}"
-                    class="main__table__body__row__cell__link"
+            <div class="main__table__body">
+              {{#each features}}
+                <div class="main__table__body__row">
+                  <div class="main__table__body__row__cell main__table__body__row__cell--feature {{#unless is_sub_level}} main__table__body__row__cell--main {{/unless}}"
+                    style="padding-left: calc({{sub_level}} * 10px)"
                   >
-                    {{#if is_sub_level}}
-                    <img
-                      src="/assets/features//subfeature.svg"
-                      class="main__table__body__row__cell__link__image"
+                    <a
+                      href="{{link}}"
+                      class="main__table__body__row__cell__link"
+                    >
+                      {{#if is_sub_level}}
+                      <img
+                        src="/assets/features//subfeature.svg"
+                        class="main__table__body__row__cell__link__image"
+                      />
+                      {{/if}}
+                      <span class="main__table__body__row__cell__link__text">
+                        {{title}}
+                      </span>
+                    </a>
+                  </div>
+                  <div class="main__table__body__row__cell main__table__body__row__cell--support">
+                    <img 
+                      src="{{feature-icon players 'lottie-web'}}"
+                      class="main__table__body__row__cell__icon"
                     />
-                    {{/if}}
-                    <span class="main__table__body__row__cell__link__text">
-                      {{title}}
-                    </span>
-                  </a>
+                  </div>
+                  <div class="main__table__body__row__cell main__table__body__row__cell--support">
+                    <img 
+                      src="{{feature-icon players 'skottie'}}"
+                      class="main__table__body__row__cell__icon"
+                    />
+                  </div>
+                  <div class="main__table__body__row__cell main__table__body__row__cell--support">
+                    <img 
+                      src="{{feature-icon players 'lottie-android'}}"
+                      class="main__table__body__row__cell__icon"
+                    />
+                  </div>
+                  <div class="main__table__body__row__cell main__table__body__row__cell--support">
+                    <img 
+                      src="{{feature-icon players 'lottie-ios'}}"
+                      class="main__table__body__row__cell__icon"
+                    />
+                  </div>
                 </div>
-                <div class="main__table__body__row__cell main__table__body__row__cell--support">
-                  <img 
-                    src="{{feature-icon players 'lottie-web'}}"
-                    class="main__table__body__row__cell__icon"
-                  />
-                </div>
-                <div class="main__table__body__row__cell main__table__body__row__cell--support">
-                  <img 
-                    src="{{feature-icon players 'skottie'}}"
-                    class="main__table__body__row__cell__icon"
-                  />
-                </div>
-                <div class="main__table__body__row__cell main__table__body__row__cell--support">
-                  <img 
-                    src="{{feature-icon players 'lottie-android'}}"
-                    class="main__table__body__row__cell__icon"
-                  />
-                </div>
-                <div class="main__table__body__row__cell main__table__body__row__cell--support">
-                  <img 
-                    src="{{feature-icon players 'lottie-ios'}}"
-                    class="main__table__body__row__cell__icon"
-                  />
-                </div>
-              </div>
-            {{/each}}
+              {{/each}}
+            </div>
           </div>
         </div>
+        {{> footer}}
       </div>
-      {{> footer}}
     </main>
     <script
       src="../src/search-widget.ts"

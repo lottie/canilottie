@@ -42,7 +42,8 @@ const createAPIForEachDataFile = async (sourceDirListing: string[]): Promise<voi
   await writeFile(
     join(getDirPath('api'), 'index.json'),
     JSON.stringify({
-      rootPath: 'https://lottie-animation-community.web.app/',
+      // rootPath: 'https://lottie-animation-community.web.app/',
+      rootPath: 'http://192.168.1.8:8080/',
       features: formattedFeatures,
     }),
   );

@@ -58,6 +58,8 @@ a {
     &__content {
       overflow-x: auto;
       flex: 1 1 auto;
+      max-width: calc(var(--grid-unit) * 105);
+      padding: 0 calc(var(--grid-unit) * 6);
     }
   }
 }
@@ -66,9 +68,19 @@ a {
   background-color: var(--color-secondary-container);
 }
 
+@media  (max-width: 840px) {
+  .main__wrapper__content {
+    padding: 0 calc(var(--grid-unit) * 4);
+  }
+}
+
 @media  (max-width: 600px) {
 
   .main__wrapper {
     flex-direction: column;
+
+    &__content {
+      padding: 0;
+    }
   }
 }

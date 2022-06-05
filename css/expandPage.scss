@@ -164,11 +164,20 @@
     &__content {
       overflow-x: auto;
       flex: 1 1 auto;
+      max-width: calc(var(--grid-unit) * 105);
+      padding: 0 calc(var(--grid-unit) * 6);
     }
   }
 }
 
+@media  (max-width: 840px) {
+  .main__wrapper__content {
+    padding: 0 calc(var(--grid-unit) * 4);
+  }
+}
+
 @media  (max-width: 600px) {
+
   .aside {
     width: 100%;
     margin: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 3) 0 0;
@@ -176,5 +185,9 @@
 
   .main__wrapper {
     flex-direction: column;
+
+    &__content {
+      padding: 0;
+    }
   }
 }
