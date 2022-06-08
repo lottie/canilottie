@@ -2,7 +2,11 @@
 
 .main {
 
-  padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2) 0 calc(var(--grid-unit) * 2);
+  padding-top: calc(var(--grid-unit) * 3);
+  
+  &__header {
+    padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
+  }
 
   &__content {
     width: 100%;
@@ -14,7 +18,7 @@
   }
 
   &__table {
-    margin-top: calc(var(--grid-unit) * 3);
+    padding: 0 calc(var(--grid-unit)*2) calc(var(--grid-unit)*4);
     width: 100%;
 
     &__header {
@@ -63,10 +67,10 @@
         border: 1px solid var(--color-outline);
         padding: 0 var(--grid-unit);
         display: flex;
-        @include font-body-medium;
+        @include font-body-large;
 
         &__cell {
-          padding: var(--grid-unit);
+          padding: calc(var(--grid-unit) * 1.375) var(--grid-unit) var(--grid-unit) var(--grid-unit);
           width: 90px;
           flex: 0 0 auto;
 
@@ -83,7 +87,6 @@
           }
 
           &__link {
-            color: var(--color-primary);
             text-decoration: none;
 
             &__image {
@@ -92,8 +95,11 @@
             }
 
             &__text {
-              width: 12px;
-              height: 12px;
+             
+            }
+
+            &:hover {
+              text-decoration: underline;
             }
           }
 

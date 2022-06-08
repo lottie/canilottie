@@ -12,6 +12,7 @@
     max-width: calc(var(--grid-unit) * 105);
     align-self: center;
     width: 100%;
+    padding-bottom: calc(var(--grid-unit) * 9);
   }
 }
 
@@ -20,11 +21,23 @@
 }
 
 .index__search {
+  font-size: var(--font-medium);
+  line-height: 1.5rem;
+  font-weight: 400;
+  font-family: var(--font-family);
   margin-top: calc(var(--grid-unit) * 1);
   color: var(--color-on-surface);
-  padding: 0 calc(var(--grid-unit) * 1);
+  padding: 0 calc(var(--grid-unit) * 2);
 }
 
 #navigation__home .navigation__button__figure {
   background-color: var(--color-secondary-container);
+}
+
+@media  (max-width: 600px) {
+  .index__search {
+    text-align: center;
+    margin-top: calc(var(--grid-unit) * 1);
+    color: var(--color-on-surface);
+  }
 }

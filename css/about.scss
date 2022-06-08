@@ -1,12 +1,8 @@
 @import "_constants";
 
-a {
-  color: var(--color-primary);
-}
-
 .about {
 
-  padding: calc(var(--grid-unit) * 3);
+  padding-top: calc(var(--grid-unit) * 3);
   overflow-y: auto;
 
   &__body {
@@ -15,30 +11,35 @@ a {
 
     &__title {
       @include font-headline-medium;
-      margin-bottom: var(--grid-unit);
+      margin-bottom: calc(var(--grid-unit) * 2);
     }
 
     &__description {
       @include font-body-large;
 
-      &__list {
-        color: var(--color-primary);
+      & p {
+        margin-top: calc(var(--grid-unit) * 2);
+      }
 
-        &__bullet {
+      &__list {
+        margin: var(--grid-unit) 0 0 calc(var(--grid-unit) * 2);
+        
+        & li {
           list-style: disc;
-          padding: 0 10px;
         }
       }
     }
 
     &__subsection {
       @include font-headline-small;
-      margin: calc(var(--grid-unit) * 4) 0  calc(var(--grid-unit) * 4);
+      margin: calc(var(--grid-unit) * 6) 0  calc(var(--grid-unit) * 2);
 
       &__title {
-        margin-top: calc(var(--grid-unit) * 2);
+        margin-top: calc(var(--grid-unit) * 4);
+        margin-bottom: var(--grid-unit);
         @include font-title-medium;
       }
+
       &__content {
         @include font-body-large;
       }
@@ -47,13 +48,14 @@ a {
 }
 
 .main {
-  padding: calc(var(--grid-unit)*3) calc(var(--grid-unit)*2) 0 calc(var(--grid-unit)*2);
+  padding-top: calc(var(--grid-unit)*3);
   width: 100%;
   min-width: 0;
   
   &__wrapper {
     display: flex;
     width: 100%;
+    padding-bottom: calc(var(--grid-unit) * 9);
 
     &__content {
       overflow-x: auto;

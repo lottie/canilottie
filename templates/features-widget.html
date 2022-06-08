@@ -7,15 +7,23 @@
     }
 
     li {
-      list-style: none;
+      list-style: disc;
     }
 
     p {
       margin: 0;
     }
 
+    a { 
+      color: var(--color-primary);
+    }
+
+    a:hover {
+      color: var(--color-on-background);
+    }
+
     .wrapper {
-      padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
+      padding: calc(var(--grid-unit) * 4) calc(var(--grid-unit) * 2);
     }
 
     .separator {
@@ -29,6 +37,7 @@
     nav.navigation {
       width: 100%;
       display: flex;
+      margin-bottom: calc(var(--grid-unit) * 4);
     }
 
     .navigation__button {
@@ -38,7 +47,7 @@
       font-weight: 500;
       font-family: var(--font-family);
       color: var(--color-on-secondary-container);
-      padding: calc(var(--grid-unit)*1) calc(var(--grid-unit)*2);
+      padding: calc(var(--grid-unit)*0.75) calc(var(--grid-unit)*2);
       margin-right: calc(var(--grid-unit)*1);
       border-radius: calc(var(--grid-unit) * 3);
       cursor: pointer;
@@ -68,26 +77,24 @@
     .navigation__button__count {
       border-radius: calc(var(--grid-unit) * 3);
       background: var(--color-surface-5);
-      padding: 0 calc(var(--grid-unit) * 0.75);
+      padding: 0 calc(var(--grid-unit) * 0.5);
+      margin-left: calc(var(--grid-unit) * 0.25);
+      font-size: var(--font-small);
+      line-height: 1rem;
     }
 
     .view {
       width: 100%;
       display: none;
-      margin-top: calc(var(--grid-unit) * 2);
     }
 
     /* NOTES */
 
     .notes-element {
       display: flex;
-      gap: calc(var(--grid-unit) * 0.5);
+      gap: calc(var(--grid-unit) * 2);
       align-items: center;
-      padding: calc(var(--grid-unit) * 1.75) 0 calc(var(--grid-unit) * 0.25);
-    }
-
-    .notes-element--highlight:hover {
-      border-bottom: 1px solid var(--color-outline)!important;
+      padding-bottom: calc(var(--grid-unit) * 2.5);
     }
 
     .notes-element-label {
@@ -95,18 +102,15 @@
       line-height: 1rem;
       font-weight: 400;
       border: 1px solid var(--color-outline);
-      padding: calc(var(--grid-unit) * 0.5);
       width: 14px;
+      height: 14px;
       text-align: center;
-    }
-
-    .notes-element-content {
-      padding: calc(var(--grid-unit) * 2);
     }
 
     /* SECTIONS */
     .section-element {
-      padding: calc(var(--grid-unit) * 1.75) 0 calc(var(--grid-unit) * 0.25);
+      margin-left: calc(var(--grid-unit) * 2);
+      padding: var(--grid-unit) 0 calc(var(--grid-unit) * 0.25);
     }
 
     .section-element__content {

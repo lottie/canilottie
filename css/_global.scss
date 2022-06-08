@@ -37,7 +37,7 @@
   --color-surface-5: #DBF9F6;
   --color-outline: #CDDAD6;
 
-  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family: system-ui;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -76,7 +76,7 @@ html, body {
   height: 100%;
   background: var(--color-background);
   overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family)
 }
 
 body {
@@ -94,7 +94,11 @@ li {
 }
 
 a {
-  color: var(--color-secondary-container);
+  color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-on-background);
+  }
 }
 
 .search {
@@ -142,26 +146,34 @@ body.embed  {
 
   &__footer {
     flex: 0 0 auto;
-    height: 50px;
     display: flex;
-    gap: calc(var(--grid-unit) * 2);
+    column-gap: calc(var(--grid-unit)*3);
+    row-gap: var(--grid-unit);
     align-items: center;
     justify-content: center;
     margin-top: calc(var(--grid-unit) * 3);
+    margin-bottom: calc(var(--grid-unit) * 3);
     flex-wrap: wrap;
+    font-size: var(--font-small-medium);
+    max-width: calc(var(--grid-unit) * 105);
+
+    & a {
+      color: var(--color-on-background);
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
 
     &__element {
       white-space: nowrap;
+      line-height: calc(var(--grid-unit) * 3);
     }
 
     &__link {
-
-      color: var(--color-on-background);
-      text-decoration: none;
-
-      &__image {
-        vertical-align: middle;
-      }
+      display: flex;
+      align-items: center;
+      gap: calc(var(--grid-unit) * 0.5);
     }
   }
 }
@@ -231,6 +243,12 @@ body.embed  {
   .search {
     &__logo {
       display: block;
+    }
+  }
+
+  .main {
+    &__footer {
+      padding: 0 calc(var(--grid-unit) * 2);
     }
   }
 }

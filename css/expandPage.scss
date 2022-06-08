@@ -11,13 +11,18 @@
 
     &__title {
       @include font-headline-medium;
-      margin-bottom: var(--grid-unit);
+      margin-bottom: calc(var(--grid-unit) * 2);
 
       &__link {
         color: var(--color-on-background);
+        text-decoration: none;
 
         &:visited {
           color: var(--color-on-background);
+        }
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
@@ -28,7 +33,7 @@
 
   &__stats {
     margin-top: calc(var(--grid-unit) * 0);
-    padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
+    padding: calc(var(--grid-unit)*1) calc(var(--grid-unit)*2) calc(var(--grid-unit)*4);
 
     &__grid {
       display: flex;
@@ -177,6 +182,9 @@
 }
 
 @media  (max-width: 600px) {
+  .main {
+    padding: calc(var(--grid-unit)*3) 0 0 0;
+  }
 
   .aside {
     width: 100%;
