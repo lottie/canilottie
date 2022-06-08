@@ -32,6 +32,10 @@
 
 #navigation__home .navigation__button__figure {
   background-color: var(--color-secondary-container);
+
+  &__icon {
+    fill: var(--color-on-secondary-container);
+  }
 }
 
 @media  (max-width: 600px) {

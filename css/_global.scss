@@ -193,12 +193,15 @@ body.embed  {
 
     &__figure {
 
-      padding: calc(var(--grid-unit)*1) calc(var(--grid-unit)*2.5);
+      padding: calc(var(--grid-unit)*0.5) calc(var(--grid-unit)*2);
       border-radius: calc(var(--grid-unit) * 3);
 
-      &__image {
-        width: 18px;
-        height: 18px;
+      & svg {
+        display: block;
+      }
+
+      &__icon {
+        fill: var(--color-on-background);
       }
     }
 
@@ -210,13 +213,14 @@ body.embed  {
     &:hover {
 
       .navigation__button__figure {
-        background-color: var(--color-secondary-container);
+        background-color: var(--color-surface-variant);
       }
     }
   }
 
   &__logo {
     margin-bottom: calc(var(--grid-unit) * 4);
+    display: block;
   }
 }
 
@@ -229,7 +233,7 @@ body.embed  {
   .navigation {
     width: 100%;
     background-color: var(--color-surface-2);
-    padding: calc(var(--grid-unit) * 1) calc(var(--grid-unit) * 1);
+    padding: calc(var(--grid-unit)*0.5) calc(var(--grid-unit)*1) calc(var(--grid-unit)*1);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
