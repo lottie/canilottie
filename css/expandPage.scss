@@ -161,20 +161,6 @@
 
 .main {
   padding: calc(var(--grid-unit)*3) calc(var(--grid-unit)*2) 0 calc(var(--grid-unit)*2);
-  width: 100%;
-  min-width: 0;
-  
-  &__wrapper {
-    display: flex;
-    width: 100%;
-
-    &__content {
-      overflow-x: auto;
-      flex: 1 1 auto;
-      max-width: calc(var(--grid-unit) * 105);
-      padding: 0 calc(var(--grid-unit) * 6);
-    }
-  }
 }
 
 @media  (max-width: 840px) {

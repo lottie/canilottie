@@ -43,6 +43,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
     --color-primary: #98E0DB;
     --color-on-primary: #1A1C1C;
     --color-primary-container: #6DDAD2;
@@ -141,6 +142,15 @@ body.embed  {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: calc(var(--grid-unit) * 105);
+  }
 
   &__title {
     @include font-headline-medium;

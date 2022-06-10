@@ -8,15 +8,6 @@
     padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
   }
 
-  &__content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: calc(var(--grid-unit) * 105);
-    padding: 0 calc(var(--grid-unit) * 6);
-  }
-
   &__table {
     padding: 0 calc(var(--grid-unit)*2) calc(var(--grid-unit)*4);
     width: 100%;

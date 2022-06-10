@@ -1,8 +1,4 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  max-width: calc(var(--grid-unit) * 117);
-
   &__body {
     display: flex;
     flex-direction: column;

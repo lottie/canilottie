@@ -17,8 +17,7 @@
     <!-- END TEMPLATES -->
     {{> navigation}}
     <main class="main">
-      <div class="main__wrapper">
-        <div class="main__wrapper__content">
+      <div class="main__content">
           {{> search-section isSmall=true}}
           <section class="expand-page__header">
             <h2
@@ -35,7 +34,6 @@
           </section>
           {{> support-table stats}}
           <features-widget></features-widget>
-        </div>
         <!--
         <aside class="aside">
           {{> related-features sub_features}}

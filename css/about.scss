@@ -51,19 +51,6 @@
   padding-top: calc(var(--grid-unit)*3);
   width: 100%;
   min-width: 0;
-  
-  &__wrapper {
-    display: flex;
-    width: 100%;
-    padding-bottom: calc(var(--grid-unit) * 9);
-
-    &__content {
-      overflow-x: auto;
-      flex: 1 1 auto;
-      max-width: calc(var(--grid-unit) * 105);
-      padding: 0 calc(var(--grid-unit) * 6);
-    }
-  }
 }
 
 #navigation__about .navigation__button__figure {
