@@ -23,7 +23,7 @@
 
     &__header {
       background-color: var(--color-secondary-container);
-      padding: calc(var(--grid-unit) * 1) 0;
+      padding-top: calc(var(--grid-unit) * 1.2);
       width: 100%;
       height: calc(var(--grid-unit)*5);
       border: 1px solid var(--color-outline);
@@ -37,20 +37,23 @@
         padding: 0 var(--grid-unit);
 
         &__cell {
-          vertical-align: middle;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: calc(var(--grid-unit) * 0.5);
           width: 90px;
           flex: 0 0 auto;
           text-align: center;
 
           &--feature {
             flex: 1 1 auto;
-            text-align: left;
+            justify-content: left;
           }
 
-          &__icon {
-            width: 12px;
-            height: 12px;
-            vertical-align: middle;
+          & .icon {
+            width: 16px;
+            height: 16px;
+            background-color: var(--color-on-secondary-container);
           }
 
           &__label {
@@ -79,7 +82,20 @@
           }
 
           &--support {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+
+            & .icon__check {
+              background-color: var(--color-primary);
+            }
+
+            & .icon__block {
+              background-color: var(--color-error);
+            }
+
+            & .icon__bug {
+              background-color: var(--color-on-surface-variant);
+            }
           }
 
           &--main {
@@ -89,23 +105,17 @@
           &__link {
             text-decoration: none;
 
-            &__image {
-              width: 12px;
-              height: 12px;
-            }
-
-            &__text {
-             
+            &__icon {
+              width: 18px;
+              height: 18px;
+              background-color: var(--color-on-background);
+              opacity: 0.5;
+              display: inline-block;
             }
 
             &:hover {
               text-decoration: underline;
             }
-          }
-
-          &__icon {
-            width: 20px;
-            height: 20px;
           }
         }
       }
@@ -116,8 +126,8 @@
 #navigation__features .navigation__button__figure {
   background-color: var(--color-secondary-container);
 
-  &__icon {
-    fill: var(--color-on-secondary-container);
+  .icon {
+    background-color: var(--color-on-secondary-container);
   }
 }
 

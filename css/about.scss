@@ -69,8 +69,8 @@
 #navigation__about .navigation__button__figure {
   background-color: var(--color-secondary-container);
 
-  &__icon {
-    fill: var(--color-on-secondary-container);
+  .icon {
+    background-color: var(--color-on-secondary-container);
   }
 }
 

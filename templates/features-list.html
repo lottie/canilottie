@@ -26,10 +26,11 @@
               <div class="main__table__header__row">
                 <div class="main__table__header__row__cell main__table__header__row__cell--feature">Feature</div>
                 <div class="main__table__header__row__cell">
-                  <img
-                    src="/assets/features/world.svg"
-                    class="main__table__header__row__cell__icon"
-                  />
+                  <span
+                    class="icon icon__world
+                    role="presentation"
+                  >
+                  </span>
                   <span
                     class="main__table__header__row__cell__label"
                   >
@@ -37,10 +38,11 @@
                   </span>
                 </div>
                 <div class="main__table__header__row__cell">
-                  <img
-                    src="/assets/features/computer.svg"
-                    class="main__table__header__row__cell__icon"
-                  />
+                  <span
+                    class="icon icon__computer
+                    role="presentation"
+                  >
+                  </span>
                   <span
                     class="main__table__header__row__cell__label"
                   >
@@ -48,10 +50,11 @@
                   </span>
                 </div>
                 <div class="main__table__header__row__cell">
-                  <img
-                    src="/assets/features/android.svg"
-                    class="main__table__header__row__cell__icon"
-                  />
+                  <span
+                    class="icon icon__android
+                    role="presentation"
+                  >
+                  </span>
                   <span
                     class="main__table__header__row__cell__label"
                   >
@@ -59,10 +62,11 @@
                   </span>
                 </div>
                 <div class="main__table__header__row__cell">
-                  <img
-                    src="/assets/features/apple.svg"
-                    class="main__table__header__row__cell__icon"
-                  />
+                  <span
+                    class="icon icon__apple
+                    role="presentation"
+                  >
+                  </span>
                   <span
                     class="main__table__header__row__cell__label"
                   >
@@ -82,10 +86,11 @@
                       class="main__table__body__row__cell__link"
                     >
                       {{#if is_sub_level}}
-                      <img
-                        src="/assets/features//subfeature.svg"
-                        class="main__table__body__row__cell__link__image"
-                      />
+                      <span
+                        class="icon icon__subfeature main__table__body__row__cell__link__icon"
+                        role="presentation"
+                      >
+                      </span>
                       {{/if}}
                       <span class="main__table__body__row__cell__link__text">
                         {{title}}
@@ -93,28 +98,16 @@
                     </a>
                   </div>
                   <div class="main__table__body__row__cell main__table__body__row__cell--support">
-                    <img 
-                      src="{{feature-icon players 'lottie-web'}}"
-                      class="main__table__body__row__cell__icon"
-                    />
+                    {{{feature-icon players 'lottie-web'}}}
                   </div>
                   <div class="main__table__body__row__cell main__table__body__row__cell--support">
-                    <img 
-                      src="{{feature-icon players 'skottie'}}"
-                      class="main__table__body__row__cell__icon"
-                    />
+                    {{{feature-icon players 'skottie'}}}
                   </div>
                   <div class="main__table__body__row__cell main__table__body__row__cell--support">
-                    <img 
-                      src="{{feature-icon players 'lottie-android'}}"
-                      class="main__table__body__row__cell__icon"
-                    />
+                    {{{feature-icon players 'lottie-android'}}}
                   </div>
                   <div class="main__table__body__row__cell main__table__body__row__cell--support">
-                    <img 
-                      src="{{feature-icon players 'lottie-ios'}}"
-                      class="main__table__body__row__cell__icon"
-                    />
+                    {{{feature-icon players 'lottie-ios'}}}
                   </div>
                 </div>
               {{/each}}
