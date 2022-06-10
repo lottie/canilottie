@@ -46,17 +46,17 @@
       line-height: 1.25rem;
       font-weight: 500;
       font-family: var(--font-family);
-      color: var(--color-on-secondary-container);
+      color: var(--color-on-background);
       padding: calc(var(--grid-unit)*0.75) calc(var(--grid-unit)*2);
       margin-right: calc(var(--grid-unit)*1);
       border-radius: calc(var(--grid-unit) * 3);
       cursor: pointer;
       background: transparent;
-      transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
+      transition: 0.33s ease-in-out;
     }
 
     .navigation__button:hover {
-      background: var(--color-secondary-container);
+      background: var(--color-surface-variant);
     }
 
     .navigation__button--selected {
@@ -71,16 +71,19 @@
     }
 
     .navigation__button--selected .navigation__button__count {
-      display: none;
+      background: var(--color-primary);
+      color: var(--color-on-primary);
     }
 
     .navigation__button__count {
       border-radius: calc(var(--grid-unit) * 3);
       background: var(--color-surface-5);
+      color: var(--color-on-background);
       padding: 0 calc(var(--grid-unit) * 0.5);
       margin-left: calc(var(--grid-unit) * 0.25);
       font-size: var(--font-small);
       line-height: 1rem;
+      transition: 0.33s ease-in-out;
     }
 
     .view {

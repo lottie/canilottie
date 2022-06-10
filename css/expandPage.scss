@@ -81,10 +81,12 @@
 
         &--supported {
           background-color: var(--color-secondary-container);
+          color: var(--color-on-secondary-container)
         }
 
         &--unsupported {
           background-color: var(--color-error);
+          color: var(--color-on-error);
         }
 
         &--highlight {
