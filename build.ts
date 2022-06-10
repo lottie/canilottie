@@ -21,6 +21,7 @@ import {
   createTargetDirs, getDirPath, getSourceDirListing, htmlFilenameFromJSONFilename, jsonFilenameWithoutExtension, loadFile,
 } from './helpers/file';
 import { formatDate } from './helpers/date';
+import { copyFile } from 'node:fs/promises';
 
 interface FeatureInterface {
   data: CanIUseData
@@ -116,6 +117,7 @@ const copyOverFixedFiles = async (): Promise<void> => {
     }),
   );
   // await copyFile('./pages/index.html', join(buildDir, 'index.html'));
+  await copyFile('./assets/favicon.ico', join(getDirPath('build'), 'favicon.ico'));
 };
 
 const buildPages = async (sourceDirListing: string[]) => {
@@ -134,3 +136,4 @@ const main = async () => {
 };
 
 main();
+ 
