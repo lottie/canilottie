@@ -2,24 +2,19 @@
 
 .main {
 
-  padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2) 0 calc(var(--grid-unit) * 2);
-
-  &__content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: calc(var(--grid-unit) * 105);
-    padding: 0 calc(var(--grid-unit) * 6);
+  padding-top: calc(var(--grid-unit) * 3);
+  
+  &__header {
+    padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
   }
 
   &__table {
-    margin-top: calc(var(--grid-unit) * 3);
+    padding: 0 calc(var(--grid-unit)*2) calc(var(--grid-unit)*4);
     width: 100%;
 
     &__header {
       background-color: var(--color-secondary-container);
-      padding: calc(var(--grid-unit) * 1) 0;
+      padding-top: calc(var(--grid-unit) * 1.2);
       width: 100%;
       height: calc(var(--grid-unit)*5);
       border: 1px solid var(--color-outline);
@@ -33,20 +28,23 @@
         padding: 0 var(--grid-unit);
 
         &__cell {
-          vertical-align: middle;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: calc(var(--grid-unit) * 0.5);
           width: 90px;
           flex: 0 0 auto;
           text-align: center;
 
           &--feature {
             flex: 1 1 auto;
-            text-align: left;
+            justify-content: left;
           }
 
-          &__icon {
-            width: 12px;
-            height: 12px;
-            vertical-align: middle;
+          & .icon {
+            width: 16px;
+            height: 16px;
+            background-color: var(--color-on-secondary-container);
           }
 
           &__label {
@@ -63,10 +61,10 @@
         border: 1px solid var(--color-outline);
         padding: 0 var(--grid-unit);
         display: flex;
-        @include font-body-medium;
+        @include font-body-large;
 
         &__cell {
-          padding: var(--grid-unit);
+          padding: calc(var(--grid-unit) * 1.375) var(--grid-unit) var(--grid-unit) var(--grid-unit);
           width: 90px;
           flex: 0 0 auto;
 
@@ -75,7 +73,20 @@
           }
 
           &--support {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+
+            & .icon__check {
+              background-color: var(--color-primary);
+            }
+
+            & .icon__block {
+              background-color: var(--color-error);
+            }
+
+            & .icon__bug {
+              background-color: var(--color-on-surface-variant);
+            }
           }
 
           &--main {
@@ -83,23 +94,19 @@
           }
 
           &__link {
-            color: var(--color-primary);
             text-decoration: none;
 
-            &__image {
-              width: 12px;
-              height: 12px;
+            &__icon {
+              width: 18px;
+              height: 18px;
+              background-color: var(--color-on-background);
+              opacity: 0.5;
+              display: inline-block;
             }
 
-            &__text {
-              width: 12px;
-              height: 12px;
+            &:hover {
+              text-decoration: underline;
             }
-          }
-
-          &__icon {
-            width: 20px;
-            height: 20px;
           }
         }
       }
@@ -109,6 +116,10 @@
 
 #navigation__features .navigation__button__figure {
   background-color: var(--color-secondary-container);
+
+  .icon {
+    background-color: var(--color-on-secondary-container);
+  }
 }
 
 @media  (max-width: 840px) {

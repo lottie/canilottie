@@ -1,7 +1,9 @@
 <div class="view" id={{id}}>
   <ul>
     {{#each elements}}
-      <li>{{markdown title}}</li>
+      <li class="section-element" id="note-{{label}}">
+        {{markdown title}}
+      </li>
     {{/each}}
   </ul>
 </div>

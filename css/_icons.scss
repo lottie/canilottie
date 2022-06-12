@@ -1,0 +1,57 @@
+.icon {
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 99%;
+  background-color: var(--color-on-background);
+  width: calc(var(--grid-unit) * 3);
+  height: calc(var(--grid-unit) * 3);
+  display: block;
+
+  &__search {
+    -webkit-mask-image: url(../assets/navigation/search.svg);
+  }
+
+  &__list {
+    -webkit-mask-image: url(../assets/navigation/list.svg);
+  }
+
+  &__about {
+    -webkit-mask-image: url(../assets/navigation/info.svg);
+  }
+
+  &__github {
+    -webkit-mask-image: url(../assets/main/github.svg);
+  }
+
+  &__bug {
+    -webkit-mask-image: url(../assets/main/bug.svg);
+  }
+
+  &__check {
+    -webkit-mask-image: url(../assets/features/check.svg);
+  }
+
+  &__block {
+    -webkit-mask-image: url(../assets/features/block.svg);
+  }
+
+  &__subfeature {
+    -webkit-mask-image: url(../assets/features/subfeature.svg);
+  }
+
+  &__world {
+    -webkit-mask-image: url(../assets/features/world.svg);
+  }
+
+  &__computer {
+    -webkit-mask-image: url(../assets/features/computer.svg);
+  }
+
+  &__android {
+    -webkit-mask-image: url(../assets/features/android.svg);
+  }
+
+  &__apple {
+    -webkit-mask-image: url(../assets/features/apple.svg);
+  }
+}

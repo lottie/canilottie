@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/index.scss" rel="stylesheet" />
     <link href="../css/expandPage.scss" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <!-- TEMPLATES -->
@@ -16,8 +17,7 @@
     <!-- END TEMPLATES -->
     {{> navigation}}
     <main class="main">
-      <div class="main__wrapper">
-        <div class="main__wrapper__content">
+      <div class="main__content">
           {{> search-section isSmall=true}}
           <section class="expand-page__header">
             <h2
@@ -34,10 +34,11 @@
           </section>
           {{> support-table stats}}
           <features-widget></features-widget>
-        </div>
+        <!--
         <aside class="aside">
           {{> related-features sub_features}}
         </aside>
+        -->
       </div>
       {{> footer}}
     </main>

@@ -11,13 +11,18 @@
 
     &__title {
       @include font-headline-medium;
-      margin-bottom: var(--grid-unit);
+      margin-bottom: calc(var(--grid-unit) * 2);
 
       &__link {
         color: var(--color-on-background);
+        text-decoration: none;
 
         &:visited {
           color: var(--color-on-background);
+        }
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
@@ -28,7 +33,7 @@
 
   &__stats {
     margin-top: calc(var(--grid-unit) * 0);
-    padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2);
+    padding: calc(var(--grid-unit)*1) calc(var(--grid-unit)*2) calc(var(--grid-unit)*4);
 
     &__grid {
       display: flex;
@@ -76,10 +81,12 @@
 
         &--supported {
           background-color: var(--color-secondary-container);
+          color: var(--color-on-secondary-container)
         }
 
         &--unsupported {
           background-color: var(--color-error);
+          color: var(--color-on-error);
         }
 
         &--highlight {
@@ -154,20 +161,6 @@
 
 .main {
   padding: calc(var(--grid-unit)*3) calc(var(--grid-unit)*2) 0 calc(var(--grid-unit)*2);
-  width: 100%;
-  min-width: 0;
-  
-  &__wrapper {
-    display: flex;
-    width: 100%;
-
-    &__content {
-      overflow-x: auto;
-      flex: 1 1 auto;
-      max-width: calc(var(--grid-unit) * 105);
-      padding: 0 calc(var(--grid-unit) * 6);
-    }
-  }
 }
 
 @media  (max-width: 840px) {
@@ -177,6 +170,9 @@
 }
 
 @media  (max-width: 600px) {
+  .main {
+    padding: calc(var(--grid-unit)*3) 0 0 0;
+  }
 
   .aside {
     width: 100%;

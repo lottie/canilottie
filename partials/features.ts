@@ -156,11 +156,11 @@ const registerFeatureIcon = async (): Promise<void> => {
   Handlebars.registerHelper('feature-icon', (players: PlayerTypes, playerType: PlayerTypesKeys) => {
     switch (players[playerType]) {
       case 'y':
-        return '/assets/features/check.svg';
+        return '<span class="icon icon__check" alt="Supported"></span>';
       case 'n':
-        return '/assets/features/block.svg';
+        return '<span class="icon icon__block" alt="Not supported"></span>';
       default:
-        return '/assets/features/bug.svg';
+        return '<span class="icon icon__bug" alt="Bug"></span>';
     }
   });
 };

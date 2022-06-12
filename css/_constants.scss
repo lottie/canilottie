@@ -70,13 +70,13 @@
 @mixin font-headline-small {
   font-size: var(--font-medium-large-large); // 24px
   line-height: 2rem; // 32px
-  font-weight: 900;
+  font-weight: 800;
   font-family: var(--font-family);
 }
 
 @mixin font-headline-medium {
   font-size: var(--font-medium-large); // 28px
   line-height: 2.25rem; // 36px
-  font-weight: 900;
+  font-weight: 800;
   font-family: var(--font-family);
 }

@@ -1,5 +1,7 @@
 <template id="search-widget-template">
   <style>
+    @import "../css/_global.scss"; 
+    @import "../css/_icons.scss";
 
     * {
       box-sizing: border-box;
@@ -17,12 +19,13 @@
       width: 100%;
       position: relative;
       background-color: var(--color-surface-2);
-      outline: 1px solid var(--color-secondary-container);
+      border: 1px solid var(--color-secondary-container);
       border-radius: calc(var(--grid-unit) * 4);
     }
 
     .search-container--focus {
-      outline: 2px solid var(--color-secondary-container);
+      border: 2px solid var(--color-secondary-container);
+      margin: -1px -2px;
     }
 
     .search-form {
@@ -39,9 +42,11 @@
       font-family: var(--font-family);
       flex: 1 1 auto;
       background: none;
+      color: var(--color-on-background);
     }
 
     .search-form__input::placeholder, .search-form__input::-webkit-input-placeholder {
+      color: var(--color-on-background);
       opacity: 0.5;
     }
 
@@ -58,11 +63,6 @@
       font-size: var(--font-large);
       cursor: pointer;
       flex: 0 0 auto;
-    }
-
-    .search-form__submit-label__icon {
-      width: 18px;
-      height: 18px;
     }
 
     .search-form__input:focus-visible {
@@ -129,10 +129,11 @@
             class="search-form__submit-label"
             for="Query"
           >
-            <img
-            class="search-form__submit-label__icon"
-              src="/assets/navigation/search.svg"
-            />
+            <span
+              class="icon icon__search"
+              role="presentation"
+            >
+            </span>
           </label>
           <input
             class="search-form__input"
