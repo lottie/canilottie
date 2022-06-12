@@ -3,6 +3,7 @@
 
 import {
   writeFile,
+  copyFile,
 } from 'fs/promises';
 import { join } from 'path';
 import {
@@ -21,7 +22,6 @@ import {
   createTargetDirs, getDirPath, getSourceDirListing, htmlFilenameFromJSONFilename, jsonFilenameWithoutExtension, loadFile,
 } from './helpers/file';
 import { formatDate } from './helpers/date';
-import { copyFile } from 'node:fs/promises';
 
 interface FeatureInterface {
   data: CanIUseData
@@ -136,4 +136,3 @@ const main = async () => {
 };
 
 main();
- 
