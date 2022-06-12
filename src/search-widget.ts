@@ -8,6 +8,12 @@ const AUTO_SUBMIT_TIMOUT_MS = 500;
 
 const MAX_RESULTS = 30;
 
+const keyCodes = {
+  ARROW_DOWN: 'ArrowDown',
+  ARROW_UP: 'ArrowUp',
+  ENTER: 'Enter',
+};
+
 interface SearchWidgetAttributes extends NamedNodeMap {
   small?: any;
 }
@@ -35,8 +41,14 @@ class SearchWidget extends HTMLElement {
   private results: HTMLUListElement | null = null;
 
   private message: HTMLDivElement | null = null;
-  
+
   private searchContainer: HTMLDivElement | null = null;
+
+  private currentFocus: number = -1;
+
+  private totalResults: number = 0;
+
+  private isActive: boolean = false;
 
   constructor() {
     super();
@@ -112,6 +124,42 @@ class SearchWidget extends HTMLElement {
     }
   }
 
+  private focusOnElementByIndex(index: number) {
+    const resultItems = this.results.getElementsByClassName('result');
+    const link = resultItems[index]?.getElementsByClassName('link')[0] as HTMLLinkElement;
+    if (link) {
+      link.focus();
+    }
+  }
+
+  private handleKeys = (ev) => {
+    if (ev.key === keyCodes.ARROW_DOWN) {
+      if (this.currentFocus === this.totalResults - 1) {
+        return;
+      }
+      this.currentFocus += 1;
+      this.focusOnElementByIndex(this.currentFocus);
+    } else if (ev.key === keyCodes.ARROW_UP) {
+      if (this.currentFocus === -1) {
+        return;
+      }
+      this.currentFocus -= 1;
+      if (this.currentFocus === -1) {
+        this.input.focus();
+      } else {
+        this.focusOnElementByIndex(this.currentFocus);
+      }
+    }
+  };
+
+  private activate() {
+    if (this.isActive) {
+      return;
+    }
+    this.isActive = true;
+    document.addEventListener('keydown', this.handleKeys);
+  }
+
   // As key presses arrive we continually bump back the auto submit timer.
   private textInput() {
     if (this.autoSubmitTimer) {
@@ -124,6 +172,7 @@ class SearchWidget extends HTMLElement {
   private textInputFocus() {
     const classList = this.searchContainer.classList;
     classList.add('search-container--focus');
+    this.activate();
   }
 
   private textInputBlur() {
@@ -148,6 +197,7 @@ class SearchWidget extends HTMLElement {
     this.results.innerHTML = '';
     this.message.textContent = '';
     this.message.style.display = 'none';
+    this.currentFocus = -1;
 
     const corpus: CorpusPage[] = await SearchWidget.corpusPromise;
     corpus.forEach((page) => {
@@ -164,6 +214,8 @@ class SearchWidget extends HTMLElement {
       this.message.textContent = '0 results found.';
       this.message.style.display = 'block';
     }
+
+    this.totalResults = totalResults;
   }
 }
 
