@@ -129,13 +129,6 @@ a {
     }
 }
 
-body.embed  {
-  padding: 0;
-  .search {
-    display: none;
-  }
-}
-
 .main {
   flex: 1 1 auto;
   overflow: auto;
@@ -267,5 +260,20 @@ body.embed  {
     &__footer {
       padding: 0 calc(var(--grid-unit) * 2);
     }
+  }
+}
+
+body.embed  {
+  padding: 0;
+  .search {
+    display: none;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .main__footer {
+    display: none;
   }
 }
