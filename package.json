@@ -14,7 +14,8 @@
     "check": "npx tsc --noEmit *.ts src/*.ts",
     "watch": "nodemon",
     "test": "echo ${PWD}",
-    "deploy": "npm run build && npx firebase deploy"
+    "deploy": "npm run build && npx firebase deploy --only hosting:prod",
+    "deploy:test": "npm run build && npx firebase deploy --only hosting:test"
   },
   "author": "",
   "license": "Apache 2.0",
