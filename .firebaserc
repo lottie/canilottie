@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "lottie-animation-community"
+  },
+  "targets": {
+    "lottie-animation-community": {
+      "hosting": {
+        "prod": [
+          "lottie-animation-community"
+        ],
+        "test": [
+          "test-lottie-community"
+        ]
+      }
+    }
   }
 }
