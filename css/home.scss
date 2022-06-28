@@ -37,6 +37,10 @@
   }
 }
 
+body .search__logo {
+  display: none;
+}
+
 @media  (max-width: 600px) {
   .index__search {
     text-align: center;
