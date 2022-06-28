@@ -1,6 +1,6 @@
 {
   "title": "Shape Layer",
-  "description": "A layer with a set of verctor based paint instructions",
+  "description": "A layer with a set of vector based paint instructions",
   "spec": "https://lottie-animation-community.github.io/docs/specs/layers/shapes/",
   "status": "ls",
   "links": [
