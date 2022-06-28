@@ -22,11 +22,11 @@
           <section class="main__header">
             <h1 class="main__title">Lottie feature index</h1>
           </section>
-          <div class="main__table">
-            <div class="main__table__header">
-              <div class="main__table__header__row">
-                <div class="main__table__header__row__cell main__table__header__row__cell--feature">Feature</div>
-                <div class="main__table__header__row__cell">
+          <table class="main__table">
+            <thead class="main__table__header">
+              <tr class="main__table__header__row">
+                <th class="main__table__header__row__cell main__table__header__row__cell--feature">Feature</th>
+                <th class="main__table__header__row__cell">
                   <span
                     class="icon icon__world
                     role="presentation"
@@ -37,8 +37,8 @@
                   >
                     Web
                   </span>
-                </div>
-                <div class="main__table__header__row__cell">
+                </th>
+                <th class="main__table__header__row__cell">
                   <span
                     class="icon icon__computer
                     role="presentation"
@@ -49,8 +49,8 @@
                   >
                     Skottie
                   </span>
-                </div>
-                <div class="main__table__header__row__cell">
+                </th>
+                <th class="main__table__header__row__cell">
                   <span
                     class="icon icon__android
                     role="presentation"
@@ -61,8 +61,8 @@
                   >
                     Android
                   </span>
-                </div>
-                <div class="main__table__header__row__cell">
+                </th>
+                <th class="main__table__header__row__cell">
                   <span
                     class="icon icon__apple
                     role="presentation"
@@ -73,13 +73,13 @@
                   >
                     iOS
                   </span>
-                </div>
-              </div>
-            </div>
-            <div class="main__table__body">
+                </th>
+              </tr>
+            </thead>
+            <tbody class="main__table__body">
               {{#each features}}
-                <div class="main__table__body__row">
-                  <div class="main__table__body__row__cell main__table__body__row__cell--feature {{#unless is_sub_level}} main__table__body__row__cell--main {{/unless}}"
+                <tr class="main__table__body__row">
+                  <td class="main__table__body__row__cell main__table__body__row__cell--feature {{#unless is_sub_level}} main__table__body__row__cell--main {{/unless}}"
                     style="padding-left: calc({{sub_level}} * 10px)"
                   >
                     <a
@@ -97,23 +97,23 @@
                         {{title}}
                       </span>
                     </a>
-                  </div>
-                  <div class="main__table__body__row__cell main__table__body__row__cell--support">
+                  </td>
+                  <td class="main__table__body__row__cell main__table__body__row__cell--support">
                     {{{feature-icon players 'lottie-web'}}}
-                  </div>
-                  <div class="main__table__body__row__cell main__table__body__row__cell--support">
+                  </td>
+                  <td class="main__table__body__row__cell main__table__body__row__cell--support">
                     {{{feature-icon players 'skottie'}}}
-                  </div>
-                  <div class="main__table__body__row__cell main__table__body__row__cell--support">
+                  </td>
+                  <td class="main__table__body__row__cell main__table__body__row__cell--support">
                     {{{feature-icon players 'lottie-android'}}}
-                  </div>
-                  <div class="main__table__body__row__cell main__table__body__row__cell--support">
+                  </td>
+                  <td class="main__table__body__row__cell main__table__body__row__cell--support">
                     {{{feature-icon players 'lottie-ios'}}}
-                  </div>
-                </div>
+                  </td>
+                </tr>
               {{/each}}
-            </div>
-          </div>
+            </tbody>
+          </table>
         </div>
         {{> footer}}
       </div>

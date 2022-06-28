@@ -9,10 +9,12 @@
   }
 
   &__table {
+    display: block;
     padding: 0 calc(var(--grid-unit)*2) calc(var(--grid-unit)*4);
     width: 100%;
 
     &__header {
+      display: block;
       background-color: var(--color-secondary-container);
       padding-top: calc(var(--grid-unit) * 1.2);
       width: 100%;
@@ -55,6 +57,7 @@
     }
 
     &__body {
+      display: block;
       width: 100%;
 
       &__row {
