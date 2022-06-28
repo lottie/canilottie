@@ -14,16 +14,9 @@
 
 .index__logo {
   margin-bottom: calc(var(--grid-unit) * 5);
-  background-image: url("/assets/main/logo-large-light.svg");
   background-size: 100%;
   width: 376px;
   height: 224px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .index__logo {
-    background-image: url("/assets/main/logo-large-dark.svg");
-  }
 }
 
 .index__search {
