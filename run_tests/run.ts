@@ -10,9 +10,9 @@ async function run() {
     const octokit = github.getOctokit(secretToken);
     console.log(typeof octokit);
     const result = await octokit.rest.repos.createDispatchEvent({
-      owner: 'bodymovin',
-      repo: 'test',
-      event_type: 'trigger-test',
+      owner: 'lottie-animation-community',
+      repo: 'tests',
+      event_type: 'trigger-tests',
       client_payload: {},
     });
     console.log('result', result);
