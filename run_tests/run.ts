@@ -1,5 +1,5 @@
-import core from '@actions/core';
-import github from '@actions/github';
+import * as core from '@actions/core';
+import * as github from '@actions/github';
 
 async function run() {
   try {
@@ -9,12 +9,13 @@ async function run() {
     console.log('secretToken', secretToken.length);
     const octokit = github.getOctokit(secretToken);
     console.log(typeof octokit);
-    await octokit.rest.repos.createDispatchEvent({
+    const result = await octokit.rest.repos.createDispatchEvent({
       owner: 'bodymovin',
       repo: 'test',
       event_type: 'trigger-test',
       client_payload: {},
     });
+    console.log('result', result);
   } catch (error) {
     console.log('RUN ERROR: ', error);
   }

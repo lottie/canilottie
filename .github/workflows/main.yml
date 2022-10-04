@@ -25,6 +25,7 @@ jobs:
         id: node_step
         run: npm install
       - run: npm run run_tests
+        working-directory: ${{env.workingd}}
 
   new_version:
     if: github.event.issue.title == 'New Version'
