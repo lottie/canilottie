@@ -5,14 +5,16 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "index.html",
   "scripts": {
-    "build_version": "node --require esbuild-register build_version.ts"
+    "build_version": "node --require esbuild-register build_version.ts",
+    "run_tests": "node --require esbuild-register run_tests.ts"
   },
   "author": "",
   "license": "Apache 2.0",
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
-    "marked": "^4.0.12"
+    "marked": "^4.0.12",
+    "yargs": "^17.6.0"
   },
   "devDependencies": {
     "esbuild": "^0.14.32",

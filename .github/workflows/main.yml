@@ -8,25 +8,6 @@ on:
     types: [opened]
 
 jobs:
-  dispatch_test:
-    if: github.event.issue.title == 'New Version'
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      BODYMOVIN_PERSONAL_TOKEN: ${{ secrets.BODYMOVIN_PERSONAL_TOKEN }}
-      workingd: run_tests
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14.x'
-      - name: Install dependencies
-        working-directory: ${{env.workingd}}
-        id: node_step
-        run: npm install
-      - run: npm run run_tests
-        working-directory: ${{env.workingd}}
 
   new_version:
     if: github.event.issue.title == 'New Version'
@@ -57,6 +38,9 @@ jobs:
         with:
           branch: ${{steps.execute.outputs.branch_name}}
           title: "Closes #${{steps.execute.outputs.issue_number}} , Adds version ${{steps.execute.outputs.version}} for player ${{steps.execute.outputs.player}}" 
+      - name: Run Tests
+        run: npm run run_tests -- --player=${{steps.execute.outputs.player}}
+        working-directory: ${{env.workingd}}
 
   new_player:
       if: github.event.issue.title == 'New Player'
