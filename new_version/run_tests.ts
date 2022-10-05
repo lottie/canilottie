@@ -21,7 +21,7 @@ async function run() {
         owner: 'lottie-animation-community',
         repo: 'tests',
         event_type: 'trigger-tests',
-        client_payload: {},
+        client_payload: payload,
       });
     }
   } catch (error) {
