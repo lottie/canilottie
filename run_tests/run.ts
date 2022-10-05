@@ -5,12 +5,9 @@ async function run() {
   try {
     console.log('Running test');
     // const token = 'a';
-    const secretToken = process.env.GITHUB_TOKEN || 'none secret';
-    const testToken = process.env.TEST_GITHUB_TOKEN || 'none2 secret';
+    const secretToken = process.env.BODYMOVIN_PERSONAL_TOKEN || 'none secret';
     console.log('secretToken', secretToken.length);
-    console.log('testToken', testToken.length);
-    const octokit = github.getOctokit(testToken);
-    console.log(typeof octokit);
+    const octokit = github.getOctokit(secretToken);
     const result = await octokit.rest.repos.createDispatchEvent({
       owner: 'lottie-animation-community',
       repo: 'tests',
