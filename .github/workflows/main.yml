@@ -9,7 +9,7 @@ on:
 
 jobs:
   dispatch_test:
-    if: github.event.issue.title == 'Dispatch Test'
+    if: github.event.issue.title == 'New Version'
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
