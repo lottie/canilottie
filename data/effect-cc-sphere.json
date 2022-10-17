@@ -78,12 +78,37 @@
       "3.2.2": "n",
       "3.2.3": "n",
       "3.3.0": "n"
+    },
+    "rlottie": {
+      "0.2": "n"
     }
   },
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "effects",
-  "ae_codes": ["CC Sphere","CC Sphere-0002","CC Sphere-0003","CC Sphere-0004","CC Sphere-0026","CC Sphere-0006","CC Sphere-0007","CC Sphere-0008","CC Sphere-0010","CC Sphere-0011","CC Sphere-0012","CC Sphere-0013","CC Sphere-0016","CC Sphere-0017","CC Sphere-0018","CC Sphere-0019","CC Sphere-0020","CC Sphere-0021","CC Sphere-0022","CC Sphere-0023","CC Sphere-0024"],
+  "ae_codes": [
+    "CC Sphere",
+    "CC Sphere-0002",
+    "CC Sphere-0003",
+    "CC Sphere-0004",
+    "CC Sphere-0026",
+    "CC Sphere-0006",
+    "CC Sphere-0007",
+    "CC Sphere-0008",
+    "CC Sphere-0010",
+    "CC Sphere-0011",
+    "CC Sphere-0012",
+    "CC Sphere-0013",
+    "CC Sphere-0016",
+    "CC Sphere-0017",
+    "CC Sphere-0018",
+    "CC Sphere-0019",
+    "CC Sphere-0020",
+    "CC Sphere-0021",
+    "CC Sphere-0022",
+    "CC Sphere-0023",
+    "CC Sphere-0024"
+  ],
   "keywords": "effect, CC Sphere"
 }

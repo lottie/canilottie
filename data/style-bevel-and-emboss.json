@@ -78,12 +78,32 @@
       "3.2.2": "n",
       "3.2.3": "n",
       "3.3.0": "n"
+    },
+    "rlottie": {
+      "0.2": "n"
     }
   },
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "styles",
-  "ae_codes": ["bevelEmboss/enabled","bevelEmboss/bevelDirection","bevelEmboss/blur","bevelEmboss/bevelTechnique","bevelEmboss/highlightOpacity","bevelEmboss/shadowOpacity","bevelEmboss/localLightingAngle","bevelEmboss/shadowColor","bevelEmboss/shadowMode","bevelEmboss/highlightMode","bevelEmboss/highlightColor","bevelEmboss/bevelStyle","bevelEmboss/strengthRatio","bevelEmboss/useGlobalAngle","bevelEmboss/softness","bevelEmboss/localLightingAltitude"],
+  "ae_codes": [
+    "bevelEmboss/enabled",
+    "bevelEmboss/bevelDirection",
+    "bevelEmboss/blur",
+    "bevelEmboss/bevelTechnique",
+    "bevelEmboss/highlightOpacity",
+    "bevelEmboss/shadowOpacity",
+    "bevelEmboss/localLightingAngle",
+    "bevelEmboss/shadowColor",
+    "bevelEmboss/shadowMode",
+    "bevelEmboss/highlightMode",
+    "bevelEmboss/highlightColor",
+    "bevelEmboss/bevelStyle",
+    "bevelEmboss/strengthRatio",
+    "bevelEmboss/useGlobalAngle",
+    "bevelEmboss/softness",
+    "bevelEmboss/localLightingAltitude"
+  ],
   "keywords": "styles, bevel and emboss style"
 }

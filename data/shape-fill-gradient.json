@@ -79,6 +79,9 @@
       "3.2.2": "y",
       "3.2.3": "y",
       "3.3.0": "y"
+    },
+    "rlottie": {
+      "0.2": "y"
     }
   },
   "notes": "",
@@ -86,6 +89,15 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "layer-shape",
-  "ae_codes": ["ADBE Vector Graphic - G-Fill","ADBE Vector Fill Opacity","ADBE Vector Grad End Pt","ADBE Vector Composite Order","ADBE Vector Grad Start Pt","ADBE Vector Fill Rule","ADBE Vector Grad Colors","ADBE Vector Grad Type"],
+  "ae_codes": [
+    "ADBE Vector Graphic - G-Fill",
+    "ADBE Vector Fill Opacity",
+    "ADBE Vector Grad End Pt",
+    "ADBE Vector Composite Order",
+    "ADBE Vector Grad Start Pt",
+    "ADBE Vector Fill Rule",
+    "ADBE Vector Grad Colors",
+    "ADBE Vector Grad Type"
+  ],
   "keywords": "gradient fill,linear gradient,radial gradient"
 }

@@ -78,12 +78,23 @@
       "3.2.2": "n",
       "3.2.3": "n",
       "3.3.0": "n"
+    },
+    "rlottie": {
+      "0.2": "n"
     }
   },
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "effects",
-  "ae_codes": ["ADBE HUE SATURATION","ADBE HUE SATURATION-0002","ADBE HUE SATURATION-0003","ADBE HUE SATURATION-0007","ADBE HUE SATURATION-0008","ADBE HUE SATURATION-0009","ADBE HUE SATURATION-0010"],
+  "ae_codes": [
+    "ADBE HUE SATURATION",
+    "ADBE HUE SATURATION-0002",
+    "ADBE HUE SATURATION-0003",
+    "ADBE HUE SATURATION-0007",
+    "ADBE HUE SATURATION-0008",
+    "ADBE HUE SATURATION-0009",
+    "ADBE HUE SATURATION-0010"
+  ],
   "keywords": "effect, Hue/Saturation, Hue, Saturation"
 }

@@ -78,6 +78,9 @@
       "3.2.2": "y",
       "3.2.3": "y",
       "3.3.0": "y"
+    },
+    "rlottie": {
+      "0.2": "y"
     }
   },
   "notes": "",
@@ -85,6 +88,8 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "mask",
-  "ae_codes": ["ADBE Mask Opacity"],
+  "ae_codes": [
+    "ADBE Mask Opacity"
+  ],
   "keywords": "mask opacity"
 }
