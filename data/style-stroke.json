@@ -78,12 +78,22 @@
       "3.2.2": "n",
       "3.2.3": "n",
       "3.3.0": "n"
+    },
+    "rlottie": {
+      "0.2": "n"
     }
   },
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "styles",
-  "ae_codes": ["frameFX/enabled","frameFX/mode2","frameFX/opacity","frameFX/style","frameFX/size","frameFX/color"],
+  "ae_codes": [
+    "frameFX/enabled",
+    "frameFX/mode2",
+    "frameFX/opacity",
+    "frameFX/style",
+    "frameFX/size",
+    "frameFX/color"
+  ],
   "keywords": "styles, stroke style"
 }

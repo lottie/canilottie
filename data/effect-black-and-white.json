@@ -78,12 +78,25 @@
       "3.2.2": "n",
       "3.2.3": "n",
       "3.3.0": "n"
+    },
+    "rlottie": {
+      "0.2": "n"
     }
   },
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "effects",
-  "ae_codes": ["ADBE Black&White","ADBE Black&White-0001","ADBE Black&White-0002","ADBE Black&White-0003","ADBE Black&White-0004","ADBE Black&White-0005","ADBE Black&White-0006","ADBE Black&White-0007","ADBE Black&White-0008"],
+  "ae_codes": [
+    "ADBE Black&White",
+    "ADBE Black&White-0001",
+    "ADBE Black&White-0002",
+    "ADBE Black&White-0003",
+    "ADBE Black&White-0004",
+    "ADBE Black&White-0005",
+    "ADBE Black&White-0006",
+    "ADBE Black&White-0007",
+    "ADBE Black&White-0008"
+  ],
   "keywords": "effect, black and white, black & white"
 }

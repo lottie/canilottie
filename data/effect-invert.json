@@ -78,12 +78,19 @@
       "3.2.2": "n",
       "3.2.3": "n",
       "3.3.0": "n"
+    },
+    "rlottie": {
+      "0.2": "n"
     }
   },
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "effects",
-  "ae_codes": ["ADBE Invert","ADBE Invert-0001","ADBE Invert-0002"],
+  "ae_codes": [
+    "ADBE Invert",
+    "ADBE Invert-0001",
+    "ADBE Invert-0002"
+  ],
   "keywords": "effect, Invert"
 }

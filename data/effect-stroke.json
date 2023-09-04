@@ -78,6 +78,9 @@
       "3.2.2": "n",
       "3.2.3": "n",
       "3.3.0": "n"
+    },
+    "rlottie": {
+      "0.2": "n"
     }
   },
   "notes_by_num": {
@@ -86,6 +89,18 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "effects",
-  "ae_codes": ["ADBE Stroke","ADBE Stroke-0001","ADBE Stroke-0010","ADBE Stroke-0002","ADBE Stroke-0003","ADBE Stroke-0004","ADBE Stroke-0005","ADBE Stroke-0008","ADBE Stroke-0009","ADBE Stroke-0006","ADBE Stroke-0007"],
+  "ae_codes": [
+    "ADBE Stroke",
+    "ADBE Stroke-0001",
+    "ADBE Stroke-0010",
+    "ADBE Stroke-0002",
+    "ADBE Stroke-0003",
+    "ADBE Stroke-0004",
+    "ADBE Stroke-0005",
+    "ADBE Stroke-0008",
+    "ADBE Stroke-0009",
+    "ADBE Stroke-0006",
+    "ADBE Stroke-0007"
+  ],
   "keywords": "effect, stroke"
 }

@@ -78,12 +78,25 @@
       "3.2.2": "n",
       "3.2.3": "n",
       "3.3.0": "n"
+    },
+    "rlottie": {
+      "0.2": "n"
     }
   },
   "notes_by_num": {},
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "effects",
-  "ae_codes": ["ADBE Displacement Map","ADBE Displacement Map-0001","ADBE Displacement Map-0002","ADBE Displacement Map-0003","ADBE Displacement Map-0004","ADBE Displacement Map-0005","ADBE Displacement Map-0006","ADBE Displacement Map-0007","ADBE Displacement Map-0008"],
+  "ae_codes": [
+    "ADBE Displacement Map",
+    "ADBE Displacement Map-0001",
+    "ADBE Displacement Map-0002",
+    "ADBE Displacement Map-0003",
+    "ADBE Displacement Map-0004",
+    "ADBE Displacement Map-0005",
+    "ADBE Displacement Map-0006",
+    "ADBE Displacement Map-0007",
+    "ADBE Displacement Map-0008"
+  ],
   "keywords": "effect, Displacement map"
 }

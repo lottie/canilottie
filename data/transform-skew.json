@@ -82,6 +82,9 @@
       "3.2.2": "y",
       "3.2.3": "y",
       "3.3.0": "y"
+    },
+    "rlottie": {
+      "0.2": "n"
     }
   },
   "notes": "",
@@ -89,6 +92,9 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "transform",
-  "ae_codes": ["ADBE Vector Skew","ADBE Vector Skew Axis"],
+  "ae_codes": [
+    "ADBE Vector Skew",
+    "ADBE Vector Skew Axis"
+  ],
   "keywords": "transform, skew, skew axis"
 }

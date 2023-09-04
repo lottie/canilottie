@@ -94,6 +94,9 @@
       "3.2.2": "y",
       "3.2.3": "y",
       "3.3.0": "y"
+    },
+    "rlottie": {
+      "0.2": "y"
     }
   },
   "notes": "",
@@ -101,6 +104,12 @@
   "usage_perc_y": 0,
   "usage_perc_a": 0,
   "parent": "transform",
-  "ae_codes": ["ADBE Orientation","ADBE Rotate X","ADBE Rotate Y","ADBE Rotate Z","ADBE Vector Rotation"],
+  "ae_codes": [
+    "ADBE Orientation",
+    "ADBE Rotate X",
+    "ADBE Rotate Y",
+    "ADBE Rotate Z",
+    "ADBE Vector Rotation"
+  ],
   "keywords": "transform, rotation"
 }
